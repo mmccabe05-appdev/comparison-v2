@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_222814) do
+ActiveRecord::Schema.define(version: 2023_02_04_222858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.float "lat", default: 0.0
+    t.float "lng", default: 0.0
+    t.integer "neighborhoods_count", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
