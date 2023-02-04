@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_222107) do
+ActiveRecord::Schema.define(version: 2023_02_04_222455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2023_02_04_222107) do
     t.index ["user_id"], name: "index_comparisons_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "comparison_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comparison_id"], name: "index_likes_on_comparison_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.citext "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +61,6 @@ ActiveRecord::Schema.define(version: 2023_02_04_222107) do
   end
 
   add_foreign_key "comparisons", "users"
+  add_foreign_key "likes", "comparisons"
+  add_foreign_key "likes", "users"
 end
