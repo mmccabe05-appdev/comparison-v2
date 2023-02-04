@@ -12,5 +12,5 @@ class User < ApplicationRecord
          has_many(:liked_comparisons, { :through => :likes, :source => :comparison })
          has_many(:liked_neighborhoods, { :through => :favorite_neighborhoods, :source => :neighborhood })
          validates(:username, { :presence => true })
-         validates(:username, { :uniqueness => true })
+         validates(:username, { :uniqueness => true }) # commit
 end
