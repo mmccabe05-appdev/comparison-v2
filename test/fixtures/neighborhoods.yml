@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: one
+  lat: 1.5
+  lng: 1.5
+  favorite_neighborhoods_count: 1
+
+two:
+  name: MyString
+  city: two
+  lat: 1.5
+  lng: 1.5
+  favorite_neighborhoods_count: 1

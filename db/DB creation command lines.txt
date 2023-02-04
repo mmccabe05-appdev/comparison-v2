@@ -72,7 +72,7 @@ rails generate scaffold city name:string location:string lat:float lng:float nei
 
 # Neighborhoods
 
-rails generate scaffold neighborhood name:string city_id:integer lat:float lng:float favorite_neighborhoods_count:integer
+rails generate scaffold neighborhood name:string city:references lat:float lng:float favorite_neighborhoods_count:integer
 
     # Neighborhood associations
 

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Neighborhoods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+      <th>Lat</th>
+      <th>Lng</th>
+      <th>Favorite neighborhoods count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @neighborhoods.each do |neighborhood| %>
+      <tr>
+        <td><%= neighborhood.name %></td>
+        <td><%= neighborhood.city_id %></td>
+        <td><%= neighborhood.lat %></td>
+        <td><%= neighborhood.lng %></td>
+        <td><%= neighborhood.favorite_neighborhoods_count %></td>
+        <td><%= link_to 'Show', neighborhood %></td>
+        <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood) %></td>
+        <td><%= link_to 'Destroy', neighborhood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Neighborhood', new_neighborhood_path %>
