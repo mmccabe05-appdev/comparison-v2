@@ -1,0 +1,95 @@
+# Users creation
+
+rails generate devise user username comparisons_count:integer favorite_neighborhoods_count:integer
+
+
+    ## User associations
+    has_many(:likes, { :class_name => "Like", :foreign_key => "user_id", :dependent => :destroy })
+    has_many(:comments, { :class_name => "Comment", :foreign_key => "commenter_id", :dependent => :destroy })
+    has_many(:comparisons, { :class_name => "Comparison", :foreign_key => "user_id", :dependent => :nullify })
+    has_many(:favorite_neighborhoods, { :class_name => "FavoriteNeighborhood", :foreign_key => "user_id", :dependent => :destroy })
+
+    has_many(:liked_comparisons, { :through => :likes, :source => :comparison })
+    has_many(:liked_neighborhoods, { :through => :favorite_neighborhoods, :source => :neighborhood })
+    validates(:username, { :presence => true })
+    validates(:username, { :uniqueness => true })
+  
+# Comparisons adding
+
+rails generate scaffold comparison body:string user:references culinary_similarity:integer transportation_similarity:integer people_similarity:integer built_environment_similarity:integer overall_similarity:float neighborhood_1_id:integer neighborhood_2_id:integer net_comparison_score:float net_votes:integer likes_count:integer comments_count:integer
+
+
+    ## Comparison Associations
+    belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
+    has_many(:likes, { :class_name => "Like", :foreign_key => "comparison_id", :dependent => :destroy })
+    has_many(:comments, { :class_name => "Comment", :foreign_key => "comparison_id", :dependent => :destroy })
+    belongs_to(:neighborhood_1, { :required => true, :class_name => "Neighborhood", :foreign_key => "neighborhood_1_id" })
+    belongs_to(:neighborhood_2, { :required => true, :class_name => "Neighborhood", :foreign_key => "neighborhood_2_id" })
+
+    has_many(:fans, { :through => :likes, :source => :user })
+    has_one(:city_1, { :through => :neighborhood_1, :source => :city })
+    has_one(:city_2, { :through => :neighborhood_2, :source => :city })
+
+    validates(:user_id, { :presence => true })
+    validates(:neighborhood_1_id, { :presence => true })
+    validates(:neighborhood_2_id, { :presence => true })
+  
+# Likes
+
+rails generate scaffold like user_id:references comparison_id:references
+
+    # Likes Associations
+    belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
+    belongs_to(:comparison, { :required => true, :class_name => "Comparison", :foreign_key => "comparison_id", :counter_cache => true })
+
+    validates(:user_id, { :presence => true })
+    validates(:comparison_id, { :presence => true })
+    validates(:comparison_id, { :uniqueness => { :scope => ["user_id"], :message => "already liked" } })
+
+# Comments
+
+rails generate scaffold comment body:text commenter_id:integer comparison_id:integer
+
+  ## Comment Associations
+
+  belongs_to(:commenter, { :required => true, :class_name => "User", :foreign_key => "commenter_id" })
+  belongs_to(:comparison, { :required => true, :class_name => "Comparison", :foreign_key => "comparison_id", :counter_cache => true })
+
+  validates(:comparison_id, { :presence => true })
+  validates(:commenter_id, { :presence => true })
+  validates(:body, { :presence => true })
+
+# Cities
+
+rails generate scaffold city name:string location:string lat:float lng:float neighborhoods_count:integer
+
+  # Cities associations
+
+  has_many(:neighborhoods, { :class_name => "Neighborhood", :foreign_key => "city_id", :dependent => :destroy })
+
+  has_many(:comparisons_as_neighborhood_1s, { :through => :neighborhoods, :source => :comparisons_as_neighborhood_1 })
+  has_many(:comparisons_as_neighborhood_2s, { :through => :neighborhoods, :source => :comparisons_as_neighborhood_2 })
+
+# Neighborhoods
+
+rails generate scaffold neighborhood name:string city_id:integer lat:float lng:float favorite_neighborhoods_count:integer
+
+    # Neighborhood associations
+
+    belongs_to(:city, { :required => true, :class_name => "City", :foreign_key => "city_id", :counter_cache => true })
+    has_many(:favorite_neighborhoods, { :class_name => "FavoriteNeighborhood", :foreign_key => "neighborhood_id", :dependent => :destroy })
+    has_many(:comparisons_as_neighborhood_1, { :class_name => "Comparison", :foreign_key => "neighborhood_1_id", :dependent => :destroy })
+    has_many(:comparisons_as_neighborhood_2, { :class_name => "Comparison", :foreign_key => "neighborhood_2_id", :dependent => :destroy })
+
+    has_many(:fans, { :through => :favorite_neighborhoods, :source => :user })
+    has_many(:neighborhood_2s, { :through => :comparisons_as_neighborhood_1, :source => :neighborhood_2 })
+    has_many(:neighborhood_1s, { :through => :comparisons_as_neighborhood_2, :source => :neighborhood_1 })
+
+# Favorite Neighborhoods
+
+rails generate scaffold favorite_neighborhood user_id:integer neighborhood_id:integer
+
+    # Fav Neighborhoods Associations
+
+    belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
+    belongs_to(:neighborhood, { :required => true, :class_name => "Neighborhood", :foreign_key => "neighborhood_id", :counter_cache => true })
