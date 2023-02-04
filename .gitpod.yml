@@ -1,0 +1,18 @@
+image: jelaniwoods/appdev2022-vanilla-rails-6
+
+tasks:
+  - before: |
+      bin/setup
+      .vscode/manage_extensions
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+  - port: 5432
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - vortizhe.simple-ruby-erb
+    - mbessey.vscode-rufo
+    - aliariff.vscode-erb-beautify
