@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorite_neighborhoods
   resources :neighborhoods
   resources :cities
   resources :comments

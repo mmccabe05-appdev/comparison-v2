@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @favorite_neighborhood.user_id %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @favorite_neighborhood.neighborhood_id %>
+</p>
+
+<%= link_to 'Edit', edit_favorite_neighborhood_path(@favorite_neighborhood) %> |
+<%= link_to 'Back', favorite_neighborhoods_path %>

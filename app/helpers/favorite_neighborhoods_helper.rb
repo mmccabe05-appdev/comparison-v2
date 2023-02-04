@@ -1,0 +1,2 @@
+module FavoriteNeighborhoodsHelper
+end

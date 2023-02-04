@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_223034) do
+ActiveRecord::Schema.define(version: 2023_02_04_223259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2023_02_04_223034) do
     t.index ["user_id"], name: "index_comparisons_on_user_id"
   end
 
+  create_table "favorite_neighborhoods", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "neighborhood_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["neighborhood_id"], name: "index_favorite_neighborhoods_on_neighborhood_id"
+    t.index ["user_id"], name: "index_favorite_neighborhoods_on_user_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "comparison_id", null: false
@@ -93,6 +102,8 @@ ActiveRecord::Schema.define(version: 2023_02_04_223034) do
 
   add_foreign_key "comments", "comparisons"
   add_foreign_key "comparisons", "users"
+  add_foreign_key "favorite_neighborhoods", "neighborhoods"
+  add_foreign_key "favorite_neighborhoods", "users"
   add_foreign_key "likes", "comparisons"
   add_foreign_key "likes", "users"
   add_foreign_key "neighborhoods", "cities"

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favorite Neighborhoods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Neighborhood</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorite_neighborhoods.each do |favorite_neighborhood| %>
+      <tr>
+        <td><%= favorite_neighborhood.user_id %></td>
+        <td><%= favorite_neighborhood.neighborhood_id %></td>
+        <td><%= link_to 'Show', favorite_neighborhood %></td>
+        <td><%= link_to 'Edit', edit_favorite_neighborhood_path(favorite_neighborhood) %></td>
+        <td><%= link_to 'Destroy', favorite_neighborhood, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Favorite Neighborhood', new_favorite_neighborhood_path %>

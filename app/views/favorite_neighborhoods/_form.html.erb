@@ -1,0 +1,27 @@
+<%= form_with(model: favorite_neighborhood) do |form| %>
+  <% if favorite_neighborhood.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(favorite_neighborhood.errors.count, "error") %> prohibited this favorite_neighborhood from being saved:</h2>
+
+      <ul>
+        <% favorite_neighborhood.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood_id %>
+    <%= form.text_field :neighborhood_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

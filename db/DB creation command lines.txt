@@ -87,7 +87,7 @@ rails generate scaffold neighborhood name:string city:references lat:float lng:f
 
 # Favorite Neighborhoods
 
-rails generate scaffold favorite_neighborhood user_id:integer neighborhood_id:integer
+rails generate scaffold favorite_neighborhood user:references neighborhood:references
 
     # Fav Neighborhoods Associations
 
