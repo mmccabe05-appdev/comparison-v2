@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_222455) do
+ActiveRecord::Schema.define(version: 2023_02_04_222814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "commenter_id"
+    t.bigint "comparison_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comparison_id"], name: "index_comments_on_comparison_id"
+  end
 
   create_table "comparisons", force: :cascade do |t|
     t.string "body"
@@ -60,6 +69,7 @@ ActiveRecord::Schema.define(version: 2023_02_04_222455) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "comments", "comparisons"
   add_foreign_key "comparisons", "users"
   add_foreign_key "likes", "comparisons"
   add_foreign_key "likes", "users"

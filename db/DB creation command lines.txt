@@ -48,7 +48,7 @@ rails generate scaffold like user_id:references comparison_id:references
 
 # Comments
 
-rails generate scaffold comment body:text commenter_id:integer comparison_id:integer
+rails generate scaffold comment body:text commenter_id:integer comparison:references
 
   ## Comment Associations
 
