@@ -1,0 +1,82 @@
+<%= form_with(model: comparison) do |form| %>
+  <% if comparison.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(comparison.errors.count, "error") %> prohibited this comparison from being saved:</h2>
+
+      <ul>
+        <% comparison.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :culinary_similarity %>
+    <%= form.number_field :culinary_similarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transportation_similarity %>
+    <%= form.number_field :transportation_similarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :people_similarity %>
+    <%= form.number_field :people_similarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :built_environment_similarity %>
+    <%= form.number_field :built_environment_similarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overall_similarity %>
+    <%= form.text_field :overall_similarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood_1_id %>
+    <%= form.number_field :neighborhood_1_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :neighborhood_2_id %>
+    <%= form.number_field :neighborhood_2_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :net_comparison_score %>
+    <%= form.text_field :net_comparison_score %>
+  </div>
+
+  <div class="field">
+    <%= form.label :net_votes %>
+    <%= form.number_field :net_votes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :likes_count %>
+    <%= form.number_field :likes_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments_count %>
+    <%= form.number_field :comments_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

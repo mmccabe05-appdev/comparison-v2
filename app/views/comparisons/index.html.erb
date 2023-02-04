@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comparisons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>User</th>
+      <th>Culinary similarity</th>
+      <th>Transportation similarity</th>
+      <th>People similarity</th>
+      <th>Built environment similarity</th>
+      <th>Overall similarity</th>
+      <th>Neighborhood 1</th>
+      <th>Neighborhood 2</th>
+      <th>Net comparison score</th>
+      <th>Net votes</th>
+      <th>Likes count</th>
+      <th>Comments count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comparisons.each do |comparison| %>
+      <tr>
+        <td><%= comparison.body %></td>
+        <td><%= comparison.user_id %></td>
+        <td><%= comparison.culinary_similarity %></td>
+        <td><%= comparison.transportation_similarity %></td>
+        <td><%= comparison.people_similarity %></td>
+        <td><%= comparison.built_environment_similarity %></td>
+        <td><%= comparison.overall_similarity %></td>
+        <td><%= comparison.neighborhood_1_id %></td>
+        <td><%= comparison.neighborhood_2_id %></td>
+        <td><%= comparison.net_comparison_score %></td>
+        <td><%= comparison.net_votes %></td>
+        <td><%= comparison.likes_count %></td>
+        <td><%= comparison.comments_count %></td>
+        <td><%= link_to 'Show', comparison %></td>
+        <td><%= link_to 'Edit', edit_comparison_path(comparison) %></td>
+        <td><%= link_to 'Destroy', comparison, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comparison', new_comparison_path %>

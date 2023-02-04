@@ -10,11 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_04_215413) do
+ActiveRecord::Schema.define(version: 2023_02_04_222107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "plpgsql"
+
+  create_table "comparisons", force: :cascade do |t|
+    t.string "body"
+    t.bigint "user_id", null: false
+    t.integer "culinary_similarity", default: 0
+    t.integer "transportation_similarity", default: 0
+    t.integer "people_similarity", default: 0
+    t.integer "built_environment_similarity", default: 0
+    t.float "overall_similarity", default: 0.0
+    t.integer "neighborhood_1_id", null: false
+    t.integer "neighborhood_2_id", null: false
+    t.float "net_comparison_score", default: 0.0
+    t.integer "net_votes", default: 0
+    t.integer "likes_count", default: 0
+    t.integer "comments_count", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_comparisons_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.citext "email", default: "", null: false
@@ -32,4 +51,5 @@ ActiveRecord::Schema.define(version: 2023_02_04_215413) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "comparisons", "users"
 end

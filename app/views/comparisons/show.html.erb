@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @comparison.body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comparison.user_id %>
+</p>
+
+<p>
+  <strong>Culinary similarity:</strong>
+  <%= @comparison.culinary_similarity %>
+</p>
+
+<p>
+  <strong>Transportation similarity:</strong>
+  <%= @comparison.transportation_similarity %>
+</p>
+
+<p>
+  <strong>People similarity:</strong>
+  <%= @comparison.people_similarity %>
+</p>
+
+<p>
+  <strong>Built environment similarity:</strong>
+  <%= @comparison.built_environment_similarity %>
+</p>
+
+<p>
+  <strong>Overall similarity:</strong>
+  <%= @comparison.overall_similarity %>
+</p>
+
+<p>
+  <strong>Neighborhood 1:</strong>
+  <%= @comparison.neighborhood_1_id %>
+</p>
+
+<p>
+  <strong>Neighborhood 2:</strong>
+  <%= @comparison.neighborhood_2_id %>
+</p>
+
+<p>
+  <strong>Net comparison score:</strong>
+  <%= @comparison.net_comparison_score %>
+</p>
+
+<p>
+  <strong>Net votes:</strong>
+  <%= @comparison.net_votes %>
+</p>
+
+<p>
+  <strong>Likes count:</strong>
+  <%= @comparison.likes_count %>
+</p>
+
+<p>
+  <strong>Comments count:</strong>
+  <%= @comparison.comments_count %>
+</p>
+
+<%= link_to 'Edit', edit_comparison_path(@comparison) %> |
+<%= link_to 'Back', comparisons_path %>
