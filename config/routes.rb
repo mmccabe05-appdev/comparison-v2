@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "comparisons#index"
+  root "cities#index"
   resources :favorite_neighborhoods
   resources :neighborhoods
   resources :cities
