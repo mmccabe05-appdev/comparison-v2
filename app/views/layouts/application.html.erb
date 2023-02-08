@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vanilla Rails</title>
+    <title>Comparison</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,10 @@
 
   <body>
 <%= render 'shared/navbar' %>
-
+<div class="container">
+<%= alert %>
+<%= notice %>
     <%= yield %>
+    </div>
   </body>
 </html>
