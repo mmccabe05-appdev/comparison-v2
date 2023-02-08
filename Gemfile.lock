@@ -122,6 +122,8 @@ GEM
     diffy (3.4.2)
     e2mmap (0.1.0)
     erubi (1.11.0)
+    faker (3.1.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     git (1.12.0)
       addressable (~> 2.8)
@@ -358,6 +360,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  faker
   htmlbeautifier
   jbuilder (~> 2.7)
   listen (~> 3.3)
