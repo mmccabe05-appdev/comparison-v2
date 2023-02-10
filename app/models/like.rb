@@ -27,5 +27,6 @@ class Like < ApplicationRecord
 
   validates(:user_id, :presence => true )
   validates(:comparison_id, :presence => true )
-  validates(:comparison_id, :uniqueness => { :scope => ["user_id"], :message => "already liked"  })
+  validates(:comparison_id, :uniqueness => { :scope => ["user_id"], :message => "already liked this"  })
+
 end
