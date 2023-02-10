@@ -1,4 +1,4 @@
-ID,name,city_id,city_name,description
+id,name,city_id,city_name,description
 1,Austin,1,Chicago,
 2,Chinatown,1,Chicago,
 3,Hyde Park,1,Chicago,

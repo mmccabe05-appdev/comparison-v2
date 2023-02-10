@@ -52,7 +52,44 @@ namespace :slurp do
   
 
   task comparisons: :environment do
+    require "csv"
+    p "removing all previous comparisons in table......"
+    Comparison.destroy_all
+    p "All comparisons have been destroyed, there are now #{Comparison.count} comparison in the database"
+    csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_comparisons.csv"))
+    csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+    p "importing csv, here is all the data in the csv....."
+    puts csv
 
+    p "loading into the database filling in new comparisons..........."
+    csv.each do |row|
+      c = Comparison.new
+      c.id = row["id"]
+      c.body = row["body"]
+      c.built_environment_similarity = row["build_environment_similarity"]
+      c.culinary_similarity         
+#  likes_count                     
+#  net_comparison_score        
+#  net_votes                       
+#  overall_similarity         
+#  people_similarity           
+#  transportation_similarity   
+#  created_at                
+#  updated_at                
+#  neighborhood_1_id       
+#  neighborhood_2_id       
+#  user_id
+      n.description = Faker::Lorem.paragraph(sentence_count: 5)
+
+
+
+      n.save
+
+
+
+      puts "#{n.name} saved to database"
+    end
+    puts "There are now #{Comparison.count} rows in the Comparison table"
 
     
   end

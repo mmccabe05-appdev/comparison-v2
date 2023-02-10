@@ -36,10 +36,12 @@ task({ :sample_data => :environment}) do
   10.times do |username|
     usernames << Faker::Name.first_name
   end
-
+  id_count = 0
   usernames.each do |username|
     name = Faker::Name.first_name
+    id_count = id_count + 1
     u = User.create(
+      id: id_count,
       email: "#{username}@example.com",
       username: username.downcase,
       password: "password",
