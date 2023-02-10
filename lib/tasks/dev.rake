@@ -45,6 +45,7 @@ task({ :sample_data => :environment}) do
       password: "password",
     )
     p u
+    p u.errors.full_messages
   end
 
   p "#{User.count} users created"
