@@ -67,27 +67,23 @@ namespace :slurp do
       c.id = row["id"]
       c.body = row["body"]
       c.built_environment_similarity = row["build_environment_similarity"]
-      c.culinary_similarity         
-#  likes_count                     
-#  net_comparison_score        
-#  net_votes                       
-#  overall_similarity         
-#  people_similarity           
-#  transportation_similarity   
-#  created_at                
-#  updated_at                
-#  neighborhood_1_id       
-#  neighborhood_2_id       
-#  user_id
-      n.description = Faker::Lorem.paragraph(sentence_count: 5)
-
-
-
-      n.save
-
-
-
-      puts "#{n.name} saved to database"
+      c.culinary_similarity = row["culinary_environment_similarity"]
+      c.overall_similarity = row["overall_similarity"]                       
+      c.net_comparison_score = row["net_comparison_score"] 
+      c.net_votes = row["net_votes"]
+      c.people_similarity = row["people_similarity"] 
+      c.transportation_similarity = row["transportation_similarity"]              
+      c.neighborhood_1_id = row["neighborhood_1_id"] 
+      c.neighborhood_2_id = row["neighborhood_2_id"]
+      if c.id < 6 
+        c.user_id = 1
+      elsif c.id < 9
+        c.user_id = 2
+      elsif c.id < 15
+        c.user_id = 3
+      end
+      c.save
+      puts "Comparison number #{c.id} saved to database"
     end
     puts "There are now #{Comparison.count} rows in the Comparison table"
 
