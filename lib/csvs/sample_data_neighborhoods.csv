@@ -1,0 +1,11 @@
+ID,name,city_id,city_name,description
+1,Austin,1,Chicago,
+2,Chinatown,1,Chicago,
+3,Hyde Park,1,Chicago,
+4,Logan Square,1,Chicago,
+5,Loop,1,Chicago,
+6,Financial District,3,NYC,
+7,Center City,2,Philadelphia,
+8,Chinatown,2,Philadelphia,
+9,Fishtown,2,Philadelphia,
+10,University City,2,Philadelphia,
