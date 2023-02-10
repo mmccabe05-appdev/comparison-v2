@@ -61,4 +61,17 @@ task({ :sample_data => :environment}) do
   Rake::Task["slurp:neighborhoods"].execute
   Rake::Task["slurp:comparisons"].execute
 
+  Comparison.all.each do |a_comparison|
+    rand_id = rand(User.count)
+    rand(1..5).times do
+      new_comment = Comment.create(
+          comparison_id: a_comparison.id,
+          commenter_id: rand_id,
+          body: Faker::Lorem.paragraph(sentence_count: 3)
+        )
+        p new_comment
+        p new_comment.errors.full_messages
+      end
+  end
+
 end

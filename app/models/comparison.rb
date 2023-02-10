@@ -7,9 +7,9 @@
 #  built_environment_similarity :integer          default(0)
 #  comments_count               :integer          default(0)    # built in sample data
 #  culinary_similarity          :integer          default(0)
-#  likes_count                  :integer          default(0)    # trying to force in at first
+#  likes_count                  :integer          default(0)    # will pull directly from Like table
 #  net_comparison_score         :float            default(0.0)
-#  net_votes                    :integer          default(0)    # if likes_count forcing fails, will add here instead
+#  net_votes                    :integer          default(0)    # for now, equal to Likes, if we add downvotes later, will be upvotes-downvotes
 #  overall_similarity           :float            default(0.0)  # will fill in sample_data
 #  people_similarity            :integer          default(0)
 #  transportation_similarity    :integer          default(0)
