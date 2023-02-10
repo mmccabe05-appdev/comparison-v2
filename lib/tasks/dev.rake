@@ -62,8 +62,9 @@ task({ :sample_data => :environment}) do
   Rake::Task["slurp:comparisons"].execute
 
   Comparison.all.each do |a_comparison|
-    rand_id = rand(User.count)
-    rand(1..5).times do
+    rand(3..7).times do
+      rand_id = rand(1..User.count)
+
       new_comment = Comment.create(
           comparison_id: a_comparison.id,
           commenter_id: rand_id,
