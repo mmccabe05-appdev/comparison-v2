@@ -46,11 +46,19 @@ task({ :sample_data => :environment}) do
       username: username.downcase,
       password: "password",
     )
-    p u
+    # p u
     p u.errors.full_messages
   end
 
   p "#{User.count} users created"
 
+  # Want to load the other pieces of the database once 
+  # Rake:slurp:cities
+  # Rake:slurp:neighborhoods
+  # Rake:slurp:comparisons
+
+  Rake::Task["slurp:cities"].execute
+  Rake::Task["slurp:neighborhoods"].execute
+  Rake::Task["slurp:comparisons"].execute
 
 end

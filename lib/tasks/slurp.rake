@@ -10,7 +10,7 @@ namespace :slurp do
     csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_cities.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     puts "displaying imported csv......"
-    puts csv
+    # puts csv
  
     p "filling in new cities"
     csv.each do |row|
@@ -33,7 +33,7 @@ namespace :slurp do
     csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_neighborhoods.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     p "importing csv, here is all the data in the csv....."
-    puts csv
+    # puts csv
 
     p "loading into the database filling in new cities..........."
     csv.each do |row|
@@ -59,7 +59,7 @@ namespace :slurp do
     csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_comparisons.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     p "importing csv, here is all the data in the csv....."
-    puts csv
+    # puts csv
 
     p "loading into the database filling in new comparisons..........."
     csv.each do |row|
