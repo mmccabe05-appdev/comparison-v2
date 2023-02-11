@@ -4,22 +4,31 @@
 
 <% @comparisons.each do |comparison| %>
   <div class="row">
-<div class="mb-4">
-    <div class="card text-center">
-      <div class="card-header">
-        <%= comparison.neighborhood_1.name %> (<%= comparison.city_1.name %>) is like <%= comparison.neighborhood_2.name %> (<%= comparison.city_2.name %>) because...
-      </div>
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"><%= comparison.body %></p>
-        <a href="#" class="btn btn-primary">Agree</a>
-        <a href="#" class="btn btn-warning">Disagree</a><br>
-        <a href="#" class="btn btn-outline-primary">Join the conversation</a>
+    <div class="mb-4">
+      <div class="card text-center">
+        <div class="card-header">
+          <%= comparison.neighborhood_1.name %> (<%= comparison.city_1.name %>) is like <%= comparison.neighborhood_2.name %> (<%= comparison.city_2.name %>) because...
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"><%= comparison.body %></p>
+          <div class="row">
+            Overall similarity: <%= comparison.overall_similarity %> (
+            People similarity: <%= comparison.people_similarity %> |
+            Culinary similarity: <%= comparison.culinary_similarity %> |
+            Transportation similarity: <%= comparison.transportation_similarity %> |
+            Built environment similarity: <%= comparison.built_environment_similarity %>)
+
+          </div><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">
+    <%= comparison.net_comparison_score %></span>
+          <a href="#" class="btn btn-primary">Agree <span class="badge text-bg-secondary"><%= comparison.upvotes %></span></a>
+          <a href="#" class="btn btn-warning">Disagree <span class="badge text-bg-secondary"><%= comparison.downvotes %></span></a>
+          <%= link_to "Join the conversation (#{comparison.comments_count})", comparison, class: 'btn btn-outline-primary' %>
       </div>
       <div class="card-footer text-muted">
-        Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %> 
+        Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 <% end %>

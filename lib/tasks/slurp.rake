@@ -66,8 +66,8 @@ namespace :slurp do
       c = Comparison.new
       c.id = row["id"]
       c.body = row["body"]
-      c.built_environment_similarity = row["build_environment_similarity"]
-      c.culinary_similarity = row["culinary_environment_similarity"]
+      c.built_environment_similarity = row["built_environment_similarity"]
+      c.culinary_similarity = row["culinary_similarity"]
       c.overall_similarity = row["overall_similarity"]                       
       c.net_comparison_score = row["net_comparison_score"] 
       c.upvotes = row["upvotes"]
