@@ -7,12 +7,14 @@
 #  built_environment_similarity :integer          default(0)
 #  comments_count               :integer          default(0)
 #  culinary_similarity          :integer          default(0)
+#  downvotes                    :integer          default(0)
 #  likes_count                  :integer          default(0)
 #  net_comparison_score         :float            default(0.0)
 #  net_votes                    :integer          default(0)
 #  overall_similarity           :float            default(0.0)
 #  people_similarity            :integer          default(0)
 #  transportation_similarity    :integer          default(0)
+#  upvotes                      :integer          default(0)
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
 #  neighborhood_1_id            :integer          not null

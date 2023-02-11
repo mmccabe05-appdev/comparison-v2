@@ -5,14 +5,16 @@
 #  id                           :bigint           not null, primary key
 #  body                         :string
 #  built_environment_similarity :integer          default(0)
-#  comments_count               :integer          default(0)    # built in sample data
+#  comments_count               :integer          default(0)
 #  culinary_similarity          :integer          default(0)
-#  likes_count                  :integer          default(0)    # will pull directly from Like table
+#  downvotes                    :integer          default(0)
+#  likes_count                  :integer          default(0)
 #  net_comparison_score         :float            default(0.0)
-#  net_votes                    :integer          default(0)    # for now, equal to Likes, if we add downvotes later, will be upvotes-downvotes
-#  overall_similarity           :float            default(0.0)  # will fill in sample_data
+#  net_votes                    :integer          default(0)
+#  overall_similarity           :float            default(0.0)
 #  people_similarity            :integer          default(0)
 #  transportation_similarity    :integer          default(0)
+#  upvotes                      :integer          default(0)
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
 #  neighborhood_1_id            :integer          not null

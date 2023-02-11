@@ -70,6 +70,9 @@ namespace :slurp do
       c.culinary_similarity = row["culinary_environment_similarity"]
       c.overall_similarity = row["overall_similarity"]                       
       c.net_comparison_score = row["net_comparison_score"] 
+      c.upvotes = row["upvotes"]
+      c.downvotes = row["downvotes"]
+
       c.net_votes = row["net_votes"]
       c.people_similarity = row["people_similarity"] 
       c.transportation_similarity = row["transportation_similarity"]              
