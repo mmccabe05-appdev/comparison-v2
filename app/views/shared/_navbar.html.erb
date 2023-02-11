@@ -12,10 +12,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/cities">Cities</a>
         </li>
-                <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/neighborhoods">Neighborhoods</a>
         </li>
-                <li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="/comparisons">Comparisons</a>
         </li>
         <li class="nav-item dropdown">
@@ -33,11 +33,18 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-      Sign up | Sign in | Profile | Sign out 
-        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button> -->
-      </form>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Sign out', destroy_user_session_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to "#{current_user.username}'s Profile", edit_user_registration_path, class: 'nav-link' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to 'Sign in', new_user_session_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+      <!-- <form class="d-flex" role="search"><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button></form> -->
+
     </div>
   </div>
 </nav>
