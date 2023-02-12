@@ -1,69 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @comparison.body %>
-</p>
+ <%= render 'comparisons/comparison', comparison: @comparison  %>
 
-<p>
-  <strong>User:</strong>
-  <%= @comparison.user_id %>
-</p>
+<div class="h5">Comments:</div>
 
-<p>
-  <strong>Culinary similarity:</strong>
-  <%= @comparison.culinary_similarity %>
-</p>
+<ul class="list-group list-group-flush">
+<% @comparison.comments.all.each do |comment| %>
+ <%= render 'comments/comment', comment: comment  %>
 
-<p>
-  <strong>Transportation similarity:</strong>
-  <%= @comparison.transportation_similarity %>
-</p>
+    <% end %>
+  </ul>
 
-<p>
-  <strong>People similarity:</strong>
-  <%= @comparison.people_similarity %>
-</p>
 
-<p>
-  <strong>Built environment similarity:</strong>
-  <%= @comparison.built_environment_similarity %>
-</p>
-
-<p>
-  <strong>Overall similarity:</strong>
-  <%= @comparison.overall_similarity %>
-</p>
-
-<p>
-  <strong>Neighborhood 1:</strong>
-  <%= @comparison.neighborhood_1_id %>
-</p>
-
-<p>
-  <strong>Neighborhood 2:</strong>
-  <%= @comparison.neighborhood_2_id %>
-</p>
-
-<p>
-  <strong>Net comparison score:</strong>
-  <%= @comparison.net_comparison_score %>
-</p>
-
-<p>
-  <strong>Net votes:</strong>
-  <%= @comparison.net_votes %>
-</p>
-
-<p>
-  <strong>Likes count:</strong>
-  <%= @comparison.likes_count %>
-</p>
-
-<p>
-  <strong>Comments count:</strong>
-  <%= @comparison.comments_count %>
-</p>
-
-<%= link_to 'Edit', edit_comparison_path(@comparison) %> |
-<%= link_to 'Back', comparisons_path %>
+<div class="row"><%= link_to 'Back', comparisons_path %></div>

@@ -3,82 +3,8 @@
 <h1>All Comparisons</h1>
 
 <% @comparisons.each do |comparison| %>
-  <div class="row">
-    <div class="mb-5 mt-5">
-      <div class="card">
-        <div class="card-header fs-2">
-          <%= comparison.neighborhood_1.name %> (<%= comparison.city_1.name %>) is like <%= comparison.neighborhood_2.name %> (<%= comparison.city_2.name %>) because...
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text fs-3"><%= comparison.body %>
-          <div class="row mb-4" >
-            <span class="fw-bold fs-4">Overall similarity: <%= comparison.overall_similarity %></span>
-            <span class="fw-lighter">( People similarity: <%= comparison.people_similarity %> |
-            Culinary similarity: <%= comparison.culinary_similarity %> |
-            Transportation similarity: <%= comparison.transportation_similarity %> |
-            Built environment similarity: <%= comparison.built_environment_similarity %>)
-</span>
-          </div>
-          </p>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
-    <%= comparison.net_comparison_score %></span>
-          <a href="#" class="btn btn-primary">Agree <span class="badge text-bg-secondary"><%= comparison.upvotes %></span></a>
-          <a href="#" class="btn btn-warning">Disagree <span class="badge text-bg-secondary"><%= comparison.downvotes %></span></a>
-          <%= link_to "Join the conversation (#{comparison.comments_count})", comparison, class: 'btn btn-outline-primary' %>
-      </div>
-      <div class="card-footer text-muted">
-        Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %>
-        </div>
-      </div>
-    </div>
-  </div>
+ <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>User</th>
-      <th>Culinary similarity</th>
-      <th>Transportation similarity</th>
-      <th>People similarity</th>
-      <th>Built environment similarity</th>
-      <th>Overall similarity</th>
-      <th>Neighborhood 1</th>
-      <th>Neighborhood 2</th>
-      <th>Net comparison score</th>
-      <th>Net votes</th>
-      <th>Likes count</th>
-      <th>Comments count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @comparisons.each do |comparison| %>
-      <tr>
-        <td><%= comparison.body %></td>
-        <td><%= comparison.user_id %></td>
-        <td><%= comparison.culinary_similarity %></td>
-        <td><%= comparison.transportation_similarity %></td>
-        <td><%= comparison.people_similarity %></td>
-        <td><%= comparison.built_environment_similarity %></td>
-        <td><%= comparison.overall_similarity %></td>
-        <td><%= comparison.neighborhood_1_id %></td>
-        <td><%= comparison.neighborhood_2_id %></td>
-        <td><%= comparison.net_comparison_score %></td>
-        <td><%= comparison.net_votes %></td>
-        <td><%= comparison.likes_count %></td>
-        <td><%= comparison.comments_count %></td>
-        <td><%= link_to 'Show', comparison %></td>
-        <td><%= link_to 'Edit', edit_comparison_path(comparison) %></td>
-        <td><%= link_to 'Destroy', comparison, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Comparison', new_comparison_path %>
