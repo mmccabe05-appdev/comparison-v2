@@ -1,1 +1,12 @@
-did we make it?
+<div class="row mt-4">
+<div>The neighborhood name of city name is...</div>
+<div>
+
+The <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> of <b><%= @query_city.name %></b> is...
+</div>
+
+<h2>All comparisons for <%= @query_neighborhood.name %></h2>
+<% @all_comparisons_for_query_neighborhood.each do |comparison| %>
+  <li><%= comparison.neighborhood_1.name %> is like <%= comparison.neighborhood_2.name %> because <%= comparison.body %></li>
+<% end %>
+</div>
