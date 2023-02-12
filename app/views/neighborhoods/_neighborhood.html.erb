@@ -1,0 +1,44 @@
+ <div class="row">
+    <div class="mb-5 mt-5">
+      <div class="card">
+        <div class="card-header fs-2">
+  <%= @neighborhood.name %>
+          (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text fs-3">
+          <p>
+  <strong>Name:</strong>
+  <%= @neighborhood.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @neighborhood.city_id %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @neighborhood.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @neighborhood.lng %>
+</p>
+
+<p>
+  <strong>Favorite neighborhoods count:</strong>
+  <%= @neighborhood.favorite_neighborhoods_count %>
+</p>
+          </div>
+          </p>
+          
+      </div>
+      <div class="card-footer text-muted">
+        
+        </div>
+      </div>
+    </div>
+  </div>
