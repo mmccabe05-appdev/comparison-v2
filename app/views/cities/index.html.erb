@@ -1,35 +1,20 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Cities</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Lat</th>
-      <th>Lng</th>
-      <th>Neighborhoods count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1 >Cities</h1>
 
-  <tbody>
+
+<ul>
     <% @cities.each do |city| %>
-      <tr>
-        <td><%= city.name %></td>
-        <td><%= city.location %></td>
-        <td><%= city.lat %></td>
-        <td><%= city.lng %></td>
-        <td><%= city.neighborhoods_count %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+
+ 
+   
+<li><%= link_to city.location, city %></li>
+ <% end %>
+</ul>
+
 
 <br>
 
 <%= link_to 'New City', new_city_path %>
+</div>

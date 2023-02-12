@@ -2,30 +2,6 @@
  <%= render 'cities/city', city: @city  %>
 
 
-<p>
-  <strong>Name:</strong>
-  <%= @city.name %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @city.location %>
-</p>
-
-<p>
-  <strong>Lat:</strong>
-  <%= @city.lat %>
-</p>
-
-<p>
-  <strong>Lng:</strong>
-  <%= @city.lng %>
-</p>
-
-<p>
-  <strong>Neighborhoods count:</strong>
-  <%= @city.neighborhoods_count %>
-</p>
 
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
