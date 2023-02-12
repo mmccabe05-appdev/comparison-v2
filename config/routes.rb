@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "cities#index"
+  get("/", { :controller => "application", :action => "index" })
+
+  root "comparisons#index"
+
   resources :favorite_neighborhoods
   resources :neighborhoods
   resources :cities
