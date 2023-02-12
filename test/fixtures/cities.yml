@@ -3,6 +3,7 @@
 # Table name: cities
 #
 #  id                  :bigint           not null, primary key
+#  description         :string
 #  lat                 :float            default(0.0)
 #  lng                 :float            default(0.0)
 #  location            :string

@@ -2,8 +2,8 @@
     <div class="mb-5 mt-5">
       <div class="card">
         <div class="card-header fs-2">
-          <%= @neighborhood.name %>
-          (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
+          
+          <%= @city.name %> 
         </div>
         <div class="card-body">
 
@@ -11,17 +11,14 @@
         <div class="bg-ligt">
           <h5 class="card-title"></h5>
           <p class="card-text fs-3">
-          <p><%= @neighborhood.description %></p>
+          <p><%= @city.description %></p>
           <p>
             <strong>Lat:</strong>
-            <%= @neighborhood.lat %>
+            <%= @city.lat %>
           | <strong>Lng:</strong>
-            <%= @neighborhood.lng %>
+            <%= @city.lng %>
           </p>
-          <p>
-            <strong>Favorite neighborhoods count:</strong>
-            <%= @neighborhood.favorite_neighborhoods_count %> <i>will add in once users start to save neighborhoods</i>
-          </p>
+          
         </div>
         <div class="vr"></div>
           <div>
