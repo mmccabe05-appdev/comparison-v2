@@ -2,8 +2,8 @@
     <div class="mb-5 mt-5">
       <div class="card">
         <div class="card-header fs-2">
-          <%= link_to %="cities/#{comparison.neighborhood_1.id}">
-          <%= comparison.neighborhood_1.name %></a> (<%= comparison.city_1.name %>) is like <%= comparison.neighborhood_2.name %> (<%= comparison.city_2.name %>) because...
+          <%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %> 
+          (<%= link_to comparison.city_1.name, comparison.city_1 %>) is like <%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2 %> (<%= link_to comparison.city_2.name, comparison.city_2 %>) because...
         </div>
         <div class="card-body">
           <h5 class="card-title"></h5>
