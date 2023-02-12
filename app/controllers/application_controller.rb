@@ -18,8 +18,12 @@ class ApplicationController < ActionController::Base
 
       @all_comparisons_for_query_neighborhood = @query_neighborhood.comparisons_as_neighborhood_1.or(@query_neighborhood.comparisons_as_neighborhood_2)
 
+      # Problems: 
+      # 1. currently returning an array (vs. active record relation)
+      # 2. returning all comparisons where the target city shows up on either side of comparison (but not limiting *just* to ones where the query_neighborhood is half the comparison)
 
-      @comparisons_limited_to_target_city = @all_comparisons_for_query_neighborhood.where(:city_1=>@query_city).or(@all_comparisons_for_query_neighborhood.where(:city_2=>@query_city)) 
+      @comparisons_limited_to_target_city = @query_city.comparisons_as_neighborhood_1s + @query_city.comparisons_as_neighborhood_2s
+ 
       
       render({:template=>"found_comparison.html.erb"})
     end

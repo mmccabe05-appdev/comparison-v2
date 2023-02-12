@@ -4,6 +4,12 @@
 
 The <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> of <b><%= @query_city.name %></b> is...
 </div>
+<h2>JUST comparisons for <%= @query_neighborhood.name %> in <%= @query_city.name %></h2>
+<% @comparisons_limited_to_target_city.each do |comparison| %>
+  <li><%= comparison.neighborhood_1.name %> (<b><%= comparison.city_1.name %></b>) is like <%= comparison.neighborhood_2.name %> (<b><%= comparison.city_2.name %></b>) because <%= comparison.body %></li>
+<% end %>
+
+<hr>
 
 <h2>All comparisons for <%= @query_neighborhood.name %></h2>
 <% @all_comparisons_for_query_neighborhood.each do |comparison| %>
