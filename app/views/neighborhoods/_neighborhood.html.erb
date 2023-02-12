@@ -2,43 +2,56 @@
     <div class="mb-5 mt-5">
       <div class="card">
         <div class="card-header fs-2">
-  <%= @neighborhood.name %>
+          <%= @neighborhood.name %>
           (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
         </div>
         <div class="card-body">
+
+        <div class="hstack gap-3">
+        <div class="bg-ligt">
           <h5 class="card-title"></h5>
           <p class="card-text fs-3">
+          <p><%= @neighborhood.description %></p>
           <p>
-  <strong>Name:</strong>
-  <%= @neighborhood.name %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @neighborhood.city_id %>
-</p>
-
-<p>
-  <strong>Lat:</strong>
-  <%= @neighborhood.lat %>
-</p>
-
-<p>
-  <strong>Lng:</strong>
-  <%= @neighborhood.lng %>
-</p>
-
-<p>
-  <strong>Favorite neighborhoods count:</strong>
-  <%= @neighborhood.favorite_neighborhoods_count %>
-</p>
-          </div>
+            <strong>Lat:</strong>
+            <%= @neighborhood.lat %>
+          | <strong>Lng:</strong>
+            <%= @neighborhood.lng %>
           </p>
+          <p>
+            <strong>Favorite neighborhoods count:</strong>
+            <%= @neighborhood.favorite_neighborhoods_count %> <i>will add in once users start to save neighborhoods</i>
+          </p>
+        </div>
+        <div class="vr"></div>
+          <div>
+          right side << THIS IS WHERE GOOGLE MAP WILL GO >>
+          </div>
+        </div>
+        <hr>
+      <div class="row">
+      <div>People have compared <%= @neighborhood.name %> to...</div>
+      <% @neighborhood.neighborhood_2s.each do |comparable_neighborhood| %>
+        <li><%= comparable_neighborhood.name %> (<%= link_to comparable_neighborhood.city.name, comparable_neighborhood.city %>)</li>
+      <% end %>
+            <% @neighborhood.neighborhood_1s.each do |comparable_neighborhood| %>
+        <li><%= comparable_neighborhood.name %> (<%= link_to comparable_neighborhood.city.name, comparable_neighborhood.city %>)</li>
+      <% end %>
+
+
+      </div>
+     <hr>
+      <div class="row">
+
+      <div>
+          RENDER ALL COMPARISONS FOR THE NEIGHBORHOOD HERE
           
+      </div>
+      </div>
       </div>
       <div class="card-footer text-muted">
         
         </div>
+        </div>
       </div>
     </div>
-  </div>
