@@ -19,6 +19,8 @@ namespace :slurp do
       c.id = row["id"]
       c.location = row["location"]
       c.name = row["city_name"]
+      c.description = Faker::Lorem.paragraph(sentence_count: 15)
+
       c.save
       puts "#{c.name} saved to database"
     end
