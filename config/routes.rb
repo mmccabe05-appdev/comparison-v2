@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get("/", { :controller => "application", :action => "index" })
+  get("/find_comparison", { :controller => "application", :action => "find_comparison" })
 
-  root "comparisons#index"
+  # root "comparisons#index"
 
   resources :favorite_neighborhoods
   resources :neighborhoods

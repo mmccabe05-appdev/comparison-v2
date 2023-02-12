@@ -5,5 +5,9 @@ class ApplicationController < ActionController::Base
   def index
     render({ :template => "main_page.html.erb" })
   end
-    
+  
+  def find_comparison
+    render({:template=>"found_comparison.html.erb"})
+  end
+  
 end
