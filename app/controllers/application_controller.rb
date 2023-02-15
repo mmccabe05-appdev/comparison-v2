@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       redirect_to("/", alert: "Gotta choose a valid neighborhood and city!" )
 
     else
-
+ 
       @query_city = City.find(params.fetch("query_city"))
       @query_neighborhood = Neighborhood.find(params.fetch("query_neighborhood"))
 
@@ -22,7 +22,16 @@ class ApplicationController < ActionController::Base
       # 1. currently returning an array (vs. active record relation)
       # 2. returning all comparisons where the target city shows up on either side of comparison (but not limiting *just* to ones where the query_neighborhood is half the comparison)
 
-      @comparisons_limited_to_target_city = @query_city.comparisons_as_neighborhood_1s + @query_city.comparisons_as_neighborhood_2s
+      
+
+      @comparisons_limited_to_target_city = @all_comparisons_for_query_neighborhood.
+        where(city_1: { id: @query_city.id }).
+        or(
+          @all_comparisons_for_query_neighborhood.where(city_2: { id: @query_city.id })
+        ).joins(:city_1, :city_2)
+      
+      # or(@all_comparisons_for_query_neighborhood.joins(:city_1).where(city_1: { id: @query_city.id }))
+      # or(@all_comparisons_for_query_neighborhood.joins(:city_2).where(city_2: { id: @query_city.id }))
  
       
       render({:template=>"found_comparison.html.erb"})

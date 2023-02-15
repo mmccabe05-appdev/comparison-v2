@@ -1,7 +1,7 @@
 # == Schema Information
 #
 # Table name: comparisons
-#
+# 
 #  id                           :bigint           not null, primary key
 #  body                         :string
 #  built_environment_similarity :integer          default(0)
