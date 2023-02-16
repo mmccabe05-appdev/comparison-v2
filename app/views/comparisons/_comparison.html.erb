@@ -1,9 +1,12 @@
 
     <div class="mb-5 mt-5">
       <div class="card">
-        <div class="card-header fs-2">
-          <%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %> 
-          (<%= link_to comparison.city_1.name, comparison.city_1 %>) is like <%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2 %> (<%= link_to comparison.city_2.name, comparison.city_2 %>) because...
+        <div class="card-header p-4 bg-white position-relative">
+          <i class="display-4 lh-lg"><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %>
+          <span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-5 text-decoration-none"><%= link_to comparison.city_1.name, comparison.city_1 %></span>
+          is like 
+          <%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2 %>
+          <span class="position-absolute top-5 start-10 translate-middle badge rounded-pill bg-light fs-5"><%= link_to comparison.city_2.name, comparison.city_2 %></span> because...</i>
         </div>
         <div class="card-body">
           <h5 class="card-title"></h5>
@@ -17,6 +20,7 @@
 </span>
           </div>
           </p>
+          
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
     <%= comparison.net_comparison_score %></span>
           <a href="#" class="btn btn-primary">Agree <span class="badge text-bg-secondary"><%= comparison.upvotes %></span></a>
@@ -30,4 +34,3 @@
         </div>
       </div>
     </div>
-
