@@ -17,8 +17,19 @@
   <body>
 <%= render 'shared/navbar' %>
 <div class="container">
-<%= alert %>
-<%= notice %>
+      <% if flash.any? %>
+        <% flash.each do |type, msg| %>
+          <div >
+            <% if notice.present? == true %>
+              <p class="alert alert-primary w-25 mx-auto mt-5"><%= notice %></p>
+            <% end %>
+            <% if alert.present? == true %>
+              <p class="alert alert-danger w-25 mx-auto mt-5"><%= alert %></p>
+            <% end %>
+            <!-- <%= msg %> -->
+          </div>
+        <% end %>
+      <% end %>
 
     <%= yield %>
     </div>
