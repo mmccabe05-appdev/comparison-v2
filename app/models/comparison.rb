@@ -9,9 +9,9 @@
 #  culinary_similarity          :integer          default(0)
 #  downvotes                    :integer          default(0)
 #  likes_count                  :integer          default(0)
-#  net_comparison_score         :float            default(0.0)
-#  net_votes                    :integer          default(0)
-#  overall_similarity           :float            default(0.0)
+#  net_comparison_score         :float            default(0.0)    # this is the all-in metric for the value of an individual comparison, higher = better
+#  net_votes                    :integer          default(0)      # upvotes - downvotes
+#  overall_similarity           :float            default(0.0)    # should be the average of the quantitative similarity indicators (built enviro, culinary etc.)
 #  people_similarity            :integer          default(0)
 #  transportation_similarity    :integer          default(0)
 #  upvotes                      :integer          default(0)

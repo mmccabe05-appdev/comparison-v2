@@ -1,18 +1,26 @@
 <div class="row mt-4">
-<div>The neighborhood name of city name is...</div>
 <div>
 
-The <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> of <b><%= @query_city.name %></b> is...
+<h1>The <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> of <b><%= @query_city.name %></b> is...</h1>
 </div>
-<h2>JUST comparisons for <%= @query_neighborhood.name %> in <%= @query_city.name %></h2>
+<h2>sort all relevant comparisons by net_comparison_score and take the top reason</h2>
+<hr>
+<h2>There are <%= @comparisons_limited_to_target_city.count %> total comparisons for <%= @query_neighborhood.name %> in <%= @query_city.name %>...</h2>
 <% @comparisons_limited_to_target_city.each do |comparison| %>
-  <li><%= comparison.neighborhood_1.name %> (<b><%= comparison.city_1.name %></b>) is like <%= comparison.neighborhood_2.name %> (<b><%= comparison.city_2.name %></b>) because <%= comparison.body %></li>
+ <%= render 'comparisons/comparison', comparison: comparison  %>
+
 <% end %>
 
 <hr>
 
-<h2>All comparisons for <%= @query_neighborhood.name %></h2>
+<h2>People have also compared <%= @query_neighborhood.name %> to places <i>not</i> in <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times</h2>
+<% @comparisons_except_in_target_city.each do |comparison| %>
+ <%= render 'comparisons/comparison', comparison: comparison  %>
+
+<% end %>
+<hr>
+<h2>For good measure, here's every comparison (all <%= @all_comparisons_for_query_neighborhood.count %> of them!) involving <%= @query_neighborhood.name %> sorted by total score...</h2>
 <% @all_comparisons_for_query_neighborhood.each do |comparison| %>
-  <li><%= comparison.neighborhood_1.name %> is like <%= comparison.neighborhood_2.name %> because <%= comparison.body %></li>
+ <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
 </div>

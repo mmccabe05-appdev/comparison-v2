@@ -32,7 +32,11 @@ class ApplicationController < ActionController::Base
             @all_comparisons_for_query_neighborhood.where(city_2: { id: @query_city.id })
           ).joins(:city_1, :city_2)
         
-        
+          @comparisons_except_in_target_city = @all_comparisons_for_query_neighborhood.
+          where.not(city_1: { id: @query_city.id }).
+          and(
+            @all_comparisons_for_query_neighborhood.where.not(city_2: { id: @query_city.id })
+          ).joins(:city_1, :city_2)
   
         
         render({:template=>"found_comparison.html.erb"})
