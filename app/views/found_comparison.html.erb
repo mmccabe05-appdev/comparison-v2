@@ -1,12 +1,15 @@
 <div class="row mt-4">
-<div>
+<div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
 
-<h1>The <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> of <b><%= @query_city.name %></b> is...</h1>
+<h1>The top comparison for <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> in <b><%= @query_city.name %></b> is... </h1>
+
+
+ <%= render 'comparisons/comparison', comparison: @winning_comparison  %>
 </div>
-<h2>sort all relevant comparisons by net_comparison_score and take the top reason</h2>
+
 <hr>
 <h2>There are <%= @comparisons_limited_to_target_city.count %> total comparisons for <%= @query_neighborhood.name %> in <%= @query_city.name %>...</h2>
-<% @comparisons_limited_to_target_city.each do |comparison| %>
+<% @comparisons_limited_to_target_city.order(net_comparison_score: :desc).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 
 <% end %>

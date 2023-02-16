@@ -31,6 +31,12 @@ class ApplicationController < ActionController::Base
           or(
             @all_comparisons_for_query_neighborhood.where(city_2: { id: @query_city.id })
           ).joins(:city_1, :city_2)
+
+         if @comparisons_limited_to_target_city.order(net_comparison_score: :desc).first != nil 
+          @winning_comparison = @comparisons_limited_to_target_city.order(net_comparison_score: :desc).first
+         else 
+          @winning_comparison = "Unfortunately no comparisons yet for this neighborhood in this city"
+         end
         
           @comparisons_except_in_target_city = @all_comparisons_for_query_neighborhood.
           where.not(city_1: { id: @query_city.id }).
