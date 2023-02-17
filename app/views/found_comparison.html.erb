@@ -5,32 +5,35 @@
 
 <% if @winning_comparison != nil %>
  <%= render 'comparisons/comparison', comparison: @winning_comparison  %>
+
+<%= link_to "Add your own comparison for #{@query_neighborhood.name} in #{@query_city.name}", new_comparison_path, class: "btn btn-primary fs-2" %>
  <% else %>
  <div class="fs-3 fw-lighter mt-4 mb-4">Doesn't seem like someone has made this comparison yet, add one?</div>
  <% end %>
 </div>
 
-<hr>
+<hr class="mb-5">
 <% if @comparisons_limited_to_target_city.length != 0 %>
-<h2>There are <%= @comparisons_limited_to_target_city.count %> total comparisons for <%= @query_neighborhood.name %> in <%= @query_city.name %>...</h2>
+<h2>There are <%= @comparisons_limited_to_target_city.count %> total comparisons for <%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>) in <%= @query_city.name %>...</h2>
 <% @comparisons_limited_to_target_city.order(net_comparison_score: :desc).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
-<% else %>
-<div class="fs-3 fw-lighter">
-Doesn't look like anyone has compared this neighborhood within this city yet, add one?
-</div>
-<% end %>
-<hr>
+<hr class="mb-5" >
 
+
+<% end %>
+<div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
 <h2>People have also compared <%= @query_neighborhood.name %> to places <i>not</i> in <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times</h2>
 <% @comparisons_except_in_target_city.each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 
 <% end %>
-<hr>
+</div>
+<hr class="mb-5">
+<div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
 <h2>For good measure, here's every comparison (all <%= @all_comparisons_for_query_neighborhood.count %> of them!) involving <%= @query_neighborhood.name %> sorted by total score...</h2>
 <% @all_comparisons_for_query_neighborhood.each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
+</div>
 </div>
