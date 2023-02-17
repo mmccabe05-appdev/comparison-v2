@@ -1,14 +1,16 @@
 <div class="row mt-4">
 <div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
 
-<h1>The top comparison for <b><%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>)</b> in <b><%= @query_city.name %></b> is... </h1>
+<h1 class="mt-4 fw-light">The top comparison for <b><%= link_to @query_neighborhood.name, @query_neighborhood %></b><span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-5 text-decoration-none"><%= link_to @query_neighborhood.city.name, @query_neighborhood.city %></span></b> in 
+<b><%= link_to @query_city.name, @query_city %></b> is... </h1>
 
 <% if @winning_comparison != nil %>
  <%= render 'comparisons/comparison', comparison: @winning_comparison  %>
 
 <%= link_to "Add your own comparison for #{@query_neighborhood.name} in #{@query_city.name}", new_comparison_path, class: "btn btn-primary fs-2" %>
  <% else %>
- <div class="fs-3 fw-lighter mt-4 mb-4">Doesn't seem like someone has made this comparison yet, add one?</div>
+ <div class="fs-3 fw-lighter mt-5 mb-5">Doesn't seem like someone has made this comparison yet, <%= link_to "add one", new_comparison_path, class: "" %>
+?</div>
  <% end %>
 </div>
 
