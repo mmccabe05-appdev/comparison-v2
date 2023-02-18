@@ -1,5 +1,5 @@
 class ComparisonsController < ApplicationController
-  before_action :set_comparison, only: %i[ show edit update destroy ]
+  before_action :set_comparison, only: %i[ show edit update destroy upvote ]
 
   ActiveRecord::Base.connection.tables.each do |table_name| 
     ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
@@ -27,8 +27,8 @@ class ComparisonsController < ApplicationController
   def create
     @comparison = Comparison.new(comparison_params)
     @comparison.user_id = current_user.id
-    
-    @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4
+    @comparison.upvotes = 1
+    @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4.0
 
     @comparison.net_comparison_score = @comparison.overall_similarity * @comparison.net_votes
 
@@ -43,8 +43,41 @@ class ComparisonsController < ApplicationController
     end
   end
 
+  def upvote
+    @comparison.upvotes = @comparison.upvotes + 1
+
+    respond_to do |format|
+      if @comparison.save
+        format.html { redirect_to comparison_url(@comparison), notice: "Upvote received." }
+        format.json { render :show, status: :ok, location: @comparison }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @comparison.errors, status: :unprocessable_entity }
+      end
+    end
+  end 
+
+  def downvote
+    @comparison.downvotes = @comparison.downvotes + 1
+
+    respond_to do |format|
+      if @comparison.save
+        format.html { redirect_to comparison_url(@comparison), notice: "Downvote received." }
+        format.json { render :show, status: :ok, location: @comparison }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @comparison.errors, status: :unprocessable_entity }
+      end
+    end
+  end 
+
   # PATCH/PUT /comparisons/1 or /comparisons/1.json
   def update
+
+    @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4.0
+
+    @comparison.net_comparison_score = @comparison.overall_similarity * @comparison.net_votes
+
     respond_to do |format|
       if @comparison.update(comparison_params)
         format.html { redirect_to comparison_url(@comparison), notice: "Comparison was successfully updated." }
@@ -74,6 +107,6 @@ class ComparisonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comparison_params
-      params.require(:comparison).permit(:body, :user_id, :culinary_similarity, :transportation_similarity, :people_similarity, :built_environment_similarity, :overall_similarity, :neighborhood_1_id, :neighborhood_2_id, :net_comparison_score, :net_votes, :likes_count, :comments_count)
+      params.require(:comparison).permit(:body, :user_id, :culinary_similarity, :transportation_similarity, :people_similarity, :built_environment_similarity, :overall_similarity, :neighborhood_1_id, :neighborhood_2_id, :net_comparison_score, :net_votes, :likes_count, :comments_count, :upvotes, :downvotes)
     end
 end

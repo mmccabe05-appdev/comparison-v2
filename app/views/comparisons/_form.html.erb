@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label :neighborhood_2_id, class: "form-label" %>
-    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:false %>
+    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:false %>
   </div>
   <div class="field">
     <%= form.label :body, class: "form-label" %>

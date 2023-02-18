@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get("/", { :controller => "application", :action => "index" })
   get("/find_comparison", { :controller => "application", :action => "find_comparison" })
 
+  get("/comparisons/:id/upvote", { :controller => "comparisons", action: "upvote"})
+  get("/comparisons/:id/downvote", { :controller => "comparisons", action: "downvote"})
+
   # root "comparisons#index"
 
   resources :favorite_neighborhoods
