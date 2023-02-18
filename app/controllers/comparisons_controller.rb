@@ -45,7 +45,8 @@ class ComparisonsController < ApplicationController
 
   def upvote
     @comparison.upvotes = @comparison.upvotes + 1
-
+    @comparison.net_votes = @comparison.upvotes - @comparison.downvotes
+    @comparison.net_comparison_score = @comparison.net_votes * @comparison.overall_similarity
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Upvote received." }
@@ -59,7 +60,8 @@ class ComparisonsController < ApplicationController
 
   def downvote
     @comparison.downvotes = @comparison.downvotes + 1
-
+    @comparison.net_votes = @comparison.upvotes - @comparison.downvotes
+    @comparison.net_comparison_score = @comparison.net_votes * @comparison.overall_similarity
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Downvote received." }
