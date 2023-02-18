@@ -22,8 +22,8 @@ class ComparisonsController < ApplicationController
   # POST /comparisons or /comparisons.json
   def create
     @comparison = Comparison.new(comparison_params)
-
-    @comparison.overall_similarity = (self.culinary_similarity + self.transportation_similarity + self.people_similarity + self.built_environment_similarity)/4
+    
+    @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4
 
     @comparison.net_comparison_score = @comparison.overall_similarity * @comparison.net_votes
 
