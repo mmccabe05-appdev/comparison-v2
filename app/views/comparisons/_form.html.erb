@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= form.label :neighborhood_1_id, class: "form-label" %>
-    <%= form.collection_select :neighborhood_1_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:false  %>
+  <div class="field form-select-lg ">
+    <%= form.label "Pick your first neighborhood", class: "form-label" %>
+    <%= form.collection_select :neighborhood_1_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true  %>
   </div>
-
-  <div class="field">
-    <%= form.label :neighborhood_2_id, class: "form-label" %>
-    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:false %>
+<div>is like....</div>
+  <div class="field form-select-lg ">
+    <%= form.label "Second neighborhood in another city", class: "form-label" %>
+    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true %>
   </div>
-  <div class="field">
-    <%= form.label :body, class: "form-label" %>
+  <div class="field mb-4">
+    <%= form.label "What makes them comparable?", class: "form-label" %>
     <%= form.text_area :body, class: "form-control" %>
   </div>
 
@@ -28,24 +28,24 @@
     <%= form.hidden_field :user_id %>
 
   </div>
-
+<div class="fw-light mb-4">How similar are each of the following on a scale of 1 to 5?</div>
   <div class="field">
-    <%= form.label :culinary_similarity %>
-    <%= form.select :culinary_similarity, ['','0','1','2','3','4','5'] %>
+    <%= form.label :culinary_similarity, class: "form-label" %>
+    <%= form.select :culinary_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
 
   <div class="field">
-    <%= form.label :transportation_similarity %>
+    <%= form.label :transportation_similarity, class: "form-label" %>
     <%= form.select :transportation_similarity, ['','0','1','2','3','4','5'] %>
   </div>
 
   <div class="field">
-    <%= form.label :people_similarity %>
+    <%= form.label :people_similarity, class: "form-label" %>
     <%= form.select :people_similarity, ['0','1','2','3','4','5'] %>
   </div>
 
   <div class="field">
-    <%= form.label :built_environment_similarity %>
+    <%= form.label :built_environment_similarity, class: "form-label" %>
     <%= form.select :built_environment_similarity, ['0','1','2','3','4','5'] %>
   </div>
 
@@ -55,6 +55,6 @@
 
 
   <div class="actions mb-4">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= form.submit class: "btn btn-primary mt-4" %>
   </div>
 <% end %>
