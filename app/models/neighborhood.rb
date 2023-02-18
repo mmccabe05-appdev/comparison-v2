@@ -31,4 +31,9 @@ class Neighborhood < ApplicationRecord
   has_many(:neighborhood_2s, :through => :comparisons_as_neighborhood_1, :source => :neighborhood_2 )
   has_many(:neighborhood_1s, :through => :comparisons_as_neighborhood_2, :source => :neighborhood_1 )
 
+  def name_with_city 
+    "#{self.city.name} - #{self.name}"
+
+  end 
+
 end

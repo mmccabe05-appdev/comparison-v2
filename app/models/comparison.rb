@@ -45,4 +45,5 @@ class Comparison < ApplicationRecord
   validates(:user_id,  :presence => true )
   validates(:neighborhood_1_id,  :presence => true )
   validates(:neighborhood_2_id,  :presence => true )
+
 end

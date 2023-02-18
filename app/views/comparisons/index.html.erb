@@ -5,7 +5,7 @@
 <div><%= link_to "Add your own!", new_comparison_path, class: "btn btn-primary" %></div>
 </div>
 
-<% @comparisons.each do |comparison| %>
+<% @comparisons.order(created_at: :desc).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
 

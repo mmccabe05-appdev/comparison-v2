@@ -1,6 +1,10 @@
 class ComparisonsController < ApplicationController
   before_action :set_comparison, only: %i[ show edit update destroy ]
 
+  ActiveRecord::Base.connection.tables.each do |table_name| 
+    ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
+  end
+
   # GET /comparisons or /comparisons.json
   def index
     @comparisons = Comparison.all
@@ -22,6 +26,7 @@ class ComparisonsController < ApplicationController
   # POST /comparisons or /comparisons.json
   def create
     @comparison = Comparison.new(comparison_params)
+    @comparison.user_id = current_user.id
     
     @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4
 
