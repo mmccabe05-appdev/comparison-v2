@@ -17,7 +17,7 @@
 
   <div class="field">
     <%= form.label :neighborhood_2_id %>
-    <%= form.number_field :neighborhood_2_id %>
+    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:name),:id,:name, include_blank:false %>
   </div>
   <div class="field">
     <%= form.label :body, class: "form-label" %>

@@ -23,6 +23,10 @@ class ComparisonsController < ApplicationController
   def create
     @comparison = Comparison.new(comparison_params)
 
+    @comparison.overall_similarity = (self.culinary_similarity + self.transportation_similarity + self.people_similarity + self.built_environment_similarity)/4
+
+    @comparison.net_comparison_score = @comparison.overall_similarity * @comparison.net_votes
+
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Comparison was successfully created." }
