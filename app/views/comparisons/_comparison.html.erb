@@ -23,8 +23,12 @@
           
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
     <%= comparison.net_comparison_score %></span>
-          <a href="#" class="btn btn-primary">Agree <span class="badge text-bg-secondary"><%= comparison.upvotes %></span></a>
-          <a href="#" class="btn btn-warning">Disagree <span class="badge text-bg-secondary"><%= comparison.downvotes %></span></a>
+          <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
+          Agree <span class='badge text-bg-secondary'><%= comparison.upvotes %></span>
+          <% end %> 
+          <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
+          Disagree <span class='badge text-bg-secondary'><%= comparison.downvotes %></span>
+          <% end %> 
           <%= link_to "Join the conversation (#{comparison.comments_count})", comparison, class: 'btn btn-outline-primary' %>
       </div>
       <div class="card-footer text-muted">

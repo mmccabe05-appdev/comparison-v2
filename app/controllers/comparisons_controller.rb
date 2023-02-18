@@ -1,5 +1,5 @@
 class ComparisonsController < ApplicationController
-  before_action :set_comparison, only: %i[ show edit update destroy upvote ]
+  before_action :set_comparison, only: %i[ show edit update destroy upvote downvote ]
 
   ActiveRecord::Base.connection.tables.each do |table_name| 
     ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
