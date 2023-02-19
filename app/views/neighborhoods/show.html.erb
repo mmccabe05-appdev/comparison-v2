@@ -1,27 +1,21 @@
  <%= render 'neighborhoods/neighborhood', neighborhood: @neighborhood  %>
 
 <div class="row">
-      <div class="fs-1">People have made <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> comparisons with <%= @neighborhood.name %>, they compared to...</div>
-
-
+      <div class="fs-1">People have made <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> comparisons with <%= @neighborhood.name %><% if @neighborhood.all_comparisons_for_given_neighborhood.count > 3 %>
+        <%= ", here are the top 3..." %>
+        <% else %>
+        <%= "..." %>
+<% end %>
+</div> 
 <div class="row">
 
-      <% @neighborhood.all_comparisons_for_given_neighborhood.order(net_comparison_score: :desc).each do |comparison| %>
+      <% @neighborhood.all_comparisons_for_given_neighborhood.order(net_comparison_score: :desc).limit(3).each do |comparison| %>
          <%= render 'comparisons/comparison', comparison: comparison, class: "w-50"  %>
 
       <% end %>
 
       </div>
-            <% @neighborhood.neighborhood_1s.each do |comparable_neighborhood| %>
-        <li><%= comparable_neighborhood.name %> (<%= link_to comparable_neighborhood.city.name, comparable_neighborhood.city %>)</li>
-      <% end %>
 
-
-      </div>
-     <div>
-          RENDER ALL COMPARISONS FOR THE NEIGHBORHOOD HERE
-          
-      </div>
 
 <%= link_to 'Edit', edit_neighborhood_path(@neighborhood) %> |
 <%= link_to 'Back', neighborhoods_path %>
