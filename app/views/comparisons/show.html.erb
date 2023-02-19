@@ -2,10 +2,10 @@
  <%= render 'comparisons/comparison', comparison: @comparison  %>
 
 <div class="h5">Comments:</div>
- <%= render 'comments/form', comment: Comment.new, comparison: @comparison  %>
+ <%= render 'comments/form', comparison: @comparison, comment: @comparison.comments.build  %>
 
 <ul class="list-group list-group-flush">
-<% @comparison.comments.all.each do |comment| %>
+<% @comparison.comments.all.order(created_at: :desc).each do |comment| %>
  <%= render 'comments/comment', comment: comment  %>
 
     <% end %>

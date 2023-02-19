@@ -12,21 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class: "form-control mb-4" %>
   </div>
-
-  <div class="field">
-    <%= form.label :commenter_id %>
-    <%= form.number_field :commenter_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comparison_id %>
-    <%= form.text_field :comparison_id %>
-  </div>
+<%= form.hidden_field :comparison_id %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary mb-4" %>
   </div>
 <% end %>

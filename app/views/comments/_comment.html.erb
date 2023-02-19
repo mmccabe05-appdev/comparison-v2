@@ -2,12 +2,11 @@
 
         <div class="media">
           <div class="media-body">
-            <h5 class="mt-0">
-              <%= link_to "@#{comment.commenter.username}" %>
+            <h5 class="mt-0 fs-4">
+              <%= link_to "@#{comment.commenter.username}" %> <span class="fw-lighter fs-5">(Posted <%= time_ago_in_words(comment.created_at) %> ago)</span>
               <!-- still need to make the link to profile pages work -->
             </h5>
-            <p><%= comment.body %></p>
-            <p class="font-weight-lighter">Posted <%= time_ago_in_words(comment.created_at) %> ago</p>
+            <p class="fw-light"><%= comment.body %></p>
           </div>
         </div>
 
