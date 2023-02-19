@@ -29,7 +29,8 @@
           <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
           Disagree <span class='badge text-bg-secondary'><%= comparison.downvotes %></span>
           <% end %> 
-          <%= link_to "Join the conversation (#{comparison.comments_count})", comparison, class: 'btn btn-outline-primary' %>
+          
+          <%= link_to_unless_current "Join the conversation (#{comparison.comments_count})", comparison, class: 'btn btn-outline-primary' do link_to "" end %>
       </div>
       <div class="card-footer text-muted">
         Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %> 
