@@ -11,13 +11,14 @@
     </div>
   <% end %>
   <div class="field form-select-lg ">
-    <%= form.label "Pick your first neighborhood", class: "form-label" %>
+    <%= form.label "Pick a first neighborhood", class: "form-label" %>
     <%= form.collection_select :neighborhood_1_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true  %>
   </div>
-<div>is like....</div>
+<div class="field form-select-lg ">is like....</div>
   <div class="field form-select-lg ">
-    <%= form.label "Second neighborhood in another city", class: "form-label" %>
-    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true %>
+    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true %><br>
+        (<%= form.label "neighborhood in another city", class: "form-label" %>)
+
   </div>
   <div class="field mb-4">
     <%= form.label "What makes them comparable?", class: "form-label" %>

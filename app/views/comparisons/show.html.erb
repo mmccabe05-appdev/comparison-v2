@@ -2,13 +2,14 @@
  <%= render 'comparisons/comparison', comparison: @comparison  %>
 
 <div class="h5">Comments:</div>
+ <%= render 'comments/form', comment: Comment.new, comparison: @comparison  %>
 
 <ul class="list-group list-group-flush">
 <% @comparison.comments.all.each do |comment| %>
  <%= render 'comments/comment', comment: comment  %>
 
     <% end %>
-  </ul>
+  </ul> 
 
 
 <div class="row"><%= link_to 'Back', comparisons_path %></div>
