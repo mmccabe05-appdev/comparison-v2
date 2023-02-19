@@ -7,31 +7,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link"><%= link_to_unless_current "Home", "/", class: "nav-link" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cities">Cities</a>
+            <a class="nav-link"><%= link_to_unless_current "Cities", cities_path, class: "nav-link" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/neighborhoods">Neighborhoods</a>
+                    <a class="nav-link"><%= link_to_unless_current "Neighborhoods", neighborhoods_path, class: "nav-link" %></a>
+
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/comparisons">Comparisons</a>
+                            <a class="nav-link"><%= link_to_unless_current "Recent Comparisons", comparisons_path, class: "nav-link" %></a>
+
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Other resources
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/likes">Likes</a></li>
-            <li><a class="dropdown-item" href="/comments">Comments</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item disabled" href="#">Users</a></li>
-          </ul>
+                <li class="nav-item">
+                            <a class="nav-link"><%= link_to_unless_current "Likes", likes_path, class: "nav-link" %></a>
+
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <li class="nav-item">
+                            <a class="nav-link"><%= link_to_unless_current "Comments", comments_path, class: "nav-link" %></a>
+
         </li>
+          <li class="nav-item">
+                            <a class="nav-link"><%= link_to_unless_current "Users", "#", class: "nav-link" %></a>
+
+        </li>
+
+
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
