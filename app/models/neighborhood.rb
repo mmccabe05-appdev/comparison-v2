@@ -33,7 +33,9 @@ class Neighborhood < ApplicationRecord
 
   def name_with_city 
     "#{self.city.name} - #{self.name}"
-
   end 
 
+  def all_comparisons_for_given_neighborhood
+    self.comparisons_as_neighborhood_1.or(self.comparisons_as_neighborhood_2)
+  end
 end

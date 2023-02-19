@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
       if @query_neighborhood.city != @query_city
         
-        @all_comparisons_for_query_neighborhood = @query_neighborhood.comparisons_as_neighborhood_1.or(@query_neighborhood.comparisons_as_neighborhood_2)
+        @all_comparisons_for_query_neighborhood = @query_neighborhood.all_comparisons_for_given_neighborhood
 
         # Problems: 
         # 1. currently returning an array (vs. active record relation)
