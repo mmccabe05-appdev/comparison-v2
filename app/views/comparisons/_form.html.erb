@@ -35,7 +35,7 @@
 <div class="fs-2 mb-4">Think about the neighborhoods, how similar are they on a scale of 1 to 5?</div>
   <div class="field">
     <%= form.label :culinary_similarity, class: "form-label" %>
-    <%= form.select :culinary_similarity, ['0','1','2','3','4','5'], include_blank:true %>
+    <%= form.collection_select :culinary_similarity, Comparison.culinary_similarities, :to_s, include_blank:true %>
   </div>
 
   <div class="field">
