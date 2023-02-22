@@ -18,13 +18,7 @@ class ApplicationController < ActionController::Base
 
       if @query_neighborhood.city != @query_city
         
-        @all_comparisons_for_query_neighborhood = @query_neighborhood.all_comparisons_for_given_neighborhood
-
-        # Problems: 
-        # 1. currently returning an array (vs. active record relation)
-        # 2. returning all comparisons where the target city shows up on either side of comparison (but not limiting *just* to ones where the query_neighborhood is half the comparison)
-
-        
+        @all_comparisons_for_query_neighborhood = @query_neighborhood.all_comparisons_for_given_neighborhood        
 
         @comparisons_limited_to_target_city = @all_comparisons_for_query_neighborhood.
           where(city_1: { id: @query_city.id }).
@@ -34,7 +28,6 @@ class ApplicationController < ActionController::Base
 
           @winning_comparison = @comparisons_limited_to_target_city.order(net_comparison_score: :desc).first
 
-        
           @comparisons_except_in_target_city = @all_comparisons_for_query_neighborhood.
           where.not(city_1: { id: @query_city.id }).
           and(
