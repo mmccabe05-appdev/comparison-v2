@@ -42,15 +42,29 @@ class Comparison < ApplicationRecord
   has_one(:city_1,  :through => :neighborhood_1, :source => :city )
   has_one(:city_2,  :through => :neighborhood_2, :source => :city )
 
-  enum people_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 }, _prefix: true 
-  enum culinary_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
-  enum transportation_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
-  enum built_environment_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
+  # enum people_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 }, _prefix: true 
+  # enum culinary_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
+  # enum transportation_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
+  # enum built_environment_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
 
 
-  validates(:user_id,  :presence => true )
+  validates :people_similarity, inclusion: { in: %i(0 1 2 3 4 5), message: "select a valid similarity level"}
+
+  def similarity_levels
+    
+  end 
+
+  validates(:user_id, :presence => true )
   validates(:neighborhood_1_id,  :presence => true )
+  
   # validates :neighborhood_1_id, comparison: { other_than: :neighborhood_2_id }
+  validate :neighborhoods_cant_match
+
+  def neighborhoods_cant_match
+    if self.neighborhood_1_id == self.neighborhood_2_id
+      errors.add(:comparison, "Can't compare a neighborhoods to itself!")
+    end
+  end
 
   validates(:neighborhood_2_id,  :presence => true )
 
