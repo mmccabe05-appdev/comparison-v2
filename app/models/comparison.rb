@@ -42,16 +42,15 @@ class Comparison < ApplicationRecord
   has_one(:city_1,  :through => :neighborhood_1, :source => :city )
   has_one(:city_2,  :through => :neighborhood_2, :source => :city )
 
-  # enum people_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 }, _prefix: true 
-  # enum culinary_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
-  # enum transportation_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
-  # enum built_environment_similarity: { not_similar: 0, slightly_similar: 1, somewhat_similar: 2, similar:  3, quite_similar: 4, very_similar: 5 } , _prefix: true
+
+  validates :people_similarity, inclusion: { in: [0, 1, 2, 3, 4, 5], message: "select a valid similarity level"}
+  validates :culinary_similarity, inclusion: { in: [0, 1, 2, 3, 4, 5], message: "select a valid similarity level"}
+  validates :transportation_similarity, inclusion: { in: [0, 1, 2, 3, 4, 5], message: "select a valid similarity level"}
+  validates :built_environment_similarity, inclusion: { in: [0, 1, 2, 3, 4, 5], message: "select a valid similarity level"}
 
 
-  validates :people_similarity, inclusion: { in: %i(0 1 2 3 4 5), message: "select a valid similarity level"}
-
-  def similarity_levels
-    
+  def similarity_levels_in_words
+  
   end 
 
   validates(:user_id, :presence => true )
