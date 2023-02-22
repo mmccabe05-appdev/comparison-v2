@@ -1,8 +1,9 @@
  <%= render 'neighborhoods/neighborhood', neighborhood: @neighborhood  %>
 
 <div class="row">
-      <div class="fs-1">People have made <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> comparisons with <%= @neighborhood.name %><% if @neighborhood.all_comparisons_for_given_neighborhood.count > 3 %>
-        <%= ", here are the top 3..." %>
+      <div class="fs-1">People have made <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> comparisons including <%= @neighborhood.name %>
+      <% if @neighborhood.all_comparisons_for_given_neighborhood.count > 3 %><br>
+        <%= "here are the top three..." %>
         <% else %>
         <%= "..." %>
 <% end %>

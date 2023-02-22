@@ -10,26 +10,29 @@
       </ul>
     </div>
   <% end %>
-  <div class="field form-select-lg ">
-    <%= form.label "Pick a first neighborhood", class: "form-label" %>
-    <%= form.collection_select :neighborhood_1_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true  %>
+  
+  <div>
+    <%= form.label "Pick a first neighborhood", class: "fs-2" %>
+    <br>
+    <%= form.collection_select :neighborhood_1_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50 fs-3", include_blank:true  %>
   </div>
-<div class="field form-select-lg ">is like....</div>
-  <div class="field form-select-lg ">
-    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-lg form-floating w-50", include_blank:true %><br>
-        (<%= form.label "neighborhood in another city", class: "form-label" %>)
+<div class="form-label fs-2 ">which is comparable to...</div>
+  <div class="">
+    <%= form.collection_select :neighborhood_2_id, Neighborhood.order(:city_id).order(:name),:id,:name_with_city, class: "form-select-xlg form-floating w-50", include_blank:true %><br>
+        <%= form.label "(hint: this is any neighborhood in another city)", class: "form-label fw-lighter" %>
 
   </div>
   <div class="field mb-4">
-    <%= form.label "What makes them comparable?", class: "form-label" %>
+    <div class="form-label fs-2">because...</div>
     <%= form.text_area :body, class: "form-control" %>
+    <div class="form-label fw-lighter">(hint: the more descriptive and specific you are the better)</div>
   </div>
 
   <div class="field">
     <%= form.hidden_field :user_id %>
 
   </div>
-<div class="fw-light mb-4">How similar are each of the following on a scale of 1 to 5?</div>
+<div class="fs-2 mb-4">Think about the neighborhoods, how similar are they on a scale of 1 to 5?</div>
   <div class="field">
     <%= form.label :culinary_similarity, class: "form-label" %>
     <%= form.select :culinary_similarity, ['0','1','2','3','4','5'], include_blank:true %>
@@ -57,5 +60,6 @@
 
   <div class="actions mb-4">
     <%= form.submit class: "btn btn-primary mt-4" %>
+  </div>
   </div>
 <% end %>

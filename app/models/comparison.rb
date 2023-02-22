@@ -42,6 +42,9 @@ class Comparison < ApplicationRecord
   has_one(:city_1,  :through => :neighborhood_1, :source => :city )
   has_one(:city_2,  :through => :neighborhood_2, :source => :city )
 
+  enum :people_similarity, { not_similar: 0, slightly_similar: 1, somewhat_similar: 2,   3, quite_simialr: 4, very_similar: 5 } 
+
+
   validates(:user_id,  :presence => true )
   validates(:neighborhood_1_id,  :presence => true )
   validates(:neighborhood_2_id,  :presence => true )
