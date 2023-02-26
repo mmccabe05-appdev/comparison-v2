@@ -29,15 +29,15 @@
     <%= form.text_area :body, class: "form-control" %>
     <div class="form-label fw-lighter">(hint: the more descriptive and specific you are the better)</div>
   </div>
-
   <div class="field">
     <%= form.hidden_field :user_id %>
 
   </div>
 <div class="fs-2 mb-4">Think about the neighborhoods, how similar are they?</div>
+    <div class="form-label fw-lighter mb-4">(hint: 0 not similar at all, 5 almost identical)</div>
+
   <div class="field">
     <%= form.label :culinary_similarity, class: "form-label" %>
-    <input type="range" class="form-range" min="0" max="5" step="1" id="customRange3">
 
     <%= form.select :culinary_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
@@ -59,7 +59,6 @@
   </div>
 
 
-<input type="range" class="form-range" min="0" max="5" step="1" id="customRange3">
 
 
   <div class="actions mb-4">
