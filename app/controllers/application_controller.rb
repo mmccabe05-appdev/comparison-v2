@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
+  def google_api_key
+    return ENV.fetch("GMAPS_KEY")
+  end
+
   def index
     render({ :template => "main_page.html.erb" })
   end
