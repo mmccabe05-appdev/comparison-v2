@@ -53,8 +53,8 @@
     });
 
   bounds.extend(new google.maps.LatLng(<%= @neighborhood.lat %>, <%= @neighborhood.lng %>));
-
-  map.fitBounds(bounds);
+  map.fitBounds(bounds,-5000);
+  map.setZoom(-100);
   };
   
 </script>
