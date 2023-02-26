@@ -1,4 +1,6 @@
+
 namespace :slurp do
+  
   desc "TODO"
   task cities: :environment do
     require "csv"
@@ -44,6 +46,7 @@ namespace :slurp do
       n.city_id = row["city_id"]
       n.name = row["name"]
       n.description = Faker::Lorem.paragraph(sentence_count: 10)
+
       n.save
       puts "#{n.name} saved to database"
     end

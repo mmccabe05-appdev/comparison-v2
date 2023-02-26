@@ -1,6 +1,10 @@
 desc "Fill the database tables with some sample data"
+require 'uri'
+
 task({ :sample_data => :environment}) do
   require 'faker'
+  require 'cgi'
+
 
   p "Initiating sample data"
 
@@ -61,6 +65,18 @@ task({ :sample_data => :environment}) do
   Rake::Task["slurp:neighborhoods"].execute
   Rake::Task["slurp:comparisons"].execute
 
+  # update each neighborhood lat and lng with googleMaps API
+  Neighborhood.all.each do |a_neighborhood|
+    placeholder = a_neighborhood.name + ", " + a_neighborhood.city.name
+    map_name = CGI.escape(placeholder)
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{map_name}&key=" + ENV.fetch("GMAPS_KEY")
+    a_neighborhood.lat = 99
+    a_neighborhood.lng = 99
+    a_neighborhood.save
+    p a_neighborhood.name + " GMAP URL: " + url
+  end
+
+
   Comparison.all.each do |a_comparison|
     rand(3..7).times do
       rand_id = rand(1..User.count)
@@ -70,7 +86,7 @@ task({ :sample_data => :environment}) do
           commenter_id: rand_id,
           body: Faker::Lorem.paragraph(sentence_count: 3)
         )
-        p new_comment
+        # p new_comment
         p new_comment.errors.full_messages
       end
   end
