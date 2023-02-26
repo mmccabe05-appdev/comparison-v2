@@ -82,6 +82,21 @@ task({ :sample_data => :environment}) do
     p "Lattitude baby?" + a_neighborhood.lat.to_s
   end
 
+  City.all.each do |a_city|
+    placeholder = a_city.name
+    map_name = CGI.escape(placeholder)
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{map_name}&key=" + ENV.fetch("GMAPS_KEY")
+    raw_data = URI.open(url).read
+    parsed_data = JSON.parse(raw_data)                                                           
+    f = parsed_data.fetch("results").at(0)
+    a_city.lat = f.fetch("geometry").fetch("location").fetch("lat").to_f
+    a_city.lng = f.fetch("geometry").fetch("location").fetch("lng").to_f
+
+    a_city.save
+    p a_city.name + " GMAP URL: " + url
+    p "Lattitude baby?" + a_city.lat.to_s
+  end
+
 
   Comparison.all.each do |a_comparison|
     rand(3..7).times do
