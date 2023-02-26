@@ -38,13 +38,13 @@
     var bounds = new google.maps.LatLngBounds();
     
     var infowindow = new google.maps.InfoWindow({
-      content: "Click Content" 
+      content: "<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)" 
     });
     
     var marker = new google.maps.Marker({
       position: {lat: 41.8381065, lng: -87.6512738}, 
       map: map,
-      title: 'Hello World!',
+      title: '<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)',
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png' 
     });
     
@@ -59,7 +59,7 @@
   
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY]&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV.fetch("GMAPS_KEY") %>&callback=initMap"
 async defer></script>
           </div>
         </div>
