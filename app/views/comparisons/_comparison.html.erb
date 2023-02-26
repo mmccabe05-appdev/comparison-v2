@@ -23,10 +23,10 @@
           
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
     <%= comparison.net_comparison_score %></span>
-          <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
+          <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-outline-primary" do %>
           Agree <span class='badge text-bg-secondary'><%= comparison.upvotes %></span>
           <% end %> 
-          <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
+          <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-outline-warning" do %>
           Disagree <span class='badge text-bg-secondary'><%= comparison.downvotes %></span>
           <% end %> 
           
