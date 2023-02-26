@@ -1,30 +1,28 @@
 <div class="row mt-4">
-<div class="vstack">
-
-<div>
-<form action="/find_comparison">
+  <div class="vstack">
+    <div>
+      <form action="/find_comparison">
         <h2>What is the...</h2>
         <select name="query_neighborhood" id="query_neighborhood" class="form-select-lg form-floating w-50" >
-        <option selected>Pick a neighborhood you know</option>
+          <option selected>Pick a neighborhood you know</option>
           <% Neighborhood.all.order(:city_id).order(:name).each do |a_neighborhood| %>
             <option value="<%= a_neighborhood.id %>"><%= a_neighborhood.city.name %> - <%= a_neighborhood.name %></option>
           <% end %>
         </select>
-      </div>
-      <h2>of</h2> 
-      <div>
-        <select name="query_city" class="form-select-lg w-50">
-          <option selected>Pick a city you don't</option>
-          <% City.all.each do |a_city| %>
-            <option value="<%= a_city.id %>"><%= a_city.name %></option>
-          <% end %>
-        </select>
-      </div>
-    <button class="btn btn-primary w-50 mx-auto mt-5 mb-5">find out..</button>
-  </form></div>
-</div>
-
-<div class="row mt-4 ms-auto">
-<div>
-Or, <%= link_to "see all recent comparisons", '/comparisons' %>, <%= link_to "explore by city", '/cities' %>, or <%= link_to "explore by neighborhoods", '/neighborhoods' %></div>
-</div>
+        <h2>of</h2>
+        <div>
+          <select name="query_city" class="form-select-lg w-50">
+            <option selected>Pick a city you don't</option>
+            <% City.all.each do |a_city| %>
+              <option value="<%= a_city.id %>"><%= a_city.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <button class="btn btn-primary w-50 mx-auto mt-5 mb-5">find out..</button>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-4 ms-auto">
+    <div>
+      Or, <%= link_to "see all recent comparisons", '/comparisons' %>, <%= link_to "explore by city", '/cities' %>, or <%= link_to "explore by neighborhoods", '/neighborhoods' %></div>
+  </div>

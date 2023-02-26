@@ -1,6 +1,7 @@
 <%= form_with(model: comparison) do |form| %>
   <% if comparison.errors.any? %>
     <div id="error_explanation">
+    <div class="alert">
       <h2><%= pluralize(comparison.errors.count, "error") %> prohibited this comparison from being saved:</h2>
 
       <ul>
@@ -8,6 +9,7 @@
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
+      </div>
     </div>
   <% end %>
   
