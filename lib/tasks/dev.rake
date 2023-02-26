@@ -4,6 +4,7 @@ require 'uri'
 task({ :sample_data => :environment}) do
   require 'faker'
   require 'cgi'
+  require 'open-uri'
 
 
   p "Initiating sample data"
@@ -70,10 +71,15 @@ task({ :sample_data => :environment}) do
     placeholder = a_neighborhood.name + ", " + a_neighborhood.city.name
     map_name = CGI.escape(placeholder)
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{map_name}&key=" + ENV.fetch("GMAPS_KEY")
-    a_neighborhood.lat = 99
-    a_neighborhood.lng = 99
+    raw_data = URI.open(url).read
+    parsed_data = JSON.parse(raw_data)                                                           
+    f = parsed_data.fetch("results").at(0)
+    a_neighborhood.lat = f.fetch("geometry").fetch("location").fetch("lat").to_f
+    a_neighborhood.lng = f.fetch("geometry").fetch("location").fetch("lng").to_f
+
     a_neighborhood.save
     p a_neighborhood.name + " GMAP URL: " + url
+    p "Lattitude baby?" + a_neighborhood.lat.to_s
   end
 
 
