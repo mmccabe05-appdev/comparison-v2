@@ -1,0 +1,9 @@
+id,location,city_name,display_name,state
+1,"Chicago, IL",Chicago,Chicago,IL
+2,"Philadelphia, PA",Philadelphia,Philadelphia,PA
+3,"Manhattan, NY",Manhattan,"NYC - Manhattan",NY
+5,"Brooklyn, NY",Brooklyn,"NYC - Brooklyn,NY
+6,"Queens, NY",Queens,"NYC - Queens,NY
+7,"Staten Island, NY",Staten Island,"NYC - Staten Island",NY
+8,"Los Angeles, CA",Los Angeles,Los Angeles,CA
+4,"Bronx, NY",Bronx,"NYC - Bronx",NY

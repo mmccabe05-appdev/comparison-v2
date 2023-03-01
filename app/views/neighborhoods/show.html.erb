@@ -1,7 +1,7 @@
  <%= render 'neighborhoods/neighborhood', neighborhood: @neighborhood  %>
 
 <div class="row">
-      <div class="fs-1">People have made <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> 
+      <div class="fs-1">People have submitted <%= @neighborhood.all_comparisons_for_given_neighborhood.count %> 
       <% if @neighborhood.all_comparisons_for_given_neighborhood.count == 1 %>
       comparison
       <% else %>
