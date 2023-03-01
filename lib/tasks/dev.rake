@@ -106,7 +106,7 @@ task({ :sample_data => :environment}) do
   end
 
   Neighborhood.all.each do |a_neighborhood|
-    page = Wikipedia.find(a_neighborhood.name)
+    page = Wikipedia.find(a_neighborhood.name + ', ' + a_neighborhood.city.name)
     a_neighborhood.wiki_url = page.fullurl
     a_neighborhood.description = page.summary.truncate(1500,separator:' ')
     a_neighborhood.save

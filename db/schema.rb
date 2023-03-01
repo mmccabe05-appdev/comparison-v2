@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_01_194828) do
+ActiveRecord::Schema.define(version: 2023_03_01_200345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2023_03_01_194828) do
     t.integer "favorite_neighborhoods_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "wiki_url"
     t.index ["city_id"], name: "index_neighborhoods_on_city_id"
   end
 
