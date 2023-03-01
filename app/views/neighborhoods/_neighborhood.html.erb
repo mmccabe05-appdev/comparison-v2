@@ -28,36 +28,9 @@
           <div>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
+         <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, neighborhood: @neighborhood  %>
 
-<script>
-  function initMap() {
-    var mapDiv = document.getElementById('map');
 
-    var map = new google.maps.Map(mapDiv);
-
-    var bounds = new google.maps.LatLngBounds();
-    
-    var infowindow = new google.maps.InfoWindow({
-      content: "<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)" 
-    });
-    
-    var marker = new google.maps.Marker({
-      position: {lat: <%= @neighborhood.lat %>, lng: <%= @neighborhood.lng %>}, 
-      map: map,
-      title: '<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)',
-      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png' 
-    });
-    
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-
-  bounds.extend(new google.maps.LatLng(<%= @neighborhood.lat %>, <%= @neighborhood.lng %>));
-  map.fitBounds(bounds,-5000);
-  map.setZoom(-100);
-  };
-  
-</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV.fetch("GMAPS_KEY") %>&callback=initMap"
 async defer></script>
