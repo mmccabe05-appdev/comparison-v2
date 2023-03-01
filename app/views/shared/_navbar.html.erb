@@ -1,31 +1,35 @@
 <nav class="navbar navbar-expand-lg bg-light mb-4">
   <div class="container-fluid">
-    <%= link_to "Comparison", "/", class: "navbar-brand" %>
+    <%= link_to "/", class: "navbar-brand" do %>
+    <i class="fa-solid fa-right-left"></i> <span class="fs-3 fw-light ms-2">Comparison</span> 
+    <% end %>
+    <div class="vr me-4"></div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link"><%= link_to_unless_current "Home", "/", class: "nav-link" %></a>
+          <span class="nav-link"><%= link_to_unless_current "Home", "/", class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-            <a class="nav-link"><%= link_to_unless_current "Cities", cities_path, class: "nav-link" %></a>
+            <span class="nav-link"><%= link_to_unless_current "Cities", cities_path, class: "nav-link" %></span>
         </li>
         <li class="nav-item">
-                    <a class="nav-link"><%= link_to_unless_current "Neighborhoods", neighborhoods_path, class: "nav-link" %></a>
+                    <span class="nav-link"><%= link_to_unless_current "Neighborhoods", neighborhoods_path, class: "nav-link" %></span>
 
         </li>
         <li class="nav-item">
-                            <a class="nav-link"><%= link_to_unless_current "Recent Comparisons", comparisons_path, class: "nav-link" %></a>
+                            <span class="nav-link"><%= link_to_unless_current "Recent Comparisons", comparisons_path, class: "nav-link" %></span>
 
         </li>
                 <li class="nav-item">
-                            <a class="nav-link"><%= link_to_unless_current "Likes", likes_path, class: "nav-link" %></a>
+                            <span class="nav-link"><%= link_to_unless_current "Likes", likes_path, class: "nav-link" %></span>
 
         </li>
           <li class="nav-item">
-                            <a class="nav-link"><%= link_to_unless_current "Comments", comments_path, class: "nav-link" %></a>
+                            <span class="nav-link"><%= link_to_unless_current "Comments", comments_path, class: "nav-link" %></span>
 
         </li>
 
