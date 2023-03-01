@@ -5,6 +5,7 @@ task({ :sample_data => :environment}) do
   require 'faker'
   require 'cgi'
   require 'open-uri'
+  require 'wikipedia'
 
 
   p "Initiating sample data"
@@ -97,6 +98,19 @@ task({ :sample_data => :environment}) do
     p "Lattitude baby?" + a_city.lat.to_s
   end
 
+  City.all.each do |a_city|
+    page = Wikipedia.find(a_city.name)
+    a_city.wiki_url = page.fullurl
+    a_city.description = page.summary.truncate(1500,separator:' ')
+    a_city.save
+  end
+
+  Neighborhood.all.each do |a_neighborhood|
+    page = Wikipedia.find(a_neighborhood.name)
+    a_neighborhood.wiki_url = page.fullurl
+    a_neighborhood.description = page.summary.truncate(1500,separator:' ')
+    a_neighborhood.save
+  end
 
   Comparison.all.each do |a_comparison|
     rand(3..7).times do

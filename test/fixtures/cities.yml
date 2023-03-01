@@ -9,6 +9,7 @@
 #  location            :string
 #  name                :string
 #  neighborhoods_count :integer          default(0)
+#  wiki_url            :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #

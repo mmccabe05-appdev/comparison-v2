@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_12_183537) do
+ActiveRecord::Schema.define(version: 2023_03_01_194828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_02_12_183537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.string "wiki_url"
   end
 
   create_table "comments", force: :cascade do |t|
