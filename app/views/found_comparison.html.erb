@@ -16,7 +16,14 @@
 
 <hr class="mb-5">
 <% if @comparisons_limited_to_target_city.length != 0 %>
-<h2>There are <%= @comparisons_limited_to_target_city.count %> total comparisons for <%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>) in <%= @query_city.name %>...</h2>
+<h2>People have submitted <%= @comparisons_limited_to_target_city.count %>  
+ <% if @comparisons_limited_to_target_city.count == 1 %>
+      comparison
+      <% else %>
+      
+      comparisons 
+      <% end %> for 
+<%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>) in <%= @query_city.name %>...</h2>
 <% @comparisons_limited_to_target_city.order(net_comparison_score: :desc).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
@@ -25,7 +32,7 @@
 
 <% end %>
 <div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
-<h2>People have also compared <%= @query_neighborhood.name %> to places <i>not</i> in <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times</h2>
+<h2>People have also compared <%= @query_neighborhood.name %> to neighborhoods<br> in cities other than <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times</h2>
 <% @comparisons_except_in_target_city.each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 

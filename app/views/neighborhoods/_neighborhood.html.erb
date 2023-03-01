@@ -12,6 +12,7 @@
           <h5 class="card-title"></h5>
           <p class="card-text fs-3">
           <p><%= @neighborhood.description %></p>
+          <p><%= link_to "Read more on Wikipedia", @neighborhood.wiki_url %></p>
           <p>
             <strong>Lat:</strong>
             <%= @neighborhood.lat %>
@@ -25,8 +26,8 @@
         </div>
         <div class="vr"></div>
           <div>
-          <div>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+          <div class="align-top">
+  <div id="map" style='width: 800px; height: 400px;' ></div>
 </div>
          <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood  %>
 
