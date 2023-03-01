@@ -28,12 +28,10 @@
           <div>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-         <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, neighborhood: @neighborhood  %>
+         <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood  %>
 
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV.fetch("GMAPS_KEY") %>&callback=initMap"
-async defer></script>
           </div>
         </div>
   

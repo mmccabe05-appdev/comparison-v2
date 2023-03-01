@@ -8,13 +8,13 @@
     var bounds = new google.maps.LatLngBounds();
     
     var infowindow = new google.maps.InfoWindow({
-      content: "<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)" 
+      content: "<%= place.name %> " 
     });
     
     var marker = new google.maps.Marker({
-      position: {lat: <%= @neighborhood.lat %>, lng: <%= @neighborhood.lng %>}, 
+      position: {lat: <%= lat %>, lng: <%= lng %>}, 
       map: map,
-      title: '<%= @neighborhood.name %> (<%= @neighborhood.city.name %>)',
+      title: '<%= place.name %>)',
       icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png' 
     });
     
@@ -22,7 +22,7 @@
       infowindow.open(map, marker);
     });
 
-  bounds.extend(new google.maps.LatLng(<%= @neighborhood.lat %>, <%= @neighborhood.lng %>));
+  bounds.extend(new google.maps.LatLng(<%= lat %>, <%= lng %>));
   map.fitBounds(bounds);
   var listener = google.maps.event.addListener(map, "idle", function() { 
   if (map.getZoom() > 16) map.setZoom(13); 
@@ -31,3 +31,6 @@
   };
   
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV.fetch("GMAPS_KEY") %>&callback=initMap"
+async defer></script>

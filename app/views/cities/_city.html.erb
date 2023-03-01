@@ -27,8 +27,11 @@
           </ul>
         </div>
         <div class="vr"></div>
+          <div id="map" style='width: 800px; height: 400px;'></div>
+
           <div>
-          right side << THIS IS WHERE GOOGLE MAP WILL GO >>
+                   <%= render 'shared/map', lat: @city.lat, lng: @city.lng, place: @city  %>
+
           </div>
         </div>
   
