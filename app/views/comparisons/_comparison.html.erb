@@ -2,50 +2,50 @@
     <div class="mb-5 mt-5">
       <div class="card">
         <div class="p-4 pb-0 mb-0 bg-white position-relative">
-          <i class="display-5 lh-lg fw-lighter"><b><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %></b>
-          <span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-5 text-decoration-none"><%= link_to comparison.city_1.name, comparison.city_1 %></span>
+          <i class="fs-1  fw-lighter"><b><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1, class: "text-reset text-decoration-none" %></b>
+          <span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-6 text-decoration-none"><%= link_to comparison.city_1.name, comparison.city_1, class: "text-decoration-none text-black-50" %></span>
           is like 
-          <b><%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2 %></b>
-          <span class="position-absolute top-5 start-10 translate-middle badge rounded-pill bg-light fs-5"><%= link_to comparison.city_2.name, comparison.city_2 %></span> because...</i>
+          <b><%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2, class: "text-reset text-decoration-none" %></b>
+          <span class="position-absolute top-5 start-10 translate-middle badge rounded-pill bg-light fs-6"><%= link_to comparison.city_2.name, comparison.city_2, class: "text-decoration-none text-black-50" %></span> because...</i>
         </div>
         <div class="card-body mt-0 pt-0">
-          <p class="card-text fs-3 pt-0"><%= comparison.body %>
+          <p class="card-text fs-3 pt-0 mt-0 fw-light lh-sm"><%= comparison.body %>
           
           </p>
           
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3 shadow">
     <%= comparison.net_comparison_score %></span>
-    <div class="container px-4 w-100 text-left">
+    <div class="container px-0 w-100 text-left align-items-start ">
 
-    <div class="row w-100 ms-0" >
-          <div class="col ms-0"> 
-            
-          <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
-          <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
-          <% end %> 
-          <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
-          <i class="fa-solid fa-thumbs-down"></i> <span class='badge text-bg-warning'><%= comparison.downvotes %></span>
-          <% end %> 
-                 
+    <div class="row w-100 ms-0 mt-5" >
+          <div class="col ms-0 w-50 ps-0"> 
+              
+            <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
+            <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
+            <% end %> 
+            <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
+            <i class="fa-solid fa-thumbs-down"></i> <span class='badge text-bg-warning'><%= comparison.downvotes %></span>
+            <% end %> 
+                  
 
-          <%= link_to_unless_current "  #{comparison.comments_count}", comparison, class: 'btn btn-lg btn-outline-success fw-light fa-regular fa-comments text-opacity-50' do %>
-          <% link_to "" %> 
-          <% end %>
+            <%= link_to_unless_current "  #{comparison.comments_count}", comparison, class: 'btn btn-lg btn-outline-success fw-light fa-regular fa-comments text-opacity-50' do %>
+            <% link_to "" %> 
+            <% end %>
           </div>
           
-          <div class="col">
-          <span class="fw-light opacity-50 fs-4">
-              <span class="fw-lighter opacity-50"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
-              <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
-              <i class="fa-solid fa-train ms-4"></i> <%= comparison.transportation_similarity %>
-              <i class="fa-solid fa-tree-city ms-4"></i> <%= comparison.built_environment_similarity %>
-              <i class="fa-solid fa-arrow-right ms-4"></i>
-            </span><span class="ms-4">Overall: <%= comparison.overall_similarity %></span></span>
+          <div class="col me-0 w-50 pe-0 text-end">
+            <span class="fw-light opacity-50 fs-4">
+                <span class="fw-lighter opacity-50"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
+                <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
+                <i class="fa-solid fa-train ms-4"></i> <%= comparison.transportation_similarity %>
+                <i class="fa-solid fa-tree-city ms-4"></i> <%= comparison.built_environment_similarity %>
+                <i class="fa-solid fa-arrow-right ms-4"></i>
+              </span><span class="ms-4">Overall: <%= comparison.overall_similarity %></span></span>
           </div>
           </div>
       </div>
       </div>
-      <div class="card-footer text-muted">
+      <div class="card-footer text-muted text-end fs-small">
         Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %> 
         <%= link_to 'Edit', edit_comparison_path(comparison) %> |
         <%= link_to 'Destroy', comparison, method: :delete, data: { confirm: 'Are you sure?' } %> |
