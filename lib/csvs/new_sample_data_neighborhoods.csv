@@ -1,8 +1,13 @@
-id,name,city_id,city_name
+ID,name,city_id,city_name
 1,Austin,1,Chicago
 2,Chinatown,1,Chicago
 3,Hyde Park,1,Chicago
 5,Loop,1,Chicago
+6,Financial District,3,Manhattan
+7,Center City,2,Philadelphia
+8,Chinatown,2,Philadelphia
+9,Fishtown,2,Philadelphia
+10,University City,2,Philadelphia
 11,Albany Park,1,Chicago
 12,Archer Heights,1,Chicago
 13,Armour Square,1,Chicago
@@ -10,797 +15,792 @@ id,name,city_id,city_name
 15,Auburn Gresham,1,Chicago
 16,Avalon Park,1,Chicago
 17,Avondale,1,Chicago
-18,Belmon Cragin,1,Chicago
-19,Beverly,1,Chicago
-20,Bridgeport,1,Chicago
-21,Brighton Park,1,Chicago
-22,Burnside,1,Chicago
-23,Calumet Heights,1,Chicago
-24,Chatham,1,Chicago
-25,Chicago Lawn,1,Chicago
-26,Clearing,1,Chicago
-27,Douglas,1,Chicago
-28,Dunning,1,Chicago
-29,East Garfield Park,1,Chicago
-30,East Side,1,Chicago
-31,Edgewater,1,Chicago
-32,Edison Park,1,Chicago
-33,Englewood,1,Chicago
-34,Forest Glen,1,Chicago
-35,Fuller Park,1,Chicago
-36,Gage Park,1,Chicago
-37,Garfield Ridge,1,Chicago
-38,Grand Boulevard,1,Chicago
-39,Greater Grand Crossing,1,Chicago
-40,Hegewisch,1,Chicago
-41,Hermosa,1,Chicago
-42,Humboldt Park,1,Chicago
-43,Irving Park,1,Chicago
-44,Jefferson Park,1,Chicago
-45,Kenwood,1,Chicago
-46,Lake View,1,Chicago
-47,Lincoln Park,1,Chicago
-48,Lincoln Square,1,Chicago
-49,Logan Square,1,Chicago
-50,Lower West Side,1,Chicago
-51,McKinley Park,1,Chicago
-52,Montclare,1,Chicago
-53,Morgan Park,1,Chicago
-54,Mount Greenwood,1,Chicago
-55,Near North Side,1,Chicago
-56,Near South Side,1,Chicago
-57,Near West Side,1,Chicago
-58,New City,1,Chicago
-59,North Center,1,Chicago
-60,North Lawndale,1,Chicago
-61,North Park,1,Chicago
-62,Norwood Park,1,Chicago
-63,O’Hare,1,Chicago
-64,Oakland,1,Chicago
-65,Portage Park,1,Chicago
-66,Pullman,1,Chicago
-67,Riverdale,1,Chicago
-68,Rogers Park,1,Chicago
-69,Roseland,1,Chicago
-70,South Chicago,1,Chicago
-71,South Deering,1,Chicago
-72,South Lawndale,1,Chicago
-73,South Shore,1,Chicago
-74,Uptown,1,Chicago
-75,Washington Heights,1,Chicago
-76,Washington Park,1,Chicago
-77,West Elsdon,1,Chicago
-78,West Englewood,1,Chicago
-79,West Garfield Park,1,Chicago
-80,West Lawn,1,Chicago
-81,West Pullman,1,Chicago
-82,West Ridge,1,Chicago
-83,West Town,1,Chicago
-84,Woodlawn,1,Chicago
-413,Adams-Normandie,8,Los Angeles
-414,Alsace,8,Los Angeles
-415,Angelino Heights,8,Los Angeles
-416,Angeles Mesa,8,Los Angeles
-417,Angelus Vista,8,Los Angeles
-418,Arleta,8,Los Angeles
-419,Arlington Heights,8,Los Angeles
-420,Arts District,8,Los Angeles
-421,Atwater Village,8,Los Angeles
-422,Baldwin Hills,8,Los Angeles
-423,Baldwin Hills/Crenshaw,8,Los Angeles
-424,Baldwin Village,8,Los Angeles
-425,Baldwin Vista,8,Los Angeles
-426,Beachwood Canyon,8,Los Angeles
-427,"Bel Air, Bel-Air or Bel Air Estates",8,Los Angeles
-428,Benedict Canyon,8,Los Angeles
-429,Beverly Crest,8,Los Angeles
-430,Beverly Glen,8,Los Angeles
-431,Beverly Grove,8,Los Angeles
-432,Beverly Hills Post Office,8,Los Angeles
-433,Beverly Park,8,Los Angeles
-434,Beverlywood,8,Los Angeles
-435,Boyle Heights,8,Los Angeles
-436,Brentwood,8,Los Angeles
-437,Brentwood Circle,8,Los Angeles
-438,Brentwood Glen,8,Los Angeles
-439,Broadway-Manchester,8,Los Angeles
-440,Brookside,8,Los Angeles
-441,Bunker Hill,8,Los Angeles
-442,Byzantine-Latino Quarter,8,Los Angeles
-443,Cahuenga Pass,8,Los Angeles
-444,Canoga Park,8,Los Angeles
-445,Canterbury Knolls,8,Los Angeles
-446,Carthay,8,Los Angeles
-447,Carthay Circle,8,Los Angeles
-448,Castle Heights,8,Los Angeles
-449,Central-Alameda,8,Los Angeles
-450,Central City,8,Los Angeles
-451,Century City,8,Los Angeles
-452,Chatsworth,8,Los Angeles
-453,Chesterfield Square,8,Los Angeles
-454,Cheviot Hills,8,Los Angeles
-455,Chinatown,8,Los Angeles
-456,Civic Center,8,Los Angeles
-457,Country Club Park,8,Los Angeles
-458,Crenshaw,8,Los Angeles
-459,Crenshaw Manor,8,Los Angeles
-460,Crestview,8,Los Angeles
-461,Crestwood Hills,8,Los Angeles
-462,Cypress Park,8,Los Angeles
-463,Del Rey,8,Los Angeles
-464,Downtown,8,Los Angeles
-465,Eagle Rock,8,Los Angeles
-466,East Gate Bel Air,8,Los Angeles
-467,East Hollywood,8,Los Angeles
-468,Echo Park,8,Los Angeles
-469,Edendale,8,Los Angeles
-470,El Sereno,8,Los Angeles
-471,Elysian Heights,8,Los Angeles
-472,Elysian Park,8,Los Angeles
-473,Elysian Valley,8,Los Angeles
-474,Encino,8,Los Angeles
-475,Exposition Park,8,Los Angeles
-476,Faircrest Heights,8,Los Angeles
-477,Fairfax,8,Los Angeles
-478,Fashion District,8,Los Angeles
-479,"Filipinotown, Historic",8,Los Angeles
-480,Financial District,8,Los Angeles
-481,Florence,8,Los Angeles
-482,Flower District,8,Los Angeles
-483,Franklin Hills,8,Los Angeles
-484,Gallery Row,8,Los Angeles
-485,Garvanza,8,Los Angeles
-486,Glassell Park,8,Los Angeles
-487,Gramercy Park,8,Los Angeles
-488,Granada Hills,8,Los Angeles
-489,Green Meadows,8,Los Angeles
-490,Griffith Park,8,Los Angeles
-491,Hancock Park,8,Los Angeles
-492,Hansen Heights,8,Los Angeles
-493,Harbor City,8,Los Angeles
-494,Harbor Gateway,8,Los Angeles
-495,Harvard Heights,8,Los Angeles
-496,Harvard Park,8,Los Angeles
-497,Hermon,8,Los Angeles
-498,Highland Park,8,Los Angeles
-499,Historic Filipinotown,8,Los Angeles
-500,Historic Core,8,Los Angeles
-501,Hollywood,8,Los Angeles
-502,Hollywood Dell,8,Los Angeles
-503,Hollywood Hills,8,Los Angeles
-504,Hollywood Hills West,8,Los Angeles
-505,Holmby Hills,8,Los Angeles
-506,Hyde Park,8,Los Angeles
-507,L.A. Downtown Industrial District,8,Los Angeles
-508,Jefferson Park,8,Los Angeles
-509,Jewelry District,8,Los Angeles
-510,Kinney Heights,8,Los Angeles
-511,Koreatown,8,Los Angeles
-512,La Cienega Heights,8,Los Angeles
-513,Ladera,8,Los Angeles
-514,Lafayette Square,8,Los Angeles
-515,Lake Balboa,8,Los Angeles
-516,Lake View Terrace,8,Los Angeles
-517,Larchmont,8,Los Angeles
-518,Laurel Canyon,8,Los Angeles
-519,Leimert Park,8,Los Angeles
-520,Lincoln Heights,8,Los Angeles
-521,Little Armenia,8,Los Angeles
-522,Little Bangladesh,8,Los Angeles
-523,Little Ethiopia,8,Los Angeles
-524,Little Italy,8,Los Angeles
-525,Little Tokyo,8,Los Angeles
-526,Los Feliz,8,Los Angeles
-527,Manchester Square,8,Los Angeles
-528,Mandeville Canyon,8,Los Angeles
-529,Marina Peninsula,8,Los Angeles
-530,Mar Vista,8,Los Angeles
-531,Melrose Hill,8,Los Angeles
-532,Mid-City,8,Los Angeles
-533,Mid-City Heights,8,Los Angeles
-534,Mid-City West,8,Los Angeles
-535,Mid-Wilshire,8,Los Angeles
-536,Miracle Mile,8,Los Angeles
-537,Mission Hills,8,Los Angeles
-538,Montecito Heights,8,Los Angeles
-539,Monterey Hills,8,Los Angeles
-540,Mount Olympus,8,Los Angeles
-541,Mount Washington,8,Los Angeles
-542,Naud Junction,8,Los Angeles
-543,Nichols Canyon,8,Los Angeles
-544,NoHo Arts District,8,Los Angeles
-545,North Hills,8,Los Angeles
-546,North Hollywood,8,Los Angeles
-547,Northridge,8,Los Angeles
-548,North University Park,8,Los Angeles
-549,Oakwood,8,Los Angeles
-550,Old Bank District,8,Los Angeles
-551,Old Chinatown,8,Los Angeles
-552,Outpost Estates,8,Los Angeles
-553,Pacific Palisades,8,Los Angeles
-554,Pacoima,8,Los Angeles
-555,Palms,8,Los Angeles
-556,Panorama City,8,Los Angeles
-557,Park La Brea,8,Los Angeles
-558,Picfair Village,8,Los Angeles
-559,Pico-Robertson,8,Los Angeles
-560,Pico-Union,8,Los Angeles
-561,Playa del Rey,8,Los Angeles
-562,Playa Vista,8,Los Angeles
-563,Porter Ranch,8,Los Angeles
-564,Rancho Park,8,Los Angeles
-565,Reseda,8,Los Angeles
-566,Reynier Village,8,Los Angeles
-567,Rose Hills,8,Los Angeles
-568,Rustic Canyon,8,Los Angeles
-569,San Pedro,8,Los Angeles
-570,Sawtelle,8,Los Angeles
-571,Shadow Hills,8,Los Angeles
-572,Sherman Oaks,8,Los Angeles
-573,Sherman Village,8,Los Angeles
-574,Silver Lake,8,Los Angeles
-575,Skid Row,8,Los Angeles
-576,Solano Canyon,8,Los Angeles
-577,Sonoratown,8,Los Angeles
-578,"South Central, Historic",8,Los Angeles
-579,South Carthay,8,Los Angeles
-580,South Park,8,Los Angeles
-581,South Robertson,8,Los Angeles
-582,Spaulding Square,8,Los Angeles
-583,Studio City,8,Los Angeles
-584,Sunland,8,Los Angeles
-585,Sunset Junction,8,Los Angeles
-586,Sun Valley,8,Los Angeles
-587,Sylmar,8,Los Angeles
-588,Tarzana,8,Los Angeles
-589,Terminal Island,8,Los Angeles
-590,Thai Town,8,Los Angeles
-591,Toluca Lake,8,Los Angeles
-592,Toy District,8,Los Angeles
-593,Tujunga,8,Los Angeles
-594,University Hills,8,Los Angeles
-595,University Park,8,Los Angeles
-596,"University Park, North",8,Los Angeles
-597,Valley Glen,8,Los Angeles
-598,Valley Village,8,Los Angeles
-599,Van Nuys,8,Los Angeles
-600,Venice,8,Los Angeles
-601,Vermont Knolls,8,Los Angeles
-602,Vermont-Slauson,8,Los Angeles
-603,Vermont Square,8,Los Angeles
-604,Vermont Vista,8,Los Angeles
-605,Victor Heights,8,Los Angeles
-606,Victoria Park,8,Los Angeles
-607,Village Green,8,Los Angeles
-608,Virgil Village,8,Los Angeles
-609,Warehouse District,8,Los Angeles
-610,Warner Center,8,Los Angeles
-611,Watts,8,Los Angeles
-612,Wellington Square,8,Los Angeles
-613,West Adams,8,Los Angeles
-614,West Adams Heights,8,Los Angeles
-615,Westchester,8,Los Angeles
-616,Westdale,8,Los Angeles
-617,Western Heights,8,Los Angeles
-618,West Hills,8,Los Angeles
-619,Westlake,8,Los Angeles
-620,West Los Angeles,8,Los Angeles
-621,Westside Village,8,Los Angeles
-622,Westwood,8,Los Angeles
-623,Westwood Village,8,Los Angeles
-624,Whitley Heights,8,Los Angeles
-625,Wholesale District,8,Los Angeles
-626,Wilmington,8,Los Angeles
-627,Wilshire Center,8,Los Angeles
-628,Wilshire Park,8,Los Angeles
-629,Wilshire Vista,8,Los Angeles
-630,Windsor Square,8,Los Angeles
-631,Winnetka,8,Los Angeles
-632,Woodland Hills,8,Los Angeles
-633,Yucca Corridor,8,Los Angeles
-85,Allerton,4,Bronx
-86,Bathgate,4,Bronx
-87,Baychester,4,Bronx
-88,Bedford Park,4,Bronx
-89,Belmont,4,Bronx
-90,Bronxdale,4,Bronx
-91,Bronx Park South,4,Bronx
-92,Bronx River,4,Bronx
-93,Castle Hill,4,Bronx
-94,City Island,4,Bronx
-95,Claremont Village,4,Bronx
-96,Clason Point,4,Bronx
-97,Concourse,4,Bronx
-98,Concourse Village,4,Bronx
-99,Co-op City,4,Bronx
-100,Country Club,4,Bronx
-101,East Tremont,4,Bronx
-102,Eastchester,4,Bronx
-103,Edenwald,4,Bronx
-104,Edgewater Park,4,Bronx
-105,Fieldston,4,Bronx
-106,Fordham,4,Bronx
-107,High Bridge,4,Bronx
-108,Hunts Point,4,Bronx
-109,Kingsbridge,4,Bronx
-110,Kingsbridge Heights,4,Bronx
-111,Longwood,4,Bronx
-112,Marble Hill,4,Bronx
-113,Melrose,4,Bronx
-114,Morris Heights,4,Bronx
-115,Morris Park,4,Bronx
-116,Morrisania,4,Bronx
-117,Mott Haven,4,Bronx
-118,Mount Eden,4,Bronx
-119,Mount Hope,4,Bronx
-120,North Riverdale,4,Bronx
-121,Norwood,4,Bronx
-122,Olinville,4,Bronx
-123,Parkchester,4,Bronx
-124,Pelham Bay,4,Bronx
-125,Pelham Gardens,4,Bronx
-126,Pelham Parkway,4,Bronx
-127,Port Morris,4,Bronx
-128,Riverdale,4,Bronx
-129,Schuylerville,4,Bronx
-130,Soundview,4,Bronx
-131,Spuyten Duyvil,4,Bronx
-132,Throgs Neck,4,Bronx
-133,Unionport,4,Bronx
-134,University Heights,4,Bronx
-135,Van Nest,4,Bronx
-136,Wakefield,4,Bronx
-137,West Farms,4,Bronx
-138,Westchester Square,4,Bronx
-139,Williamsbridge,4,Bronx
-140,Woodlawn,4,Bronx
-141,Bath Beach,5,Brooklyn
-142,Bay Ridge,5,Brooklyn
-143,Bedford Stuyvesant,5,Brooklyn
-144,Bensonhurst,5,Brooklyn
-145,Bergen Beach,5,Brooklyn
-146,Boerum Hill,5,Brooklyn
-147,Borough Park,5,Brooklyn
-148,Brighton Beach,5,Brooklyn
-149,Broadway Junction,5,Brooklyn
-150,Brooklyn Heights,5,Brooklyn
-151,Brownsville,5,Brooklyn
-152,Bushwick,5,Brooklyn
-153,Canarsie,5,Brooklyn
-154,Carroll Gardens,5,Brooklyn
-155,City Line,5,Brooklyn
-156,Clinton Hill,5,Brooklyn
-157,Cobble Hill,5,Brooklyn
-158,Coney Island,5,Brooklyn
-159,Crown Heights,5,Brooklyn
-160,Cypress Hills,5,Brooklyn
-161,Ditmas Park,5,Brooklyn
-162,Downtown,5,Brooklyn
-163,DUMBO,5,Brooklyn
-164,Dyker Heights,5,Brooklyn
-165,East Flatbush,5,Brooklyn
-166,East New York,5,Brooklyn
-167,East Williamsburg,5,Brooklyn
-168,Farragut,5,Brooklyn
-169,Flatbush,5,Brooklyn
-170,Flatlands,5,Brooklyn
-171,Fort Greene,5,Brooklyn
-172,Fort Hamilton,5,Brooklyn
-173,Fulton Ferry,5,Brooklyn
-174,Georgetown,5,Brooklyn
-175,Gerritsen Beach,5,Brooklyn
-176,Gowanus,5,Brooklyn
-177,Gravesend,5,Brooklyn
-178,Greenpoint,5,Brooklyn
-179,Highland Park,5,Brooklyn
-180,Homecrest,5,Brooklyn
-181,Kensington,5,Brooklyn
-182,Kings Highway,5,Brooklyn
-183,Manhattan Beach,5,Brooklyn
-184,Manhattan Terrace,5,Brooklyn
-185,Mapleton,5,Brooklyn
-186,Marine Park,5,Brooklyn
-187,Midwood,5,Brooklyn
-188,Mill Basin,5,Brooklyn
-189,Mill Island,5,Brooklyn
-190,Navy Yard,5,Brooklyn
-191,New Lots,5,Brooklyn
-192,North Side,5,Brooklyn
-193,Ocean Hill,5,Brooklyn
-194,Ocean Parkway,5,Brooklyn
-195,Paerdegat Basin,5,Brooklyn
-196,Park Slope,5,Brooklyn
-197,Plum Beach,5,Brooklyn
-198,Prospect Heights,5,Brooklyn
-199,Prospect Lefferts Gardens,5,Brooklyn
-200,Prospect Park South,5,Brooklyn
-201,Red Hook,5,Brooklyn
-202,Remsen Village,5,Brooklyn
-203,Rugby,5,Brooklyn
-204,Sea Gate,5,Brooklyn
-205,Sheepshead Bay,5,Brooklyn
-206,South Side,5,Brooklyn
-207,Spring Creek,5,Brooklyn
-208,Starrett City,5,Brooklyn
-209,Stuyvesant Heights,5,Brooklyn
-210,Sunset Park,5,Brooklyn
-211,Tompkins Park North,5,Brooklyn
-212,Vinegar Hill,5,Brooklyn
-213,Weeksville,5,Brooklyn
-214,West Brighton,5,Brooklyn
-215,Williamsburg,5,Brooklyn
-216,Windsor Terrace,5,Brooklyn
-217,Wingate,5,Brooklyn
-6,Financial District,3,Manhattan
-218,Battery Park City,3,Manhattan
-219,Beekman Place,3,Manhattan
-220,Carnegie Hill,3,Manhattan
-221,Chelsea,3,Manhattan
-222,Chinatown,3,Manhattan
-223,Civic Center,3,Manhattan
-224,Clinton,3,Manhattan
-225,East Harlem,3,Manhattan
-226,East Village,3,Manhattan
-227,Flatiron,3,Manhattan
-228,Gramercy,3,Manhattan
-229,Greenwich Village,3,Manhattan
-230,Hamilton Heights,3,Manhattan
-231,Harlem (Central),3,Manhattan
-232,Herald Square,3,Manhattan
-233,Hudson Square,3,Manhattan
-234,Inwood,3,Manhattan
-235,Lenox Hill,3,Manhattan
-236,Lincoln Square,3,Manhattan
-237,Little Italy,3,Manhattan
-238,Lower East Side,3,Manhattan
-239,Manhattan Valley,3,Manhattan
-240,Manhattanville,3,Manhattan
-241,Midtown South,3,Manhattan
-242,Midtown,3,Manhattan
-243,Morningside Heights,3,Manhattan
-244,Murray Hill,3,Manhattan
-245,NoHo,3,Manhattan
-246,Roosevelt Island,3,Manhattan
-247,SoHo,3,Manhattan
-248,South Village,3,Manhattan
-249,Stuyvesant Town,3,Manhattan
-250,Sutton Place,3,Manhattan
-251,Times Square,3,Manhattan
-252,Tribeca,3,Manhattan
-253,Tudor City,3,Manhattan
-254,Turtle Bay,3,Manhattan
-255,Union Square,3,Manhattan
-256,Upper East Side,3,Manhattan
-257,Upper West Side,3,Manhattan
-258,Wall Street,3,Manhattan
-259,Washington Heights,3,Manhattan
-260,West Village,3,Manhattan
-261,Yorkville,3,Manhattan
-262,Arverne,6,Queens
-263,Astoria,6,Queens
-264,Astoria Heights,6,Queens
-265,Auburndale,6,Queens
-266,Bay Terrace,6,Queens
-267,Bayside,6,Queens
-268,Bayswater,6,Queens
-269,Beechhurst,6,Queens
-270,Bellaire,6,Queens
-271,Belle Harbor,6,Queens
-272,Bellerose,6,Queens
-273,Blissville,6,Queens
-274,Breezy Point,6,Queens
-275,Briarwood,6,Queens
-276,Broad Channel,6,Queens
-277,Brookville,6,Queens
-278,Cambria Heights,6,Queens
-279,Clearview,6,Queens
-280,College Point,6,Queens
-281,Douglaston,6,Queens
-282,Dutch Kills,6,Queens
-283,East Elmhurst,6,Queens
-284,Edgemere,6,Queens
-285,Elmhurst,6,Queens
-286,Far Rockaway,6,Queens
-287,Floral Park,6,Queens
-288,Flushing,6,Queens
-289,Flushing (Downtown),6,Queens
-290,Forest Hills,6,Queens
-291,Forest Hills Gardens,6,Queens
-292,Fresh Meadows,6,Queens
-293,Glen Oaks,6,Queens
-294,Glendale,6,Queens
-295,Hammels,6,Queens
-296,Hillcrest,6,Queens
-297,Hollis,6,Queens
-298,Holliswood,6,Queens
-299,Howard Beach,6,Queens
-300,Hunters Point,6,Queens
-301,Jackson Heights,6,Queens
-302,Jamaica,6,Queens
-303,Jamaica Center,6,Queens
-304,Jamaica Estates,6,Queens
-305,Jamaica Hills,6,Queens
-306,Kew Gardens,6,Queens
-307,Kew Gardens Hills,6,Queens
-308,Laurelton,6,Queens
-309,Lefrak City,6,Queens
-310,Lindenwood,6,Queens
-311,Little Neck,6,Queens
-312,Long Island City,6,Queens
-313,Malba,6,Queens
-314,Maspeth,6,Queens
-315,Middle Village,6,Queens
-316,Murray Hill,6,Queens
-317,Neponsit,6,Queens
-318,New Hyde Park,6,Queens
-319,North Corona,6,Queens
-320,Oakland Gardens,6,Queens
-321,Ozone Park,6,Queens
-322,Pomonok,6,Queens
-323,Queens Village,6,Queens
-324,Queensboro Hill,6,Queens
-325,Ravenswood,6,Queens
-326,Rego Park,6,Queens
-327,Richmond Hill,6,Queens
-328,Ridgewood,6,Queens
-329,Rochdale,6,Queens
-330,Rockaway Park,6,Queens
-331,Rosedale,6,Queens
-332,Roxbury,6,Queens
-333,Seaside,6,Queens
-334,Somerville,6,Queens
-335,South Corona,6,Queens
-336,South Jamaica,6,Queens
-337,South Ozone Park,6,Queens
-338,Springfield Gardens,6,Queens
-339,St. Albans,6,Queens
-340,Steinway,6,Queens
-341,Sunnyside,6,Queens
-342,Sunnyside Gardens,6,Queens
-343,Utopia,6,Queens
-344,Whitestone,6,Queens
-345,Woodhaven,6,Queens
-346,Woodside,6,Queens
-347,Annadale,7,Staten Island
-348,Arden Heights,7,Staten Island
-349,Arlington,7,Staten Island
-350,Arrochar,7,Staten Island
-351,Bay Terrace,7,Staten Island
-352,Bloomfield,7,Staten Island
-353,Bulls Head,7,Staten Island
-354,Butler Manor,7,Staten Island
-355,Castleton Corners,7,Staten Island
-356,Charleston,7,Staten Island
-357,Chelsea,7,Staten Island
-358,Clifton,7,Staten Island
-359,Concord,7,Staten Island
-360,Dongan Hills,7,Staten Island
-361,Egbertville,7,Staten Island
-362,Elm Park,7,Staten Island
-363,Eltingville,7,Staten Island
-364,Emerson Hill,7,Staten Island
-365,Fox Hills,7,Staten Island
-366,Graniteville,7,Staten Island
-367,Grant City,7,Staten Island
-368,Grasmere,7,Staten Island
-369,Great Kills,7,Staten Island
-370,Greenridge,7,Staten Island
-371,Grymes Hill,7,Staten Island
-372,Heartland Village,7,Staten Island
-373,Howland Hook,7,Staten Island
-374,Huguenot,7,Staten Island
-375,Lighthouse Hill,7,Staten Island
-376,Livingston,7,Staten Island
-377,Manor Heights,7,Staten Island
-378,Mariner's Harbor,7,Staten Island
-379,Midland Beach,7,Staten Island
-380,New Brighton,7,Staten Island
-381,New Dorp,7,Staten Island
-382,New Dorp Beach,7,Staten Island
-383,New Springville,7,Staten Island
-384,Oakwood,7,Staten Island
-385,Old Place,7,Staten Island
-386,Old Town,7,Staten Island
-387,Park Hill,7,Staten Island
-388,Pleasant Plains,7,Staten Island
-389,Port Ivory,7,Staten Island
-390,Port Richmond,7,Staten Island
-391,Prince's Bay,7,Staten Island
-392,Randall Manor,7,Staten Island
-393,Richmond Town,7,Staten Island
-394,Richmond Valley,7,Staten Island
-395,Rosebank,7,Staten Island
-396,Rossville,7,Staten Island
-397,Sandy Ground,7,Staten Island
-398,Shore Acres,7,Staten Island
-399,Silver Lake,7,Staten Island
-400,South Beach,7,Staten Island
-401,St. George,7,Staten Island
-402,Stapleton,7,Staten Island
-403,Sunnyside,7,Staten Island
-404,Todt Hill,7,Staten Island
-405,Tompkinsville,7,Staten Island
-406,Tottenville,7,Staten Island
-407,Travis,7,Staten Island
-408,Ward Hill,7,Staten Island
-409,West Brighton,7,Staten Island
-410,Westerleigh,7,Staten Island
-411,Willowbrook,7,Staten Island
-412,Woodrow,7,Staten Island
-7,Center City,2,Philadelphia
-8,Chinatown,2,Philadelphia
-9,Fishtown,2,Philadelphia
-10,University City,2,Philadelphia
-413,Chestnut Hill Historic District,2,Philadelphia
+16,Belmon Cragin,1,Chicago
+17,Beverly,1,Chicago
+18,Bridgeport,1,Chicago
+19,Brighton Park,1,Chicago
+20,Burnside,1,Chicago
+21,Calumet Heights,1,Chicago
+22,Chatham,1,Chicago
+23,Chicago Lawn,1,Chicago
+24,Clearing,1,Chicago
+25,Douglas,1,Chicago
+26,Dunning,1,Chicago
+27,East Garfield Park,1,Chicago
+28,East Side,1,Chicago
+29,Edgewater,1,Chicago
+30,Edison Park,1,Chicago
+31,Englewood,1,Chicago
+32,Forest Glen,1,Chicago
+33,Fuller Park,1,Chicago
+34,Gage Park,1,Chicago
+35,Garfield Ridge,1,Chicago
+36,Grand Boulevard,1,Chicago
+37,Greater Grand Crossing,1,Chicago
+38,Hegewisch,1,Chicago
+39,Hermosa,1,Chicago
+40,Humboldt Park,1,Chicago
+41,Irving Park,1,Chicago
+42,Jefferson Park,1,Chicago
+43,Kenwood,1,Chicago
+44,Lake View,1,Chicago
+45,Lincoln Park,1,Chicago
+46,Lincoln Square,1,Chicago
+47,Logan Square,1,Chicago
+48,Lower West Side,1,Chicago
+49,McKinley Park,1,Chicago
+50,Montclare,1,Chicago
+51,Morgan Park,1,Chicago
+52,Mount Greenwood,1,Chicago
+53,Near North Side,1,Chicago
+54,Near South Side,1,Chicago
+55,Near West Side,1,Chicago
+56,New City,1,Chicago
+57,North Center,1,Chicago
+58,North Lawndale,1,Chicago
+59,North Park,1,Chicago
+60,Norwood Park,1,Chicago
+61,O’Hare,1,Chicago
+62,Oakland,1,Chicago
+63,Portage Park,1,Chicago
+64,Pullman,1,Chicago
+65,Riverdale,1,Chicago
+66,Rogers Park,1,Chicago
+67,Roseland,1,Chicago
+68,South Chicago,1,Chicago
+69,South Deering,1,Chicago
+70,South Lawndale,1,Chicago
+71,South Shore,1,Chicago
+72,Uptown,1,Chicago
+73,Washington Heights,1,Chicago
+74,Washington Park,1,Chicago
+75,West Elsdon,1,Chicago
+76,West Englewood,1,Chicago
+77,West Garfield Park,1,Chicago
+78,West Lawn,1,Chicago
+79,West Pullman,1,Chicago
+80,West Ridge,1,Chicago
+81,West Town,1,Chicago
+82,Woodlawn,1,Chicago
+83,Allerton,4,Bronx
+84,Bathgate,4,Bronx
+85,Baychester,4,Bronx
+86,Bedford Park,4,Bronx
+87,Belmont,4,Bronx
+88,Bronxdale,4,Bronx
+89,Bronx Park South,4,Bronx
+90,Bronx River,4,Bronx
+91,Castle Hill,4,Bronx
+92,City Island,4,Bronx
+93,Claremont Village,4,Bronx
+94,Clason Point,4,Bronx
+95,Concourse,4,Bronx
+96,Concourse Village,4,Bronx
+97,Co-op City,4,Bronx
+98,Country Club,4,Bronx
+99,East Tremont,4,Bronx
+100,Eastchester,4,Bronx
+101,Edenwald,4,Bronx
+102,Edgewater Park,4,Bronx
+103,Fieldston,4,Bronx
+104,Fordham,4,Bronx
+105,High Bridge,4,Bronx
+106,Hunts Point,4,Bronx
+107,Kingsbridge,4,Bronx
+108,Kingsbridge Heights,4,Bronx
+109,Longwood,4,Bronx
+110,Marble Hill,4,Bronx
+111,Melrose,4,Bronx
+112,Morris Heights,4,Bronx
+113,Morris Park,4,Bronx
+114,Morrisania,4,Bronx
+115,Mott Haven,4,Bronx
+116,Mount Eden,4,Bronx
+117,Mount Hope,4,Bronx
+118,North Riverdale,4,Bronx
+119,Norwood,4,Bronx
+120,Olinville,4,Bronx
+121,Parkchester,4,Bronx
+122,Pelham Bay,4,Bronx
+123,Pelham Gardens,4,Bronx
+124,Pelham Parkway,4,Bronx
+125,Port Morris,4,Bronx
+126,Riverdale,4,Bronx
+127,Schuylerville,4,Bronx
+128,Soundview,4,Bronx
+129,Spuyten Duyvil,4,Bronx
+130,Throgs Neck,4,Bronx
+131,Unionport,4,Bronx
+132,University Heights,4,Bronx
+133,Van Nest,4,Bronx
+134,Wakefield,4,Bronx
+135,West Farms,4,Bronx
+136,Westchester Square,4,Bronx
+137,Williamsbridge,4,Bronx
+138,Woodlawn,4,Bronx
+139,Bath Beach,5,Brooklyn
+140,Bay Ridge,5,Brooklyn
+141,Bedford Stuyvesant,5,Brooklyn
+142,Bensonhurst,5,Brooklyn
+143,Bergen Beach,5,Brooklyn
+144,Boerum Hill,5,Brooklyn
+145,Borough Park,5,Brooklyn
+146,Brighton Beach,5,Brooklyn
+147,Broadway Junction,5,Brooklyn
+148,Brooklyn Heights,5,Brooklyn
+149,Brownsville,5,Brooklyn
+150,Bushwick,5,Brooklyn
+151,Canarsie,5,Brooklyn
+152,Carroll Gardens,5,Brooklyn
+153,City Line,5,Brooklyn
+154,Clinton Hill,5,Brooklyn
+155,Cobble Hill,5,Brooklyn
+156,Coney Island,5,Brooklyn
+157,Crown Heights,5,Brooklyn
+158,Cypress Hills,5,Brooklyn
+159,Ditmas Park,5,Brooklyn
+160,Downtown,5,Brooklyn
+161,DUMBO,5,Brooklyn
+162,Dyker Heights,5,Brooklyn
+163,East Flatbush,5,Brooklyn
+164,East New York,5,Brooklyn
+165,East Williamsburg,5,Brooklyn
+166,Farragut,5,Brooklyn
+167,Flatbush,5,Brooklyn
+168,Flatlands,5,Brooklyn
+169,Fort Greene,5,Brooklyn
+170,Fort Hamilton,5,Brooklyn
+171,Fulton Ferry,5,Brooklyn
+172,Georgetown,5,Brooklyn
+173,Gerritsen Beach,5,Brooklyn
+174,Gowanus,5,Brooklyn
+175,Gravesend,5,Brooklyn
+176,Greenpoint,5,Brooklyn
+177,Highland Park,5,Brooklyn
+178,Homecrest,5,Brooklyn
+179,Kensington,5,Brooklyn
+180,Kings Highway,5,Brooklyn
+181,Manhattan Beach,5,Brooklyn
+182,Manhattan Terrace,5,Brooklyn
+183,Mapleton,5,Brooklyn
+184,Marine Park,5,Brooklyn
+185,Midwood,5,Brooklyn
+186,Mill Basin,5,Brooklyn
+187,Mill Island,5,Brooklyn
+188,Navy Yard,5,Brooklyn
+189,New Lots,5,Brooklyn
+190,North Side,5,Brooklyn
+191,Ocean Hill,5,Brooklyn
+192,Ocean Parkway,5,Brooklyn
+193,Paerdegat Basin,5,Brooklyn
+194,Park Slope,5,Brooklyn
+195,Plum Beach,5,Brooklyn
+196,Prospect Heights,5,Brooklyn
+197,Prospect Lefferts Gardens,5,Brooklyn
+198,Prospect Park South,5,Brooklyn
+199,Red Hook,5,Brooklyn
+200,Remsen Village,5,Brooklyn
+201,Rugby,5,Brooklyn
+202,Sea Gate,5,Brooklyn
+203,Sheepshead Bay,5,Brooklyn
+204,South Side,5,Brooklyn
+205,Spring Creek,5,Brooklyn
+206,Starrett City,5,Brooklyn
+207,Stuyvesant Heights,5,Brooklyn
+208,Sunset Park,5,Brooklyn
+209,Tompkins Park North,5,Brooklyn
+210,Vinegar Hill,5,Brooklyn
+211,Weeksville,5,Brooklyn
+212,West Brighton,5,Brooklyn
+213,Williamsburg,5,Brooklyn
+214,Windsor Terrace,5,Brooklyn
+215,Wingate,5,Brooklyn
+216,Battery Park City,3,Manhattan
+217,Beekman Place,3,Manhattan
+218,Carnegie Hill,3,Manhattan
+219,Chelsea,3,Manhattan
+220,Chinatown,3,Manhattan
+221,Civic Center,3,Manhattan
+222,Clinton,3,Manhattan
+223,East Harlem,3,Manhattan
+224,East Village,3,Manhattan
+225,Flatiron,3,Manhattan
+226,Gramercy,3,Manhattan
+227,Greenwich Village,3,Manhattan
+228,Hamilton Heights,3,Manhattan
+229,Harlem (Central),3,Manhattan
+230,Herald Square,3,Manhattan
+231,Hudson Square,3,Manhattan
+232,Inwood,3,Manhattan
+233,Lenox Hill,3,Manhattan
+234,Lincoln Square,3,Manhattan
+235,Little Italy,3,Manhattan
+236,Lower East Side,3,Manhattan
+237,Manhattan Valley,3,Manhattan
+238,Manhattanville,3,Manhattan
+239,Midtown South,3,Manhattan
+240,Midtown,3,Manhattan
+241,Morningside Heights,3,Manhattan
+242,Murray Hill,3,Manhattan
+243,NoHo,3,Manhattan
+244,Roosevelt Island,3,Manhattan
+245,SoHo,3,Manhattan
+246,South Village,3,Manhattan
+247,Stuyvesant Town,3,Manhattan
+248,Sutton Place,3,Manhattan
+249,Times Square,3,Manhattan
+250,Tribeca,3,Manhattan
+251,Tudor City,3,Manhattan
+252,Turtle Bay,3,Manhattan
+253,Union Square,3,Manhattan
+254,Upper East Side,3,Manhattan
+255,Upper West Side,3,Manhattan
+256,Wall Street,3,Manhattan
+257,Washington Heights,3,Manhattan
+258,West Village,3,Manhattan
+259,Yorkville,3,Manhattan
+260,Arverne,6,Queens
+261,Astoria,6,Queens
+262,Astoria Heights,6,Queens
+263,Auburndale,6,Queens
+264,Bay Terrace,6,Queens
+265,Bayside,6,Queens
+266,Bayswater,6,Queens
+267,Beechhurst,6,Queens
+268,Bellaire,6,Queens
+269,Belle Harbor,6,Queens
+270,Bellerose,6,Queens
+271,Blissville,6,Queens
+272,Breezy Point,6,Queens
+273,Briarwood,6,Queens
+274,Broad Channel,6,Queens
+275,Brookville,6,Queens
+276,Cambria Heights,6,Queens
+277,Clearview,6,Queens
+278,College Point,6,Queens
+279,Douglaston,6,Queens
+280,Dutch Kills,6,Queens
+281,East Elmhurst,6,Queens
+282,Edgemere,6,Queens
+283,Elmhurst,6,Queens
+284,Far Rockaway,6,Queens
+285,Floral Park,6,Queens
+286,Flushing,6,Queens
+287,Flushing (Downtown),6,Queens
+288,Forest Hills,6,Queens
+289,Forest Hills Gardens,6,Queens
+290,Fresh Meadows,6,Queens
+291,Glen Oaks,6,Queens
+292,Glendale,6,Queens
+293,Hammels,6,Queens
+294,Hillcrest,6,Queens
+295,Hollis,6,Queens
+296,Holliswood,6,Queens
+297,Howard Beach,6,Queens
+298,Hunters Point,6,Queens
+299,Jackson Heights,6,Queens
+300,Jamaica,6,Queens
+301,Jamaica Center,6,Queens
+302,Jamaica Estates,6,Queens
+303,Jamaica Hills,6,Queens
+304,Kew Gardens,6,Queens
+305,Kew Gardens Hills,6,Queens
+306,Laurelton,6,Queens
+307,Lefrak City,6,Queens
+308,Lindenwood,6,Queens
+309,Little Neck,6,Queens
+310,Long Island City,6,Queens
+311,Malba,6,Queens
+312,Maspeth,6,Queens
+313,Middle Village,6,Queens
+314,Murray Hill,6,Queens
+315,Neponsit,6,Queens
+316,New Hyde Park,6,Queens
+317,North Corona,6,Queens
+318,Oakland Gardens,6,Queens
+319,Ozone Park,6,Queens
+320,Pomonok,6,Queens
+321,Queens Village,6,Queens
+322,Queensboro Hill,6,Queens
+323,Ravenswood,6,Queens
+324,Rego Park,6,Queens
+325,Richmond Hill,6,Queens
+326,Ridgewood,6,Queens
+327,Rochdale,6,Queens
+328,Rockaway Park,6,Queens
+329,Rosedale,6,Queens
+330,Roxbury,6,Queens
+331,Seaside,6,Queens
+332,Somerville,6,Queens
+333,South Corona,6,Queens
+334,South Jamaica,6,Queens
+335,South Ozone Park,6,Queens
+336,Springfield Gardens,6,Queens
+337,St. Albans,6,Queens
+338,Steinway,6,Queens
+339,Sunnyside,6,Queens
+340,Sunnyside Gardens,6,Queens
+341,Utopia,6,Queens
+342,Whitestone,6,Queens
+343,Woodhaven,6,Queens
+344,Woodside,6,Queens
+345,Annadale,7,Staten Island
+346,Arden Heights,7,Staten Island
+347,Arlington,7,Staten Island
+348,Arrochar,7,Staten Island
+349,Bay Terrace,7,Staten Island
+350,Bloomfield,7,Staten Island
+351,Bulls Head,7,Staten Island
+352,Butler Manor,7,Staten Island
+353,Castleton Corners,7,Staten Island
+354,Charleston,7,Staten Island
+355,Chelsea,7,Staten Island
+356,Clifton,7,Staten Island
+357,Concord,7,Staten Island
+358,Dongan Hills,7,Staten Island
+359,Egbertville,7,Staten Island
+360,Elm Park,7,Staten Island
+361,Eltingville,7,Staten Island
+362,Emerson Hill,7,Staten Island
+363,Fox Hills,7,Staten Island
+364,Graniteville,7,Staten Island
+365,Grant City,7,Staten Island
+366,Grasmere,7,Staten Island
+367,Great Kills,7,Staten Island
+368,Greenridge,7,Staten Island
+369,Grymes Hill,7,Staten Island
+370,Heartland Village,7,Staten Island
+371,Howland Hook,7,Staten Island
+372,Huguenot,7,Staten Island
+373,Lighthouse Hill,7,Staten Island
+374,Livingston,7,Staten Island
+375,Manor Heights,7,Staten Island
+376,Mariner's Harbor,7,Staten Island
+377,Midland Beach,7,Staten Island
+378,New Brighton,7,Staten Island
+379,New Dorp,7,Staten Island
+380,New Dorp Beach,7,Staten Island
+381,New Springville,7,Staten Island
+382,Oakwood,7,Staten Island
+383,Old Place,7,Staten Island
+384,Old Town,7,Staten Island
+385,Park Hill,7,Staten Island
+386,Pleasant Plains,7,Staten Island
+387,Port Ivory,7,Staten Island
+388,Port Richmond,7,Staten Island
+389,Prince's Bay,7,Staten Island
+390,Randall Manor,7,Staten Island
+391,Richmond Town,7,Staten Island
+392,Richmond Valley,7,Staten Island
+393,Rosebank,7,Staten Island
+394,Rossville,7,Staten Island
+395,Sandy Ground,7,Staten Island
+396,Shore Acres,7,Staten Island
+397,Silver Lake,7,Staten Island
+398,South Beach,7,Staten Island
+399,St. George,7,Staten Island
+400,Stapleton,7,Staten Island
+401,Sunnyside,7,Staten Island
+402,Todt Hill,7,Staten Island
+403,Tompkinsville,7,Staten Island
+404,Tottenville,7,Staten Island
+405,Travis,7,Staten Island
+406,Ward Hill,7,Staten Island
+407,West Brighton,7,Staten Island
+408,Westerleigh,7,Staten Island
+409,Willowbrook,7,Staten Island
+410,Woodrow,7,Staten Island
+411,Adams-Normandie,8,Los Angeles
+412,Chestnut Hill Historic District,2,Philadelphia
+413,Alsace,8,Los Angeles
 414,Academy Gardens,2,Philadelphia
-415,Allegheny West,2,Philadelphia
-416,Andorra,2,Philadelphia
-417,Angora,2,Philadelphia
-418,Ashton-Woodenbridge,2,Philadelphia
-419,Bartram Village,2,Philadelphia
-420,Beggarstown,2,Philadelphia
-421,Bella Vista,2,Philadelphia
-422,Belmont Village,2,Philadelphia
-423,Black Bottom,2,Philadelphia
-424,Brewerytown,2,Philadelphia
-425,Bridesburg,2,Philadelphia
-426,Burholme,2,Philadelphia
-427,Bustleton,2,Philadelphia
-428,Byberry,2,Philadelphia
-429,Callowhill,2,Philadelphia
-430,Carroll Park,2,Philadelphia
-431,Castor Gardens,2,Philadelphia
-432,Cathedral Park,2,Philadelphia
-433,Cecil B. Moore,2,Philadelphia
-434,Cedar Park,2,Philadelphia
-435,Cedarbrook,2,Philadelphia
-436,Center City East,2,Philadelphia
-437,Central South Philadelphia,2,Philadelphia
-438,Chestnut Hill,2,Philadelphia
-439,Clearview,2,Philadelphia
-440,Cobbs Creek,2,Philadelphia
-441,Crescentville,2,Philadelphia
-442,Crestmont Farms,2,Philadelphia
-443,Devil's Pocket,2,Philadelphia
-444,Dickinson Square West,2,Philadelphia
-445,Dunlap,2,Philadelphia
-446,East Falls,2,Philadelphia
-447,East Oak Lane,2,Philadelphia
-448,East Passyunk Crossing,2,Philadelphia
-449,Eastwick,2,Philadelphia
-450,Elmwood Park,2,Philadelphia
-451,Fairhill,2,Philadelphia
-452,Fairmount,2,Philadelphia
-453,Feltonville,2,Philadelphia
-454,Fern Rock,2,Philadelphia
-455,Fitler Square,2,Philadelphia
-456,Fox Chase,2,Philadelphia
-457,Francisville,2,Philadelphia
-458,Frankford,2,Philadelphia
-459,Franklintown,2,Philadelphia
-460,Franklinville,2,Philadelphia
-461,French Quarter,2,Philadelphia
-462,Garden Court,2,Philadelphia
-463,Germantown,2,Philadelphia
-464,Girard Estate,2,Philadelphia
-465,Glenwood,2,Philadelphia
-466,Grays Ferry,2,Philadelphia
-467,Haddington,2,Philadelphia
-468,Harrowgate,2,Philadelphia
-469,Hartranft,2,Philadelphia
-470,Haverford North,2,Philadelphia
-471,Hawthorne,2,Philadelphia
-472,Hog Island,2,Philadelphia
-473,Holme Circle,2,Philadelphia
-474,Holmesburg,2,Philadelphia
-475,Hunting Park,2,Philadelphia
-476,Italian Market,2,Philadelphia
-477,Jewelers' Row,2,Philadelphia
-478,Juniata,2,Philadelphia
-479,Kensington,2,Philadelphia
-480,Kingsessing,2,Philadelphia
-481,Krewstown,2,Philadelphia
-482,Lawncrest,2,Philadelphia
-483,Lawndale,2,Philadelphia
-484,Lexington Park,2,Philadelphia
-485,Logan Square,2,Philadelphia
-486,Logan,2,Philadelphia
-487,Lower Moyamensing,2,Philadelphia
-488,Ludlow,2,Philadelphia
-489,Manayunk,2,Philadelphia
-490,Mantua,2,Philadelphia
-491,Marconi Plaza,2,Philadelphia
-492,Mayfair,2,Philadelphia
-493,Mill Creek,2,Philadelphia
-494,Millbrook,2,Philadelphia
-495,Modena Park,2,Philadelphia
-496,Morrell Park,2,Philadelphia
-497,Morris Park,2,Philadelphia
-498,Morton,2,Philadelphia
-499,Mount Airy,2,Philadelphia
-500,Mount Moriah,2,Philadelphia
-501,Moyamensing,2,Philadelphia
-502,Naval Square,2,Philadelphia
-503,Newbold,2,Philadelphia
-504,Normandy,2,Philadelphia
-505,North Central,2,Philadelphia
-506,Northern Liberties,2,Philadelphia
-507,Northwood,2,Philadelphia
-508,Ogontz,2,Philadelphia
-509,Old City,2,Philadelphia
-510,Olde Kensington,2,Philadelphia
-511,Olde Richmond,2,Philadelphia
-512,Olney-Oak Lane,2,Philadelphia
-513,Olney,2,Philadelphia
-514,Overbrook Farms,2,Philadelphia
-515,Overbrook,2,Philadelphia
-516,Oxford Circle,2,Philadelphia
-517,Parkland,2,Philadelphia
-518,Parkside,2,Philadelphia
-519,Parkwood,2,Philadelphia
-520,Paschall,2,Philadelphia
-521,Passyunk Square,2,Philadelphia
-522,Penn Center,2,Philadelphia
-523,Pennsport,2,Philadelphia
-524,Pennypack,2,Philadelphia
-525,Little Saigon,2,Philadelphia
-526,Point Breeze,2,Philadelphia
-527,Poplar,2,Philadelphia
-528,Port Richmond,2,Philadelphia
-529,Powelton Village,2,Philadelphia
-530,Queen Village,2,Philadelphia
-531,Rhawnhurst,2,Philadelphia
-532,River Wards,2,Philadelphia
-533,Roxborough,2,Philadelphia
-534,Ryers,2,Philadelphia
-535,Saunders Park,2,Philadelphia
-536,Schuylkill,2,Philadelphia
-537,Sharswood,2,Philadelphia
-538,Somerton,2,Philadelphia
-539,Southwark,2,Philadelphia
-540,Southwest Center City,2,Philadelphia
-541,Southwest Schuylkill,2,Philadelphia
-542,Spring Garden,2,Philadelphia
-543,Spruce Hill,2,Philadelphia
-544,Squirrel Hill,2,Philadelphia
-545,Stanton,2,Philadelphia
-546,Strawberry Mansion,2,Philadelphia
-547,Swampoodle,2,Philadelphia
-548,Tacony,2,Philadelphia
-549,Thai Town,2,Philadelphia
-550,Torresdale,2,Philadelphia
-551,Upper Holmesburg,2,Philadelphia
-552,Walnut Hill,2,Philadelphia
-553,Washington Square West,2,Philadelphia
-554,West Kensington,2,Philadelphia
-555,West Oak Lane,2,Philadelphia
-556,Wharton,2,Philadelphia
-557,Whitman,2,Philadelphia
-558,Winchester Park,2,Philadelphia
-559,Wissahickon,2,Philadelphia
-560,Wissinoming,2,Philadelphia
-561,Wister,2,Philadelphia
-562,Woodland Terrace,2,Philadelphia
-563,Wynnefield Heights,2,Philadelphia
-564,Wynnefield,2,Philadelphia
-565,Yorktown,2,Philadelphia
-566,Blue Bell Hill,2,Philadelphia
-567,Centennial District,2,Philadelphia
-568,Christian Street Historic District,2,Philadelphia
-569,Druim Moir Historic District,2,Philadelphia
-570,Elfreth's Alley,2,Philadelphia
-571,Fabric Row,2,Philadelphia
-572,Lower North Philadelphia,2,Philadelphia
-573,Nicetown–Tioga,2,Philadelphia
-574,North Philadelphia East,2,Philadelphia
-575,North Philadelphia West,2,Philadelphia
-576,Northwest Philadelphia,2,Philadelphia
-577,Penn's Landing,2,Philadelphia
-578,Philadelphia Badlands,2,Philadelphia
-579,Philadelphia Koreatown,2,Philadelphia
-580,Sansom Row,2,Philadelphia
-581,Society Hill,2,Philadelphia
-582,South Philadelphia Sports Complex,2,Philadelphia
-583,Upper North Philadelphia,2,Philadelphia
-584,West Passyunk,2,Philadelphia
-585,West Philadelphia Streetcar Suburb Historic District,2,Philadelphia
+415,Angelino Heights,8,Los Angeles
+416,Allegheny West,2,Philadelphia
+417,Angeles Mesa,8,Los Angeles
+418,Andorra,2,Philadelphia
+419,Angelus Vista,8,Los Angeles
+420,Angora,2,Philadelphia
+421,Arleta,8,Los Angeles
+422,Ashton-Woodenbridge,2,Philadelphia
+423,Arlington Heights,8,Los Angeles
+424,Bartram Village,2,Philadelphia
+425,Arts District,8,Los Angeles
+426,Beggarstown,2,Philadelphia
+427,Atwater Village,8,Los Angeles
+428,Bella Vista,2,Philadelphia
+429,Baldwin Hills,8,Los Angeles
+430,Belmont Village,2,Philadelphia
+431,Baldwin Hills/Crenshaw,8,Los Angeles
+432,Black Bottom,2,Philadelphia
+433,Baldwin Village,8,Los Angeles
+434,Brewerytown,2,Philadelphia
+435,Baldwin Vista,8,Los Angeles
+436,Bridesburg,2,Philadelphia
+437,Beachwood Canyon,8,Los Angeles
+438,Burholme,2,Philadelphia
+439,"Bel Air, Bel-Air or Bel Air Estates",8,Los Angeles
+440,Bustleton,2,Philadelphia
+441,Benedict Canyon,8,Los Angeles
+442,Byberry,2,Philadelphia
+443,Beverly Crest,8,Los Angeles
+444,Callowhill,2,Philadelphia
+445,Beverly Glen,8,Los Angeles
+446,Carroll Park,2,Philadelphia
+447,Beverly Grove,8,Los Angeles
+448,Castor Gardens,2,Philadelphia
+449,Beverly Hills Post Office,8,Los Angeles
+450,Cathedral Park,2,Philadelphia
+451,Beverly Park,8,Los Angeles
+452,Cecil B. Moore,2,Philadelphia
+453,Beverlywood,8,Los Angeles
+454,Cedar Park,2,Philadelphia
+455,Boyle Heights,8,Los Angeles
+456,Cedarbrook,2,Philadelphia
+457,Brentwood,8,Los Angeles
+458,Center City East,2,Philadelphia
+459,Brentwood Circle,8,Los Angeles
+460,Central South Philadelphia,2,Philadelphia
+461,Brentwood Glen,8,Los Angeles
+462,Chestnut Hill,2,Philadelphia
+463,Broadway-Manchester,8,Los Angeles
+464,Clearview,2,Philadelphia
+465,Brookside,8,Los Angeles
+466,Cobbs Creek,2,Philadelphia
+467,Bunker Hill,8,Los Angeles
+468,Crescentville,2,Philadelphia
+469,Byzantine-Latino Quarter,8,Los Angeles
+470,Crestmont Farms,2,Philadelphia
+471,Cahuenga Pass,8,Los Angeles
+472,Devil's Pocket,2,Philadelphia
+473,Canoga Park,8,Los Angeles
+474,Dickinson Square West,2,Philadelphia
+475,Canterbury Knolls,8,Los Angeles
+476,Dunlap,2,Philadelphia
+477,Carthay,8,Los Angeles
+478,East Falls,2,Philadelphia
+479,Carthay Circle,8,Los Angeles
+480,East Oak Lane,2,Philadelphia
+481,Castle Heights,8,Los Angeles
+482,East Passyunk Crossing,2,Philadelphia
+483,Central-Alameda,8,Los Angeles
+484,Eastwick,2,Philadelphia
+485,Central City,8,Los Angeles
+486,Elmwood Park,2,Philadelphia
+487,Century City,8,Los Angeles
+488,Fairhill,2,Philadelphia
+489,Chatsworth,8,Los Angeles
+490,Fairmount,2,Philadelphia
+491,Chesterfield Square,8,Los Angeles
+492,Feltonville,2,Philadelphia
+493,Cheviot Hills,8,Los Angeles
+494,Fern Rock,2,Philadelphia
+495,Chinatown,8,Los Angeles
+496,Fitler Square,2,Philadelphia
+497,Civic Center,8,Los Angeles
+498,Fox Chase,2,Philadelphia
+499,Country Club Park,8,Los Angeles
+500,Francisville,2,Philadelphia
+501,Crenshaw,8,Los Angeles
+502,Frankford,2,Philadelphia
+503,Crenshaw Manor,8,Los Angeles
+504,Franklintown,2,Philadelphia
+505,Crestview,8,Los Angeles
+506,Franklinville,2,Philadelphia
+507,Crestwood Hills,8,Los Angeles
+508,French Quarter,2,Philadelphia
+509,Cypress Park,8,Los Angeles
+510,Garden Court,2,Philadelphia
+511,Del Rey,8,Los Angeles
+512,Germantown,2,Philadelphia
+513,Downtown,8,Los Angeles
+514,Girard Estate,2,Philadelphia
+515,Eagle Rock,8,Los Angeles
+516,Glenwood,2,Philadelphia
+517,East Gate Bel Air,8,Los Angeles
+518,Grays Ferry,2,Philadelphia
+519,East Hollywood,8,Los Angeles
+520,Haddington,2,Philadelphia
+521,Echo Park,8,Los Angeles
+522,Harrowgate,2,Philadelphia
+523,Edendale,8,Los Angeles
+524,Hartranft,2,Philadelphia
+525,El Sereno,8,Los Angeles
+526,Haverford North,2,Philadelphia
+527,Elysian Heights,8,Los Angeles
+528,Hawthorne,2,Philadelphia
+529,Elysian Park,8,Los Angeles
+530,Hog Island,2,Philadelphia
+531,Elysian Valley,8,Los Angeles
+532,Holme Circle,2,Philadelphia
+533,Encino,8,Los Angeles
+534,Holmesburg,2,Philadelphia
+535,Exposition Park,8,Los Angeles
+536,Hunting Park,2,Philadelphia
+537,Faircrest Heights,8,Los Angeles
+538,Italian Market,2,Philadelphia
+539,Fairfax,8,Los Angeles
+540,Jewelers' Row,2,Philadelphia
+541,Fashion District,8,Los Angeles
+542,Juniata,2,Philadelphia
+543,"Filipinotown, Historic",8,Los Angeles
+544,Kensington,2,Philadelphia
+545,Financial District,8,Los Angeles
+546,Kingsessing,2,Philadelphia
+547,Florence,8,Los Angeles
+548,Krewstown,2,Philadelphia
+549,Flower District,8,Los Angeles
+550,Lawncrest,2,Philadelphia
+551,Franklin Hills,8,Los Angeles
+552,Lawndale,2,Philadelphia
+553,Gallery Row,8,Los Angeles
+554,Lexington Park,2,Philadelphia
+555,Garvanza,8,Los Angeles
+556,Logan Square,2,Philadelphia
+557,Glassell Park,8,Los Angeles
+558,Logan,2,Philadelphia
+559,Gramercy Park,8,Los Angeles
+560,Lower Moyamensing,2,Philadelphia
+561,Granada Hills,8,Los Angeles
+562,Ludlow,2,Philadelphia
+563,Green Meadows,8,Los Angeles
+564,Manayunk,2,Philadelphia
+565,Griffith Park,8,Los Angeles
+566,Mantua,2,Philadelphia
+567,Hancock Park,8,Los Angeles
+568,Marconi Plaza,2,Philadelphia
+569,Hansen Heights,8,Los Angeles
+570,Mayfair,2,Philadelphia
+571,Harbor City,8,Los Angeles
+572,Mill Creek,2,Philadelphia
+573,Harbor Gateway,8,Los Angeles
+574,Millbrook,2,Philadelphia
+575,Harvard Heights,8,Los Angeles
+576,Modena Park,2,Philadelphia
+577,Harvard Park,8,Los Angeles
+578,Morrell Park,2,Philadelphia
+579,Hermon,8,Los Angeles
+580,Morris Park,2,Philadelphia
+581,Highland Park,8,Los Angeles
+582,Morton,2,Philadelphia
+583,Historic Filipinotown,8,Los Angeles
+584,Mount Airy,2,Philadelphia
+585,Historic Core,8,Los Angeles
+586,Mount Moriah,2,Philadelphia
+587,Hollywood,8,Los Angeles
+588,Moyamensing,2,Philadelphia
+589,Hollywood Dell,8,Los Angeles
+590,Naval Square,2,Philadelphia
+591,Hollywood Hills,8,Los Angeles
+592,Newbold,2,Philadelphia
+593,Hollywood Hills West,8,Los Angeles
+594,Normandy,2,Philadelphia
+595,Holmby Hills,8,Los Angeles
+596,North Central,2,Philadelphia
+597,Hyde Park,8,Los Angeles
+598,Northern Liberties,2,Philadelphia
+599,L.A. Downtown Industrial District,8,Los Angeles
+600,Northwood,2,Philadelphia
+601,Jefferson Park,8,Los Angeles
+602,Ogontz,2,Philadelphia
+603,Jewelry District,8,Los Angeles
+604,Old City,2,Philadelphia
+605,Kinney Heights,8,Los Angeles
+606,Olde Kensington,2,Philadelphia
+607,Koreatown,8,Los Angeles
+608,Olde Richmond,2,Philadelphia
+609,La Cienega Heights,8,Los Angeles
+610,Olney-Oak Lane,2,Philadelphia
+611,Ladera,8,Los Angeles
+612,Olney,2,Philadelphia
+613,Lafayette Square,8,Los Angeles
+614,Overbrook Farms,2,Philadelphia
+615,Lake Balboa,8,Los Angeles
+616,Overbrook,2,Philadelphia
+617,Lake View Terrace,8,Los Angeles
+618,Oxford Circle,2,Philadelphia
+619,Larchmont,8,Los Angeles
+620,Parkland,2,Philadelphia
+621,Laurel Canyon,8,Los Angeles
+622,Parkside,2,Philadelphia
+623,Leimert Park,8,Los Angeles
+624,Parkwood,2,Philadelphia
+625,Lincoln Heights,8,Los Angeles
+626,Paschall,2,Philadelphia
+627,Little Armenia,8,Los Angeles
+628,Passyunk Square,2,Philadelphia
+629,Little Bangladesh,8,Los Angeles
+630,Penn Center,2,Philadelphia
+631,Little Ethiopia,8,Los Angeles
+632,Pennsport,2,Philadelphia
+633,Little Italy,8,Los Angeles
+634,Pennypack,2,Philadelphia
+635,Little Tokyo,8,Los Angeles
+636,Little Saigon,2,Philadelphia
+637,Los Feliz,8,Los Angeles
+638,Point Breeze,2,Philadelphia
+639,Manchester Square,8,Los Angeles
+640,Poplar,2,Philadelphia
+641,Mandeville Canyon,8,Los Angeles
+642,Port Richmond,2,Philadelphia
+643,Marina Peninsula,8,Los Angeles
+644,Powelton Village,2,Philadelphia
+645,Mar Vista,8,Los Angeles
+646,Queen Village,2,Philadelphia
+647,Melrose Hill,8,Los Angeles
+648,Rhawnhurst,2,Philadelphia
+649,Mid-City,8,Los Angeles
+650,River Wards,2,Philadelphia
+651,Mid-City Heights,8,Los Angeles
+652,Roxborough,2,Philadelphia
+653,Mid-City West,8,Los Angeles
+654,Ryers,2,Philadelphia
+655,Mid-Wilshire,8,Los Angeles
+656,Saunders Park,2,Philadelphia
+657,Miracle Mile,8,Los Angeles
+658,Schuylkill,2,Philadelphia
+659,Mission Hills,8,Los Angeles
+660,Sharswood,2,Philadelphia
+661,Montecito Heights,8,Los Angeles
+662,Somerton,2,Philadelphia
+663,Monterey Hills,8,Los Angeles
+664,Southwark,2,Philadelphia
+665,Mount Olympus,8,Los Angeles
+666,Southwest Center City,2,Philadelphia
+667,Mount Washington,8,Los Angeles
+668,Southwest Schuylkill,2,Philadelphia
+669,Naud Junction,8,Los Angeles
+670,Spring Garden,2,Philadelphia
+671,Nichols Canyon,8,Los Angeles
+672,Spruce Hill,2,Philadelphia
+673,NoHo Arts District,8,Los Angeles
+674,Squirrel Hill,2,Philadelphia
+675,North Hills,8,Los Angeles
+676,Stanton,2,Philadelphia
+677,North Hollywood,8,Los Angeles
+678,Strawberry Mansion,2,Philadelphia
+679,Northridge,8,Los Angeles
+680,Swampoodle,2,Philadelphia
+681,North University Park,8,Los Angeles
+682,Tacony,2,Philadelphia
+683,Oakwood,8,Los Angeles
+684,Thai Town,2,Philadelphia
+685,Old Bank District,8,Los Angeles
+686,Torresdale,2,Philadelphia
+687,Old Chinatown,8,Los Angeles
+688,Upper Holmesburg,2,Philadelphia
+689,Outpost Estates,8,Los Angeles
+690,Walnut Hill,2,Philadelphia
+691,Pacific Palisades,8,Los Angeles
+692,Washington Square West,2,Philadelphia
+693,Pacoima,8,Los Angeles
+694,West Kensington,2,Philadelphia
+695,Palms,8,Los Angeles
+696,West Oak Lane,2,Philadelphia
+697,Panorama City,8,Los Angeles
+698,Wharton,2,Philadelphia
+699,Park La Brea,8,Los Angeles
+700,Whitman,2,Philadelphia
+701,Picfair Village,8,Los Angeles
+702,Winchester Park,2,Philadelphia
+703,Pico-Robertson,8,Los Angeles
+704,Wissahickon,2,Philadelphia
+705,Pico-Union,8,Los Angeles
+706,Wissinoming,2,Philadelphia
+707,Playa del Rey,8,Los Angeles
+708,Wister,2,Philadelphia
+709,Playa Vista,8,Los Angeles
+710,Woodland Terrace,2,Philadelphia
+711,Porter Ranch,8,Los Angeles
+712,Wynnefield Heights,2,Philadelphia
+713,Rancho Park,8,Los Angeles
+714,Wynnefield,2,Philadelphia
+715,Reseda,8,Los Angeles
+716,Yorktown,2,Philadelphia
+717,Reynier Village,8,Los Angeles
+718,Blue Bell Hill,2,Philadelphia
+719,Rose Hills,8,Los Angeles
+720,Centennial District,2,Philadelphia
+721,Rustic Canyon,8,Los Angeles
+722,Christian Street Historic District,2,Philadelphia
+723,San Pedro,8,Los Angeles
+724,Druim Moir Historic District,2,Philadelphia
+725,Sawtelle,8,Los Angeles
+726,Elfreth's Alley,2,Philadelphia
+727,Shadow Hills,8,Los Angeles
+728,Fabric Row,2,Philadelphia
+729,Sherman Oaks,8,Los Angeles
+730,Lower North Philadelphia,2,Philadelphia
+731,Sherman Village,8,Los Angeles
+732,Nicetown–Tioga,2,Philadelphia
+733,Silver Lake,8,Los Angeles
+734,North Philadelphia East,2,Philadelphia
+735,Skid Row,8,Los Angeles
+736,North Philadelphia West,2,Philadelphia
+737,Solano Canyon,8,Los Angeles
+738,Northwest Philadelphia,2,Philadelphia
+739,Sonoratown,8,Los Angeles
+740,Penn's Landing,2,Philadelphia
+741,"South Central, Historic",8,Los Angeles
+742,Philadelphia Badlands,2,Philadelphia
+743,South Carthay,8,Los Angeles
+744,Philadelphia Koreatown,2,Philadelphia
+745,South Park,8,Los Angeles
+746,Sansom Row,2,Philadelphia
+747,South Robertson,8,Los Angeles
+748,Society Hill,2,Philadelphia
+749,Spaulding Square,8,Los Angeles
+750,South Philadelphia Sports Complex,2,Philadelphia
+751,Studio City,8,Los Angeles
+752,Upper North Philadelphia,2,Philadelphia
+753,Sunland,8,Los Angeles
+754,West Passyunk,2,Philadelphia
+755,Sunset Junction,8,Los Angeles
+756,West Philadelphia Streetcar Suburb Historic District,2,Philadelphia
+757,Sun Valley,8,Los Angeles
+758,Sylmar,8,Los Angeles
+759,Tarzana,8,Los Angeles
+760,Terminal Island,8,Los Angeles
+761,Thai Town,8,Los Angeles
+762,Toluca Lake,8,Los Angeles
+763,Toy District,8,Los Angeles
+764,Tujunga,8,Los Angeles
+765,University Hills,8,Los Angeles
+766,University Park,8,Los Angeles
+767,"University Park, North",8,Los Angeles
+768,Valley Glen,8,Los Angeles
+769,Valley Village,8,Los Angeles
+770,Van Nuys,8,Los Angeles
+771,Venice,8,Los Angeles
+772,Vermont Knolls,8,Los Angeles
+773,Vermont-Slauson,8,Los Angeles
+774,Vermont Square,8,Los Angeles
+775,Vermont Vista,8,Los Angeles
+776,Victor Heights,8,Los Angeles
+777,Victoria Park,8,Los Angeles
+778,Village Green,8,Los Angeles
+779,Virgil Village,8,Los Angeles
+780,Warehouse District,8,Los Angeles
+781,Warner Center,8,Los Angeles
+782,Watts,8,Los Angeles
+783,Wellington Square,8,Los Angeles
+784,West Adams,8,Los Angeles
+785,West Adams Heights,8,Los Angeles
+786,Westchester,8,Los Angeles
+787,Westdale,8,Los Angeles
+788,Western Heights,8,Los Angeles
+789,West Hills,8,Los Angeles
+790,Westlake,8,Los Angeles
+791,West Los Angeles,8,Los Angeles
+792,Westside Village,8,Los Angeles
+793,Westwood,8,Los Angeles
+794,Westwood Village,8,Los Angeles
+795,Whitley Heights,8,Los Angeles
+796,Wholesale District,8,Los Angeles
+797,Wilmington,8,Los Angeles
+798,Wilshire Center,8,Los Angeles
+799,Wilshire Park,8,Los Angeles
+800,Wilshire Vista,8,Los Angeles
+801,Windsor Square,8,Los Angeles
+802,Winnetka,8,Los Angeles
+803,Woodland Hills,8,Los Angeles
+804,Yucca Corridor,8,Los Angeles

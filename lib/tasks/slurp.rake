@@ -9,7 +9,7 @@ namespace :slurp do
     p "All cities have been destroyed, there are now #{City.count} cities in the database"
 
     puts "importing cities csv......"
-    csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_cities.csv"))
+    csv_text = File.read(Rails.root.join("lib", "csvs", "new_sample_data_cities.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     puts "displaying imported csv......"
     # puts csv
@@ -36,7 +36,7 @@ namespace :slurp do
     p "removing all previous neighborhoods in table......"
     Neighborhood.destroy_all
     p "All neighborhoods have been destroyed, there are now #{Neighborhood.count} cities in the database"
-    csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_neighborhoods.csv"))
+    csv_text = File.read(Rails.root.join("lib", "csvs", "new_sample_data_neighborhoods.csv"))
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
     p "importing csv, here is all the data in the csv....."
     # puts csv

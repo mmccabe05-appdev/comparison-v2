@@ -69,7 +69,8 @@ task({ :sample_data => :environment}) do
 
   # update each neighborhood lat and lng with googleMaps API
   Neighborhood.all.each do |a_neighborhood|
-    placeholder = a_neighborhood.name + ", " + a_neighborhood.city.name
+    begin
+    placeholder = a_neighborhood.name.tr('\'', '') + ", " + a_neighborhood.city.name
     map_name = CGI.escape(placeholder)
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{map_name}&key=" + ENV.fetch("GMAPS_KEY")
     raw_data = URI.open(url).read
@@ -80,7 +81,10 @@ task({ :sample_data => :environment}) do
 
     a_neighborhood.save
     p a_neighborhood.name + " GMAP URL: " + url
-    p "Lattitude baby?" + a_neighborhood.lat.to_s
+    p "Lattitude baby? " + a_neighborhood.lat.to_s
+    rescue OpenURI::HTTPError => ex
+      puts a_neighborhood.name.tr('\'', '') + "caused an error"
+    end 
   end
 
   City.all.each do |a_city|
@@ -95,7 +99,7 @@ task({ :sample_data => :environment}) do
 
     a_city.save
     p a_city.name + " GMAP URL: " + url
-    p "Lattitude baby?" + a_city.lat.to_s
+    p "Lattitude baby? " + a_city.lat.to_s
   end
 
   City.all.each do |a_city|
