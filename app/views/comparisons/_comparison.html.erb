@@ -1,34 +1,25 @@
 
     <div class="mb-5 mt-5">
       <div class="card">
-        <div class="p-4 bg-white position-relative">
-          <i class="display-4 lh-lg fw-lighter"><b><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %></b>
+        <div class="p-4 pb-0 mb-0 bg-white position-relative">
+          <i class="display-5 lh-lg fw-lighter"><b><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %></b>
           <span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-5 text-decoration-none"><%= link_to comparison.city_1.name, comparison.city_1 %></span>
           is like 
           <b><%= link_to comparison.neighborhood_2.name, comparison.neighborhood_2 %></b>
           <span class="position-absolute top-5 start-10 translate-middle badge rounded-pill bg-light fs-5"><%= link_to comparison.city_2.name, comparison.city_2 %></span> because...</i>
         </div>
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text fs-3"><%= comparison.body %>
+        <div class="card-body mt-0 pt-0">
+          <p class="card-text fs-3 pt-0"><%= comparison.body %>
           
           </p>
           
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
     <%= comparison.net_comparison_score %></span>
-    <div class="container px-4 w-100 text-center">
+    <div class="container px-4 w-100 text-left">
 
-    <div class="row gx5 w-100" >
-           <div class="col"> 
-            <span class="fw-bold fs-4">Overall similarity: <%= comparison.overall_similarity %></span>
-              <span class="fw-lighter"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
-              <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
-              <i class="fa-solid fa-train ms-4"></i> <%= comparison.transportation_similarity %>
-              <i class="fa-solid fa-tree-city ms-4"></i> <%= comparison.built_environment_similarity %>
-            </span>
-            </div>
-          
-          <div class="col">
+    <div class="row w-100 ms-0" >
+          <div class="col ms-0"> 
+            
           <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
           <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
           <% end %> 
@@ -40,6 +31,16 @@
           <%= link_to_unless_current "  #{comparison.comments_count}", comparison, class: 'btn btn-lg btn-outline-success fw-light fa-regular fa-comments text-opacity-50' do %>
           <% link_to "" %> 
           <% end %>
+          </div>
+          
+          <div class="col">
+          <span class="fw-light opacity-50 fs-4">
+              <span class="fw-lighter opacity-50"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
+              <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
+              <i class="fa-solid fa-train ms-4"></i> <%= comparison.transportation_similarity %>
+              <i class="fa-solid fa-tree-city ms-4"></i> <%= comparison.built_environment_similarity %>
+              <i class="fa-solid fa-arrow-right ms-4"></i>
+            </span><span class="ms-4">Overall: <%= comparison.overall_similarity %></span></span>
           </div>
           </div>
       </div>
