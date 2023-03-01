@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+
 
 <div class="hstack gap-3">
 <div><h1>Most recent comparisons</h1></div>
-<div><%= link_to "Add your own!", new_comparison_path, class: "btn btn-primary" %></div>
+<div><%= render 'shared/add_comparison_button' %>
+</div>
 </div>
 
 <% @comparisons.order(created_at: :desc).each do |comparison| %>

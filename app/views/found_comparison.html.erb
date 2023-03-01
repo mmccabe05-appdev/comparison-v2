@@ -20,7 +20,6 @@
  <% if @comparisons_limited_to_target_city.count == 1 %>
       comparison
       <% else %>
-      
       comparisons 
       <% end %> for 
 <%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>) in <%= @query_city.name %>...</h2>
@@ -32,16 +31,22 @@
 
 <% end %>
 <div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
-<h2>People have also compared <%= @query_neighborhood.name %> to neighborhoods<br> in cities other than <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times</h2>
-<% @comparisons_except_in_target_city.each do |comparison| %>
+<% if @comparisons_except_in_target_city.count == 0 %>
+<h2>No one has added a comparison for <%= @query_neighborhood.name %> in a city other than <%= @query_city.name %> yet</h2>
+<% else %>
+<h2>Are there places like <%= @query_neighborhood.name %> in other cities? </h2>
+<h5>
+  People have compared <%= @query_neighborhood.name %> to neighborhoods in cities other than <%= @query_city.name %> <%= @comparisons_except_in_target_city.count %> times, here are the top three...</h5>
+<% @comparisons_except_in_target_city.order(net_comparison_score: :desc).limit(3).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 
+<% end %>
 <% end %>
 </div>
 <hr class="mb-5">
 <div class="shadow-lg p-3 bg-body rounded text-center position-relative mb-5">
 <h2>For good measure, here's every comparison (all <%= @all_comparisons_for_query_neighborhood.count %> of them!) involving <%= @query_neighborhood.name %> sorted by total score...</h2>
-<% @all_comparisons_for_query_neighborhood.each do |comparison| %>
+<% @all_comparisons_for_query_neighborhood.order(net_comparison_score: :desc).limit(3).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
 </div>
