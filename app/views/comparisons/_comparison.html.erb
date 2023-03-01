@@ -1,7 +1,7 @@
 
     <div class="mb-5 mt-5">
       <div class="card">
-        <div class="card-header p-4 bg-white position-relative">
+        <div class="p-4 bg-white position-relative">
           <i class="display-4 lh-lg fw-lighter"><b><%= link_to comparison.neighborhood_1.name, comparison.neighborhood_1 %></b>
           <span class="position-absolute top-20 start-10 translate-middle badge rounded-pill bg-light fs-5 text-decoration-none"><%= link_to comparison.city_1.name, comparison.city_1 %></span>
           is like 
@@ -11,18 +11,24 @@
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text fs-3"><%= comparison.body %>
-          <div class="row mb-4" >
-            <span class="fw-bold fs-4">Overall similarity: <%= comparison.overall_similarity %></span>
-            <span class="fw-lighter">( People similarity: <%= comparison.people_similarity %> |
-            Culinary similarity: <%= comparison.culinary_similarity %> |
-            Transportation similarity: <%= comparison.transportation_similarity %> |
-            Built environment similarity: <%= comparison.built_environment_similarity %>)
-</span>
-          </div>
+          
           </p>
           
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3">
     <%= comparison.net_comparison_score %></span>
+    <div class="container px-4 w-100 text-center">
+
+    <div class="row gx5 w-100" >
+           <div class="col"> 
+            <span class="fw-bold fs-4">Overall similarity: <%= comparison.overall_similarity %></span>
+              <span class="fw-lighter"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
+              <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
+              <i class="fa-solid fa-train ms-4"></i> <%= comparison.transportation_similarity %>
+              <i class="fa-solid fa-tree-city ms-4"></i> <%= comparison.built_environment_similarity %>
+            </span>
+            </div>
+          
+          <div class="col">
           <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
           <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
           <% end %> 
@@ -34,6 +40,9 @@
           <%= link_to_unless_current "  #{comparison.comments_count}", comparison, class: 'btn btn-lg btn-outline-success fw-light fa-regular fa-comments text-opacity-50' do %>
           <% link_to "" %> 
           <% end %>
+          </div>
+          </div>
+      </div>
       </div>
       <div class="card-footer text-muted">
         Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %> 

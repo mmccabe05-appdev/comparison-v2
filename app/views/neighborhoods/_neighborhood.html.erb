@@ -1,7 +1,8 @@
  <div class="row">
     <div class="mb-5 mt-5">
       <div class="card">
-        <div class="card-header fs-1 fw-light">
+        <div class="card-header fs-2 fw-light">
+        <i class="fa-solid fa-map-location-dot"></i>
           <%= @neighborhood.name %>
           (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
         </div>
@@ -19,10 +20,7 @@
           | <strong>Lng:</strong>
             <%= @neighborhood.lng %>
           </p>
-          <p>
-            <strong>Favorite neighborhoods count:</strong>
-            <%= @neighborhood.favorite_neighborhoods_count %> <i>will add in once users start to save neighborhoods</i>
-          </p>
+          
         </div>
         <div class="vr"></div>
           <div>
