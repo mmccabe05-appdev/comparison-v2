@@ -64,9 +64,12 @@ namespace :slurp do
     Comparison.destroy_all
     p "All comparisons have been destroyed, there are now #{Comparison.count} comparison in the database"
     csv_text = File.read(Rails.root.join("lib", "csvs", "sample_data_comparisons.csv"))
+
     csv = CSV.parse(csv_text, :headers => true, :encoding => "ISO-8859-1")
+
     p "importing csv, here is all the data in the csv....."
-    # puts csv
+
+    puts csv
 
     p "loading into the database filling in new comparisons..........."
     csv.each do |row|
@@ -92,8 +95,15 @@ namespace :slurp do
       elsif c.id < 15
         c.user_id = 3
       end
+      p c
       c.save
-      puts "Comparison number #{c.id} saved to database"
+      if c.valid? 
+        c.save
+        puts "Comparison number #{c.id} saved to database"
+      else 
+        p "something went wrong"
+        p c.errors.full_messages
+      end
     end
     puts "There are now #{Comparison.count} rows in the Comparison table"
 
