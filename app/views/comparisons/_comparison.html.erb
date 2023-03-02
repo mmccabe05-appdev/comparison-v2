@@ -17,8 +17,8 @@
     <%= comparison.net_comparison_score %></span>
     <div class="container px-0 w-100 text-left align-items-start ">
 
-    <div class="row w-100 ms-0 mt-5" >
-          <div class="col ms-0 w-50 ps-0"> 
+    <div class="row ms-0 mt-5" >
+          <div class="col ms-0  ps-0"> 
               
             <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
             <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
@@ -33,7 +33,7 @@
             <% end %>
           </div>
           
-          <div class="col me-0 w-50 pe-0 text-end">
+          <div class="col me-0 pe-0 text-end">
             <span class="fw-light opacity-50 fs-4">
                 <span class="fw-lighter opacity-50"><i class="fa-solid fa-people-group"></i> <%= comparison.people_similarity %> 
                 <i class="fa-solid fa-utensils ms-4"></i> <%= comparison.culinary_similarity %>
