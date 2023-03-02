@@ -5,10 +5,10 @@
 <div><%= render 'shared/add_comparison_button' %>
 </div>
 </div>
-
+<ol>
 <% @comparisons.each do |comparison| %>
- <%= render 'comparisons/comparison', comparison: comparison  %>
+ <li class="fs-1"><%= render 'comparisons/comparison', comparison: comparison  %></li>
 <% end %>
-
+</ol>
 
 <%= link_to 'New Comparison', new_comparison_path %>
