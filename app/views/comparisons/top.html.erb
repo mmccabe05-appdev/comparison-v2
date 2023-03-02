@@ -1,0 +1,14 @@
+
+
+<div class="hstack gap-3">
+<div><h1 class="fs-1 fw-lighter"><b><i>Top</i></b> Comparisons All time</h1></div>
+<div><%= render 'shared/add_comparison_button' %>
+</div>
+</div>
+
+<% @comparisons.each do |comparison| %>
+ <%= render 'comparisons/comparison', comparison: comparison  %>
+<% end %>
+
+
+<%= link_to 'New Comparison', new_comparison_path %>

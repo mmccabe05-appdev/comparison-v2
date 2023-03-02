@@ -10,6 +10,12 @@ class ComparisonsController < ApplicationController
     @comparisons = Comparison.all
   end
 
+  def top
+    @comparisons = Comparison.all.order(net_comparison_score: :desc).first(10)
+  end 
+  def worst
+    @comparisons = Comparison.all.order(net_comparison_score: :asc).first(10)
+  end 
   # GET /comparisons/1 or /comparisons/1.json
   def show
   end
