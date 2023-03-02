@@ -5,8 +5,11 @@
         <h2 class="fs-1 fw-lighter">What is the...</h2>
         <select name="query_neighborhood" id="query_neighborhood" class="form-select-lg form-floating w-50" >
           <option selected>Pick a neighborhood you know</option>
-          <% Neighborhood.all.order(:city_id).order(:name).each do |a_neighborhood| %>
-            <option value="<%= a_neighborhood.id %>"><%= a_neighborhood.city.name %> - <%= a_neighborhood.name %></option>
+          <% City.all.each do |each_city| %>
+
+    <% Neighborhood.where(:city=>each_city).all.order(name: :asc).each do |neighborhood| %>
+            <option value="<%= neighborhood.id %>"><%= neighborhood.name_with_city %></option>
+          <% end %>
           <% end %>
         </select>
         <h2 class="fs-1 fw-lighter">of</h2>
@@ -14,7 +17,7 @@
           <select name="query_city" class="form-select-lg w-50">
             <option selected>Pick a city you don't</option>
             <% City.all.each do |a_city| %>
-              <option value="<%= a_city.id %>"><%= a_city.name %></option>
+              <option value="<%= a_city.id %>"><%= a_city.display_name %></option>
             <% end %>
           </select>
         </div>
