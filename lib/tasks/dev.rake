@@ -1,14 +1,22 @@
 desc "Fill the database tables with some sample data"
 require 'uri'
 
-task({ :sample_data => :environment}) do
+task({ :comparisons_and_comments => :environment}) do
+  Rake::Task["slurp:comparisons"].execute
+  Rake::Task["comments:add_comments"].execute
+
+
+end
+
+
+task({ :all_sample_data => :environment}) do
   require 'faker'
   require 'cgi'
   require 'open-uri'
   require 'wikipedia'
 
 
-  p "Initiating sample data"
+  p "Initiating full scale sample data rewrite"
 
   if Rails.env.development?
     p "destroying previous data"
@@ -72,20 +80,8 @@ task({ :sample_data => :environment}) do
 
 
   Rake::Task["slurp:comparisons"].execute
+  Rake::Task["comments:add_comments"].execute
 
 
-  Comparison.all.each do |a_comparison|
-    rand(3..7).times do
-      rand_id = rand(1..User.count)
-
-      new_comment = Comment.create(
-          comparison_id: a_comparison.id,
-          commenter_id: rand_id,
-          body: Faker::Lorem.paragraph(sentence_count: 3)
-        )
-        # p new_comment
-        p new_comment.errors.full_messages
-      end
-  end
 
 end

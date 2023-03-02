@@ -1,13 +1,16 @@
 
-<h1 class="fs-1 fw-lighter">Neighborhoods</h1>
-
+<h1 class="fs-1 fw-lighter">All Neighborhoods</h1>
 <% City.all.each do |each_city| %>
-  <li><%= link_to each_city.name, each_city %><ul>
-    <% Neighborhood.where(:city=>each_city).all.each do |neighborhood| %>
-      <li><%= link_to neighborhood.name, neighborhood %>
+<ul class="list-unstyled card-columns" >
+
+  <li class="fs-4"><%= link_to each_city.display_name, each_city %>
+  <ul style="column-count: 4;">
+    <% Neighborhood.where(:city=>each_city).all.order(name: :asc).each do |neighborhood| %>
+      <li class="fs-6"><%= link_to neighborhood.name, neighborhood %>
       </li>
     <% end %></ul>
     </li>
+    </ul>
 <% end %>
 
 
