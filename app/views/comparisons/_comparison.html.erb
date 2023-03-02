@@ -48,7 +48,7 @@
       <div class="card-footer text-muted text-end fs-small">
         Submitted <%= time_ago_in_words(comparison.created_at) %> ago by <%= comparison.user.username %> 
         <%= link_to 'Edit', edit_comparison_path(comparison) %> |
-        <%= link_to 'Destroy', comparison, method: :delete, data: { confirm: 'Are you sure?' } %> |
+        <%= link_to 'Delete', comparison, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>

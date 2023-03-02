@@ -1,19 +1,17 @@
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_comparison">
   Add your own comparison!
 </button>
-  <div class="modal fade" id="add_comparison" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="add_comparison" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Add a new comparison</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-<%= link_to "Add your own !", new_comparison_path, class: "btn btn-primary" %>
+        <%= render 'form', comparison: Comparison.new %>
       </div>
       <div class="modal-footer">
-        
       </div>
     </div>
   </div>
-</div>
