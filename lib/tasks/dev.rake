@@ -15,7 +15,6 @@ task({ :all_sample_data => :environment}) do
   require 'open-uri'
   require 'wikipedia'
 
-
   p "Initiating full scale sample data rewrite"
 
   if Rails.env.development?
@@ -66,10 +65,6 @@ task({ :all_sample_data => :environment}) do
 
   p "#{User.count} users created"
 
-  # Want to load the other pieces of the database once 
-  # Rake:slurp:cities
-  # Rake:slurp:neighborhoods
-  # Rake:slurp:comparisons
 
   Rake::Task["slurp:cities"].execute
   Rake::Task["slurp:neighborhoods"].execute
@@ -81,7 +76,5 @@ task({ :all_sample_data => :environment}) do
 
   Rake::Task["slurp:comparisons"].execute
   Rake::Task["comments:add_comments"].execute
-
-
 
 end

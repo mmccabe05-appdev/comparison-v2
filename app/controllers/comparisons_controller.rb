@@ -75,7 +75,7 @@ class ComparisonsController < ApplicationController
 
   # PATCH/PUT /comparisons/1 or /comparisons/1.json
   def update
-
+    @comparison.update(comparison_params)
     @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4.0
 
     @comparison.net_comparison_score = @comparison.overall_similarity * @comparison.net_votes
