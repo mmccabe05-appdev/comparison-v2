@@ -8,8 +8,9 @@
         </div>
         <div class="card-body">
 
-        <div class="hstack gap-3">
-        <div class="bg-ligt w-50">
+        <div class="row">
+        <div class="col bg-ligt">
+        <div>
           <h5 class="card-title"></h5>
           <p class="card-text fs-3">
           <p><%= @city.description %></p>
@@ -20,22 +21,30 @@
           | <strong>Lng:</strong>
             <%= @city.lng %>
           </p>
-          <%= @city.neighborhoods_count%> neighborhoods in <%= @city.name %>
-          <ul>
-          <% @city.neighborhoods.each do |neighborhood| %>
-            <li><%= link_to neighborhood.name, neighborhood %></li>
-          <% end %>
-          </ul>
+          
         </div>
-        <div class="vr"></div>
-          <div id="map" style='width: 800px; height: 400px;'></div>
+        </div>
+        <div class="col">
+          <div id="map" style='width: 600px; height: 400px;'></div>
 
           <div>
                    <%= render 'shared/map', lat: @city.lat, lng: @city.lng, place: @city  %>
 
           </div>
         </div>
-  
+        </div>
+        <div class="row">
+
+      <div class="col">
+        <h4>There are <%= @city.neighborhoods_count%> identified neighborhoods in <%= @city.name %></h4>
+          <ul class="list-unstyled card-columns" style="column-count: 4;">
+          <% @city.neighborhoods.order(name: :asc).each do |neighborhood| %>
+            <li><%= link_to neighborhood.name, neighborhood %></li>
+          <% end %>
+          </ul>
+</div>
+        </div>
+  </div>
       </div>
       <div class="card-footer text-muted">
         

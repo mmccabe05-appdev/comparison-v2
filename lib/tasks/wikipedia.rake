@@ -1,8 +1,8 @@
 
 namespace :wikipedia do
   
-  desc "TODO"
-  task wikipedia: :environment do
+  desc "Adds descriptions and links to the database for each city and neighborhood from wikipedia"
+  task cities: :environment do
     require "csv"
     require 'faker'
     require 'cgi'
@@ -20,7 +20,13 @@ namespace :wikipedia do
       puts "City wikipedia error for " + a_city.name
     end
   end
-
+end 
+task neighborhoods: :environment do
+  require "csv"
+  require 'faker'
+  require 'cgi'
+  require 'open-uri'
+  require 'wikipedia'
   Neighborhood.all.each do |a_neighborhood|
     begin 
     page = Wikipedia.find(a_neighborhood.name + ', ' + a_neighborhood.city.name)

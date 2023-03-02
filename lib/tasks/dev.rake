@@ -67,8 +67,10 @@ task({ :sample_data => :environment}) do
   Rake::Task["slurp:neighborhoods"].execute
 
   Rake::Task["google_maps:google_maps"].execute
-  Rake::Task["wikipedia:wikipedia"].execute
-  
+  Rake::Task["wikipedia:cities"].execute
+  Rake::Task["wikipedia:neighborhoods"].execute
+
+
   Rake::Task["slurp:comparisons"].execute
 
 

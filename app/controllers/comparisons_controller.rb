@@ -25,7 +25,7 @@ class ComparisonsController < ApplicationController
 
   # POST /comparisons or /comparisons.json
   def create
-    @comparison = Comparison.new(comparison_params)
+    @comparison = Comparison.create(comparison_params)
     @comparison.user_id = current_user.id
     @comparison.upvotes = 1
     @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4.0
