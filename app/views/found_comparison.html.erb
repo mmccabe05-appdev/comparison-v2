@@ -5,8 +5,10 @@
 <b><%= link_to @query_city.name, @query_city %></b> is... </h1>
 
 <% if @winning_comparison != nil %>
- <%= render 'comparisons/comparison', comparison: @winning_comparison  %>
-  <div class="text-center"><%= render 'shared/add_comparison_button', comparison: Comparison.new %></div>
+ <div class="w-75 mx-auto"><%= render 'comparisons/comparison', comparison: @winning_comparison  %></div>
+  <div class="mx-auto">
+  <center><%= render 'shared/add_comparison_button', comparison: Comparison.new %></center>
+  </div>
  <% else %>
  <div class="fs-3 fw-lighter mt-5 mb-5">Doesn't seem like someone has made this comparison yet, <%= link_to "add one", new_comparison_path, class: "" %>
 ?</div>
