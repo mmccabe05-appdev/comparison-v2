@@ -11,10 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def profile
-    @user = User.where(id: params.fetch("id")).first
+    @user = User.where(username: params.fetch("username")).first
     @comparisons = Comparison.where(user: @user).order(net_comparison_score: :desc)
-
-    render({ :template => "profiles/show.html.erb" })
+    @user.karma = @comparisons.sum(:net_comparison_score)
+    @user.save
+    render({ :template => "users/show.html.erb" })
   end
   
   def find_comparison

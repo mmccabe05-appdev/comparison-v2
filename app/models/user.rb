@@ -3,10 +3,12 @@
 # Table name: users
 #
 #  id                           :bigint           not null, primary key
+#  bio                          :string           default(" ")
 #  comparisons_count            :integer          default(0)
 #  email                        :citext           default(""), not null
 #  encrypted_password           :string           default(""), not null
 #  favorite_neighborhoods_count :integer          default(0)
+#  karma                        :float            default(0.0)
 #  remember_created_at          :datetime
 #  reset_password_sent_at       :datetime
 #  reset_password_token         :string

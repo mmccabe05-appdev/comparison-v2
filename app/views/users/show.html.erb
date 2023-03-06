@@ -1,0 +1,47 @@
+  <% content_for :title, @user.username + "'s profile" %>
+
+
+
+
+<div class="row">
+    <div class="mb-5 mt-5">
+      <div class="card">
+        <div class="card-header fs-1">
+          
+          <i class="fa-solid fa-address-card"></i> <%= @user.username %>'s profile (total karma: <%= @user.karma %>)
+        </div>
+        <div class="card-body">
+
+        <div class="row">
+        <div class="col bg-ligt">
+        <div>
+          <h5 class="card-title"></h5>
+          <p class="card-text fs-3">
+<p class="fs-4"><%= @user.bio %>TESTING</p>
+<p class="fs-2 fw-lighter"><%= @user.username %> has contributed <%= @comparisons.count %> comparisons, with a total of </p>
+          
+        </div>
+        </div>
+
+        <div class="row">
+
+
+        </div>
+  </div>
+      </div>
+      <div class="card-footer text-muted">
+        
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<h2><%= @user.username %>'s comparisons</h2>
+
+  <ol>
+<% @comparisons.each do |comparison| %>
+ <li class="fs-1"><%= render 'comparisons/comparison', comparison: comparison  %></li>
+<% end %>
+</ol>
