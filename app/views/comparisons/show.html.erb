@@ -1,6 +1,8 @@
 
  <%= render 'comparisons/comparison', comparison: @comparison  %>
 
+  <% content_for :title, @comparison.neighborhood_1.name + " is like " + @comparison.neighborhood_2.name %>
+
 <div class="h5">Comments:</div>
  <%= render 'comments/form', comparison: @comparison, comment: @comparison.comments.build  %>
 

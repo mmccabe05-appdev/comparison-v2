@@ -1,6 +1,7 @@
 
  <%= render 'cities/city', city: @city  %>
 
+  <% content_for :title, @city.name %>
 
 
 <%= link_to 'Back', cities_path %>
