@@ -58,10 +58,17 @@ class Comparison < ApplicationRecord
   
   # validates :neighborhood_1_id, comparison: { other_than: :neighborhood_2_id }
   validate :neighborhoods_cant_match
+  validate :cities_cant_match
 
   def neighborhoods_cant_match
     if self.neighborhood_1_id == self.neighborhood_2_id
       errors.add(:comparison, "Can't compare a neighborhoods to itself!")
+    end
+  end
+
+  def cities_cant_match
+    if Neighborhood.where(id: self.neighborhood_1_id).first.city_id == Neighborhood.where(id: self.neighborhood_2_id).first.city_id
+      errors.add(:comparison, "Can't compare neighborhoods within the same city!")
     end
   end
 
