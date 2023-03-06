@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get("/comparisons/:id/upvote", { :controller => "comparisons", action: "upvote"})
   get("/comparisons/:id/downvote", { :controller => "comparisons", action: "downvote"})
+  get("/users/top/", { :controller => "application", action: "top_users"})
 
   get("/users/:username/", { :controller => "application", action: "profile"})
 

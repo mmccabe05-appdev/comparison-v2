@@ -1,0 +1,7 @@
+<div><h1 class="fs-1 fw-lighter"><b><i>Top</i></b> Contributors</h1></div>
+
+<ol>
+<% @users.each do |user| %>
+ <li class="fs-1"><a href="/users/<%= user.username %>" %><%= user.username %></a> | <%= user.karma %></li>
+<% end %>
+</ol>

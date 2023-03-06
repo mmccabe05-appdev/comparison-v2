@@ -17,6 +17,19 @@ class ApplicationController < ActionController::Base
     @user.save
     render({ :template => "users/show.html.erb" })
   end
+
+  def top_users
+    # refresh Karma scores for all users
+    # active record query for users desc, return just top 50
+
+    # @comparisons = Comparison.where(user: @user).order(net_comparison_score: :desc)
+    # @user.karma = @comparisons.sum(:net_comparison_score)
+    # @user.save
+
+    @users = User.all.order(karma: :desc).first(50)
+
+    render({ :template => "users/top_users.html.erb" })
+  end
   
   def find_comparison
 
