@@ -1,0 +1,9 @@
+<h1><%= @user.username %>'s profile</h1>
+
+<ul><%= @user.username %>'s comparisons</ul>
+
+  <ol>
+<% @comparisons.each do |comparison| %>
+ <li class="fs-1"><%= render 'comparisons/comparison', comparison: comparison  %></li>
+<% end %>
+</ol>

@@ -9,6 +9,13 @@ class ApplicationController < ActionController::Base
   def index
     render({ :template => "main_page.html.erb" })
   end
+
+  def profile
+    @user = User.where(id: params.fetch("id")).first
+    @comparisons = Comparison.where(user: @user).order(net_comparison_score: :desc)
+
+    render({ :template => "profiles/show.html.erb" })
+  end
   
   def find_comparison
 
