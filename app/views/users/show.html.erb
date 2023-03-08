@@ -20,7 +20,10 @@
 <p class="fs-4"><%= @user.bio %>TESTING</p>
 <p class="fs-2 fw-lighter"><%= @user.username %> has contributed <%= link_to @comparisons.count, "#user_comparisons" %> comparisons</p>
 <p class="fs-2 fw-lighter"><%= @user.username %> has <%= @user.favorite_neighborhoods.count %> favorite neighborhoods</p>
-<ul><li>neighborhood </li>
+<ul>
+<% @user.favorite_neighborhoods.all.each do |fav| %>
+<li><%= link_to fav.neighborhood.name, fav.neighborhood %> </li>
+<% end %>
 </ul>
           
         </div>
