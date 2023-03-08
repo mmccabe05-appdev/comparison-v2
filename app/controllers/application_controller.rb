@@ -26,8 +26,11 @@ class ApplicationController < ActionController::Base
     # @user.karma = @comparisons.sum(:net_comparison_score)
     # @user.save
 
-    @users = User.all.order(karma: :desc).first(50)
+    @top_karma_users = User.all.order(karma: :desc).first(50)
+    # @top_contributions_users = User.where(username: "matt").first.comparisons.size
 
+    @top_contributions_users = User.all.order(comparisons_count: :desc).first(50)
+  
     render({ :template => "users/top_users.html.erb" })
   end
   

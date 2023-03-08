@@ -1,7 +1,21 @@
-<div><h1 class="fs-1 fw-lighter"><b><i>Top</i></b> Contributors</h1></div>
-
+<div><h1 class="fs-1 fw-lighter text-center"><b><i>Top</i></b> Contributors</h1></div>
+<hr class="hr">
+<div class="row">
+<div class="col">
 <ol>
-<% @users.each do |user| %>
+<h2 class="fs-1 fw-lighter">Top Total Karma</h2>
+
+<% @top_karma_users.each do |user| %>
  <li class="fs-1"><a href="/users/<%= user.username %>" %><%= user.username %></a> | <%= user.karma %></li>
 <% end %>
 </ol>
+</div>
+<div class="col">
+<ol>
+<h2 class="fs-1 fw-lighter">Most submissions</h2>
+<% @top_contributions_users.each do |user| %>
+ <li class="fs-1"><a href="/users/<%= user.username %>" %><%= user.username %></a> | <%= user.comparisons.count %></li>
+<% end %>
+</ol>
+</div>
+</div>
