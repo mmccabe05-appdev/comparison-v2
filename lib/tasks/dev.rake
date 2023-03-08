@@ -3,10 +3,13 @@ require 'uri'
 
 task({ :comparisons_and_comments => :environment}) do
   Rake::Task["slurp:comparisons"].execute
-  Rake::Task["comments:add_comments"].execute
+  Rake::Task["users:add_comments"].execute
+  Rake::Task["users:add_users"].execute
 
 
 end
+
+task({ :users => :environment}) do
 
 
 task({ :all_sample_data => :environment}) do
@@ -32,38 +35,7 @@ task({ :all_sample_data => :environment}) do
 
   end 
 
-  p "creating users"
-  # test user
-  # user = User.new
-  # user.username = "test"
-  # user.email = "test@test.com"
-  # user.password = "password"
-  # p user
-  # user.save
-
-  usernames = Array.new { Faker::Name.first_name }
-
-  usernames << "matt"
-  usernames << "alice"
-  usernames << "test"
-  10.times do |username|
-    usernames << Faker::Name.first_name
-  end
-  id_count = 0
-  usernames.each do |username|
-    name = Faker::Name.first_name
-    id_count = id_count + 1
-    u = User.create(
-      id: id_count,
-      email: "#{username}@example.com",
-      username: username.downcase,
-      password: "password",
-    )
-    # p u
-    p u.errors.full_messages
-  end
-
-  p "#{User.count} users created"
+  Rake::Task["users:add_users"].execute
 
 
   Rake::Task["slurp:cities"].execute
@@ -75,6 +47,6 @@ task({ :all_sample_data => :environment}) do
 
 
   Rake::Task["slurp:comparisons"].execute
-  Rake::Task["comments:add_comments"].execute
-
+  Rake::Task["users:add_comments"].execute
+end 
 end
