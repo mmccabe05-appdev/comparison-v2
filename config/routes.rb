@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get("/comparisons/:id/upvote", { :controller => "comparisons", action: "upvote"})
   get("/comparisons/:id/downvote", { :controller => "comparisons", action: "downvote"})
   get("/users/top/", { :controller => "application", action: "top_users"})
+  devise_for :users
 
   get("/users/:username/", { :controller => "application", action: "profile"})
 
@@ -21,6 +22,5 @@ Rails.application.routes.draw do
   resources :comments
   resources :likes
   resources :comparisons
-  devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

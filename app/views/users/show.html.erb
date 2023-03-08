@@ -30,8 +30,8 @@
   </div>
       </div>
       <div class="card-footer text-muted">
-         <% if user_signed_in? %>
-          <%= link_to "edit #{current_user.username.capitalize}'s profile", edit_user_registration_path, class: 'nav-link' %>
+         <% if user_signed_in? && @user == current_user %>
+          <%= link_to "update password", edit_user_registration_path %> | <%= link_to "change bio", edit_user_registration_path %>
         <% else %>
 
         <% end %>
