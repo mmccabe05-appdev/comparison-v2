@@ -31,6 +31,7 @@ namespace :users do
         email: "#{username}@example.com",
         username: username.downcase,
         password: "password",
+        bio: Faker::Lorem.paragraph(sentence_count: 6)
       )
       # p u
       p u.errors.full_messages
@@ -39,6 +40,14 @@ namespace :users do
     p "#{User.count} users created"
 
   end 
+
+  task add_bios: :environment do
+
+    User.all.each do |user|
+      user.bio = Faker::Lorem.paragraph(sentence_count: 24)
+      user.save
+    end
+  end
 
 
   task add_comments: :environment do
@@ -49,7 +58,7 @@ namespace :users do
         new_comment = Comment.create(
             comparison_id: a_comparison.id,
             commenter_id: rand_id,
-            body: Faker::Lorem.paragraph(sentence_count: 3)
+            body: Faker::Lorem.paragraph(sentence_count: 4)
           )
           # p new_comment
           p new_comment.errors.full_messages
