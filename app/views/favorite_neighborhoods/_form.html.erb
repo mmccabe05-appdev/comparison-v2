@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id, value: current_user %>
   </div>
 
   <div class="field">
     <%= form.label :neighborhood_id %>
-    <%= form.text_field :neighborhood_id %>
+    <%= form.text_field :neighborhood_id, value: @neighborhood.id %>
   </div>
 
   <div class="actions">

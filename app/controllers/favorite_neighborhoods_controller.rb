@@ -1,5 +1,6 @@
 class FavoriteNeighborhoodsController < ApplicationController
   before_action :set_favorite_neighborhood, only: %i[ show edit update destroy ]
+  before_action :set_user
 
   # GET /favorite_neighborhoods or /favorite_neighborhoods.json
   def index
@@ -61,6 +62,10 @@ class FavoriteNeighborhoodsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite_neighborhood
       @favorite_neighborhood = FavoriteNeighborhood.find(params[:id])
+    end
+
+    def set_user
+      
     end
 
     # Only allow a list of trusted parameters through.

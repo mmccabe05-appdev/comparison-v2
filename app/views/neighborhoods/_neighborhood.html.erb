@@ -7,7 +7,11 @@
           <%= @neighborhood.name %>
           (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
           </div>
-          <div class="ms-auto"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></div>
+          <div class="ms-auto"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i>
+                        <%= render 'favorite_neighborhoods/form', neighborhood: @neighborhood, favorite_neighborhood: FavoriteNeighborhood.new  %>
+
+          
+          </div>
           </div>
       </div>
       <div class="card-body">
@@ -31,7 +35,7 @@
               </div>
               <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood  %>
             </div>
-            <div class="mt-4"><span class="fs-4"><%= @neighborhood.name %> has <%= @neighborhood.fans.count %> fans:</span>
+            <div class="mt-4"><span class="fs-4"><%= @neighborhood.name %> currently has <%= @neighborhood.fans.count %> fans:</span>
             <p><% @neighborhood.fans.all.order(karma: :desc).each do |fan| %>
             <a href="/users/<%= fan.username %>" %><%= fan.username %></a>,
             <% end %></p>
