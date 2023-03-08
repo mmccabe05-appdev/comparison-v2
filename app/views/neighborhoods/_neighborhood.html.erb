@@ -31,6 +31,11 @@
               </div>
               <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood  %>
             </div>
+            <div class="mt-4"><span class="fs-4"><%= @neighborhood.name %> has <%= @neighborhood.fans.count %> fans:</span>
+            <p><% @neighborhood.fans.all.order(karma: :desc).each do |fan| %>
+            <a href="/users/<%= fan.username %>" %><%= fan.username %></a>,
+            <% end %></p>
+            </div>
             </div>
           </div>
         </div>
