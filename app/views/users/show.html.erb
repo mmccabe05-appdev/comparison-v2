@@ -18,7 +18,10 @@
           <h5 class="card-title"></h5>
           <p class="card-text fs-3">
 <p class="fs-4"><%= @user.bio %>TESTING</p>
-<p class="fs-2 fw-lighter"><%= @user.username %> has contributed <%= @comparisons.count %> comparisons</p>
+<p class="fs-2 fw-lighter"><%= @user.username %> has contributed <%= link_to @comparisons.count, "#user_comparisons" %> comparisons</p>
+<p class="fs-2 fw-lighter"><%= @user.username %> has <%= @user.favorite_neighborhoods.count %> favorite neighborhoods</p>
+<ul><li>neighborhood </li>
+</ul>
           
         </div>
         </div>
@@ -41,8 +44,8 @@
     </div>
 
 
-
-<h2><%= @user.username %>'s comparisons</h2>
+<a id="user_comparisons">
+<h2><%= @user.username %>'s comparisons</h2></a>
 
   <ol>
 <% @comparisons.each do |comparison| %>
