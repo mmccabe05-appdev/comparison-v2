@@ -30,7 +30,11 @@
   </div>
       </div>
       <div class="card-footer text-muted">
-        
+         <% if user_signed_in? %>
+          <%= link_to "edit #{current_user.username.capitalize}'s profile", edit_user_registration_path, class: 'nav-link' %>
+        <% else %>
+
+        <% end %>
         </div>
         </div>
       </div>
