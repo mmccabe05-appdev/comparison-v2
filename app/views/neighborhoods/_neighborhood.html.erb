@@ -2,9 +2,13 @@
   <div class="mb-5 mt-5">
     <div class="card">
       <div class="card-header fs-2 fw-light">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <%= @neighborhood.name %>
-        (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
+        <div class="hstack ">
+          <div><i class="fa-solid fa-map-location-dot me-2"></i>
+          <%= @neighborhood.name %>
+          (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
+          </div>
+          <div class="ms-auto"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i></div>
+          </div>
       </div>
       <div class="card-body">
         <div class="row">
