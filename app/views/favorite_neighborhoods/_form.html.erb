@@ -10,18 +10,21 @@
       </ul>
     </div>
   <% end %>
+<% if FavoriteNeighborhood.where(user_id: current_user.id).where(neighborhood_id: @neighborhood.id) == [] %>
+
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, value: current_user %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div class="field">
-    <%= form.label :neighborhood_id %>
-    <%= form.text_field :neighborhood_id, value: @neighborhood.id %>
+    <%= form.hidden_field :neighborhood_id, value: @neighborhood.id %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  <% else %>
+  UNFAVORITE
+  <% end %>
 <% end %>
