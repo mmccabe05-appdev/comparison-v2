@@ -22,9 +22,14 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.button type: :submit do %>
+      <i class="fa-regular fa-heart"></i>
+    <% end %>
   </div>
   <% else %>
-  UNFAVORITE
+  <% @favorite_neighborhood = FavoriteNeighborhood.where(user_id: current_user.id).where(neighborhood_id: @neighborhood.id).first %>
+  <%= link_to favorite_neighborhood_path(@favorite_neighborhood.id), method: :delete do %>
+  <i class="fa-solid fa-heart"></i>
+  <% end %>
   <% end %>
 <% end %>

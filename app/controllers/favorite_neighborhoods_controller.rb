@@ -26,7 +26,7 @@ class FavoriteNeighborhoodsController < ApplicationController
 
     respond_to do |format|
       if @favorite_neighborhood.save
-        format.html { redirect_to favorite_neighborhood_url(@favorite_neighborhood), notice: "Favorite neighborhood was successfully created." }
+        format.html { redirect_to neighborhood_url(@favorite_neighborhood.neighborhood), notice: "Favorite neighborhood was successfully created." }
         format.json { render :show, status: :created, location: @favorite_neighborhood }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,10 +50,11 @@ class FavoriteNeighborhoodsController < ApplicationController
 
   # DELETE /favorite_neighborhoods/1 or /favorite_neighborhoods/1.json
   def destroy
+    @old_neighborhood = @favorite_neighborhood
     @favorite_neighborhood.destroy
 
     respond_to do |format|
-      format.html { redirect_to favorite_neighborhoods_url, notice: "Favorite neighborhood was successfully destroyed." }
+      format.html { redirect_to neighborhood_url(@old_neighborhood.neighborhood), notice: "Favorite neighborhood was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,7 +66,7 @@ class FavoriteNeighborhoodsController < ApplicationController
     end
 
     def set_user
-      
+
     end
 
     # Only allow a list of trusted parameters through.

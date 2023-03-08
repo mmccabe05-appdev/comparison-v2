@@ -7,7 +7,7 @@
           <%= @neighborhood.name %>
           (<%= link_to @neighborhood.city.name, @neighborhood.city %>) 
           </div>
-          <div class="ms-auto"><i class="fa-regular fa-heart"></i><i class="fa-solid fa-heart"></i>
+          <div class="ms-auto">
                         <%= render 'favorite_neighborhoods/form', neighborhood: @neighborhood, favorite_neighborhood: FavoriteNeighborhood.new  %>
 
           
