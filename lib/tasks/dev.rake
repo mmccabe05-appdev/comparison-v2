@@ -33,6 +33,10 @@ task({ :all_sample_data => :environment}) do
     User.destroy_all
     p "#{User.count} users remain"
 
+    FavoriteNeighborhood.destroy_all
+    p "#{FavoriteNeighborhood.count} neighborhood favorites remain"
+
+
   end 
 
   Rake::Task["users:add_users"].execute
