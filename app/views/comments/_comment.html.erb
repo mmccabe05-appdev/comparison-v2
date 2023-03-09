@@ -8,6 +8,14 @@
               <!-- still need to make the link to profile pages work -->
             </h5>
             <p class="fw-light"><%= comment.body %></p>
+            <% if comment.commenter == current_user %>
+            <%= link_to edit_comment_path(comment) do %>
+              <i class="fas fa-edit"></i><% end %>
+            <%= link_to comment_path(comment), method: :delete do %>
+              <i class="fas fa-trash fa-fw"></i><% end %>
+            <% else %>
+            <% end %>
+
           </div>
         </div>
 
