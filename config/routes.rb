@@ -17,10 +17,10 @@ Rails.application.routes.draw do
 
 
 
-  resources :favorite_neighborhoods
+  resources :favorite_neighborhoods, only: %i[new create update edit destroy]
   resources :neighborhoods, only: %i[index show]
   resources :cities, only: %i[index show]
-  resources :comments
+  resources :comments, only: %i[new create update edit destroy]
   resources :likes, only: %i[]
   resources :comparisons
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

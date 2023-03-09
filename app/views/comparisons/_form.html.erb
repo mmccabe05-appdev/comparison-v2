@@ -37,26 +37,26 @@
     <div class="form-label fw-lighter mb-4">(hint: 0 not similar at all, 5 almost identical)</div>
 
   <div class="field">
-    <i class="fa-solid fa-utensils mx-4"></i><%= form.label :culinary_similarity, class: "form-label" %>
-
+    <i class="fa-solid fa-utensils mx-4"></i>
+    <%= form.label :culinary_similarity, class: "form-label" %>
     <%= form.select :culinary_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
 
   <div class="field">
-    <i class="fa-solid fa-train mx-4"></i><%= form.label :transportation_similarity, class: "form-label" %>
-        <%= form.select :transportation_similarity, ['0','1','2','3','4','5'], include_blank:true %>
-
+    <i class="fa-solid fa-train mx-4"></i>
+    <%= form.label :transportation_similarity, class: "form-label" %>
+    <%= form.select :transportation_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
   <div class="field">
-    <i class="fa-solid fa-tree-city mx-4"></i><%= form.label :built_environment_similarity, class: "form-label" %>
+    <i class="fa-solid fa-tree-city mx-4"></i>
+    <%= form.label :built_environment_similarity, class: "form-label" %>
     <%= form.select :built_environment_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
   <div class="field">
-    <i class="fa-solid fa-people-group mx-4"></i><%= form.label :people_similarity, class: "form-label" %>
+    <i class="fa-solid fa-people-group mx-4"></i>
+    <%= form.label :people_similarity, class: "form-label" %>
     <%= form.select :people_similarity, ['0','1','2','3','4','5'], include_blank:true %>
   </div>
-
-
 
 
   <div class="actions mb-4">
