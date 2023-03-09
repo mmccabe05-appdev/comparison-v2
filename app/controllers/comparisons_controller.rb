@@ -53,6 +53,8 @@ class ComparisonsController < ApplicationController
     @comparison.upvotes = @comparison.upvotes + 1
     @comparison.net_votes = @comparison.upvotes - @comparison.downvotes
     @comparison.net_comparison_score = @comparison.net_votes * @comparison.overall_similarity
+    @comparison.user.update(karma: Comparison.where(user: @comparison.user).order(net_comparison_score: :desc).sum(:net_comparison_score))
+
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Upvote received." }
@@ -71,6 +73,8 @@ class ComparisonsController < ApplicationController
     @comparison.downvotes = @comparison.downvotes + 1
     @comparison.net_votes = @comparison.upvotes - @comparison.downvotes
     @comparison.net_comparison_score = @comparison.net_votes * @comparison.overall_similarity
+    @comparison.user.update(karma: Comparison.where(user: @comparison.user).order(net_comparison_score: :desc).sum(:net_comparison_score))
+
     respond_to do |format|
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Downvote received." }
