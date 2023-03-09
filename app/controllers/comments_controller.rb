@@ -56,7 +56,11 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to comments_url, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
+      format.js do
+        render template: "comments/destroy.js.erb"
+      end
     end
+
   end
 
   private
