@@ -1,4 +1,7 @@
 console.log("<%= @comment.body %>")
 var added_comment = $("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
+added_comment.hide();
 
 $("#new_comment_form").after(added_comment);
+added_comment.slideDown();
+$("#new_comment_form #comment_body").val("");
