@@ -54,22 +54,39 @@ class Comparison < ApplicationRecord
   end 
 
   validates(:user_id, :presence => true )
-  validates(:neighborhood_1_id,  :presence => true )
-  
+  validates(:neighborhood_1_id,  :presence => true, :allow_nil => false )
+  validate :neighborhoods_cant_be_nil
+
   # validates :neighborhood_1_id, comparison: { other_than: :neighborhood_2_id }
   validate :neighborhoods_cant_match
   validate :cities_cant_match
+
 
   def neighborhoods_cant_match
     if self.neighborhood_1_id == self.neighborhood_2_id
       errors.add(:comparison, "Can't compare a neighborhoods to itself!")
     end
   end
+  
+  def neighborhoods_cant_be_nil
+    if self.neighborhood_1_id.nil?
+      errors.add(:comparison, "Must select a neighborhood 1!")
+      return false
+    elsif self.neighborhood_2_id.nil?
+      errors.add(:comparison, "Must select a neighborhood 2!")
+      return false
+    else 
+      return true
+    end
+  end
 
   def cities_cant_match
-    if Neighborhood.where(id: self.neighborhood_1_id).first.city_id == Neighborhood.where(id: self.neighborhood_2_id).first.city_id
-      errors.add(:comparison, "Can't compare neighborhoods within the same city!")
-    end
+    if self.neighborhoods_cant_be_nil == true
+      if Neighborhood.where(id: self.neighborhood_1_id).first.city_id == Neighborhood.where(id: self.neighborhood_2_id).first.city_id
+        errors.add(:comparison, "Can't compare neighborhoods within the same city!")
+      end
+    else
+    end 
   end
 
   validates(:neighborhood_2_id,  :presence => true )
