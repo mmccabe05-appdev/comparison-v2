@@ -1,0 +1,7 @@
+console.log("editing working")
+
+var insert_form = $("<li id=<%= j(dom_id(@comment))%> class=list-group-item > <%= j(render "comments/form", comment: @comment) %></li>");
+insert_form.hide();
+
+$("#<%= dom_id(@comment) %>").replaceWith(insert_form);
+insert_form.fadeIn();

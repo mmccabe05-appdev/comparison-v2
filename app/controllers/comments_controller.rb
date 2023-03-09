@@ -17,6 +17,11 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    respond_to do |format|
+      format.js do
+        render template: "comments/edit.js.erb"
+      end
+    end
   end
 
   # POST /comments or /comments.json
@@ -45,6 +50,9 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         format.html { redirect_to comment_url(@comment), notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
+        format.js do
+          render template: "comments/update.js.erb"
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

@@ -1,0 +1,7 @@
+console.log("updating!")
+var updated_comment = $("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
+updated_comment.hide();
+
+
+$("#<%= dom_id(@comment) %>").replaceWith(updated_comment);
+updated_comment.fadeIn();
