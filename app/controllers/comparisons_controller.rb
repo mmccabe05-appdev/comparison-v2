@@ -59,7 +59,7 @@ class ComparisonsController < ApplicationController
         format.json { render :show, status: :ok, location: @comparison }
         format.js do 
           render template: "comparisons/upvote.js.erb"
-      end
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @comparison.errors, status: :unprocessable_entity }

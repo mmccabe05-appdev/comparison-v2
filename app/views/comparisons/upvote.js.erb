@@ -1,7 +1,5 @@
 console.log("upvoting!")
-var updated_upvote = $("<span j(class='badge text-bg-primary') j(id='<%= dom_id(comparison) %>_upvotes'><%= comparison.upvotes %></span>)");
-updated_upvote.hide();
+console.log("<%= dom_id(@comparison) %>_upvotes")
+var updated_upvote = $("<span class='badge text-bg-primary' id='<%= dom_id(@comparison) %>_upvotes'><%= @comparison.upvotes %></span>");
 
-
-$("#<%= dom_id(@comment) %>_upvotes").replaceWith(updated_upvote);
-updated_upvote.fadeIn();
+$("#<%= dom_id(@comparison) %>_upvotes").replaceWith(updated_upvote);
