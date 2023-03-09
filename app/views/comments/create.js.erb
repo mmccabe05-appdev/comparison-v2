@@ -1,0 +1,4 @@
+console.log("<%= @comment.body %>")
+var added_comment = $("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
+
+$("#new_comment_form").after(added_comment);

@@ -4,9 +4,11 @@
   <% content_for :title, @comparison.neighborhood_1.name + " is like " + @comparison.neighborhood_2.name %>
 
 <div class="h5">Comments:</div>
- <%= render 'comments/form', comparison: @comparison, comment: @comparison.comments.build  %>
 
-<ul class="list-group list-group-flush">
+<ul class="list-group list-group-flush" >
+<li id="<%= dom_id(@comparison.comments.build) %>_form" class="list-group-item">
+ <%= render 'comments/form', comparison: @comparison, comment: @comparison.comments.build  %></li>
+
 <% @comparison.comments.all.order(created_at: :desc).each do |comment| %>
  <%= render 'comments/comment', comment: comment  %>
 
