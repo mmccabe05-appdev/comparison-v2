@@ -13,7 +13,7 @@
           
           </p>
           
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3 shadow">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3 shadow" id="<%= dom_id(comparison) %>_net_comparison_score">
     <%= comparison.net_comparison_score %></span>
     <div class="container px-0 w-100 text-left align-items-start ">
 
@@ -23,7 +23,7 @@
             <%= link_to "/comparisons/#{comparison.id}/upvote", remote: true, class: "btn btn-primary" do %>
               <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary' id="<%= dom_id(comparison) %>_upvotes"><%= comparison.upvotes %></span>
             <% end %> 
-            <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
+            <%= link_to "/comparisons/#{comparison.id}/downvote", remote: true, class: "btn btn-warning" do %>
             <i class="fa-solid fa-thumbs-down"></i> <span class='badge text-bg-warning' id="<%= dom_id(comparison) %>_downvotes"><%= comparison.downvotes %></span>
             <% end %> 
                   

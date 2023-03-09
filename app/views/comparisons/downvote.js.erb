@@ -1,13 +1,12 @@
-console.log("upvoting!")
-console.log("<%= dom_id(@comparison) %>_upvotes")
-var updated_upvote = $("<span class='badge text-bg-light' id='<%= dom_id(@comparison) %>_upvotes'><%= @comparison.upvotes %></span>");
+console.log("downvoting!")
+console.log("<%= dom_id(@comparison) %>_downvotes")
+var updated_downvote = $("<span class='badge text-bg-light' id='<%= dom_id(@comparison) %>_downvotes'><%= @comparison.downvotes %></span>");
 var updated_net_comparison_score = $("<span class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info fs-3 shadow' id='<%= dom_id(@comparison) %>_net_comparison_score'><%= @comparison.net_comparison_score %></span>");
-
-updated_upvote.hide();
+updated_downvote.hide();
 updated_net_comparison_score.hide();
 
-$("#<%= dom_id(@comparison) %>_upvotes").replaceWith(updated_upvote);
+$("#<%= dom_id(@comparison) %>_downvotes").replaceWith(updated_downvote);
 $("#<%= dom_id(@comparison) %>_net_comparison_score").replaceWith(updated_net_comparison_score);
 
-updated_upvote.fadeIn();
+updated_downvote.fadeIn();
 updated_net_comparison_score.fadeIn();
