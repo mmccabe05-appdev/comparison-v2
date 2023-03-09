@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
-  get("/", { :controller => "application", :action => "index" })
-  get("/find_comparison", { :controller => "application", :action => "find_comparison" })
-  #'comparisons#top'
+  root "application#index"
 
-  get("/comparisons/:id/upvote", { :controller => "comparisons", action: "upvote"})
-  get("/comparisons/:id/downvote", { :controller => "comparisons", action: "downvote"})
-  get("/users/top/", { :controller => "application", action: "top_users"})
+  get "/find_comparison" => "application#find_comparison"
+
+  get "/comparisons/:id/upvote" => "comparisons#upvote"
+  get "/comparisons/:id/downvote" => "comparisons#downvote"
+  get "/comparisons/top" => "comparisons#top"
+  get "/comparisons/worst" => "comparisons#worst"
+
+  get "/users/top/" => "application#top_users"
+  
   devise_for :users
 
-  get("/users/:username/", { :controller => "application", action: "profile"})
+  get "/users/:username/" => "application#profile"
 
 
-  # root "comparisons#index"
 
-  get("/comparisons/top")
-  get("/comparisons/worst")
 
   resources :favorite_neighborhoods
   resources :neighborhoods
