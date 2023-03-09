@@ -88,7 +88,7 @@ namespace :slurp do
       c.transportation_similarity = row["transportation_similarity"]              
       c.neighborhood_1_id = row["neighborhood_1_id"] 
       c.neighborhood_2_id = row["neighborhood_2_id"]
-      if c.id < 6 
+      if c.id < 5 
         c.user_id = 1
       elsif c.id < 9
         c.user_id = 2
