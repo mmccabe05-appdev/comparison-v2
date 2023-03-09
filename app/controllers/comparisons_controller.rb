@@ -57,6 +57,9 @@ class ComparisonsController < ApplicationController
       if @comparison.save
         format.html { redirect_to comparison_url(@comparison), notice: "Upvote received." }
         format.json { render :show, status: :ok, location: @comparison }
+        format.js do 
+          render template: "comparisons/upvote.js.erb"
+      end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @comparison.errors, status: :unprocessable_entity }
