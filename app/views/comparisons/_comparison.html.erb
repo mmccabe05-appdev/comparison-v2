@@ -21,10 +21,10 @@
           <div class="col ms-0  ps-0"> 
               
             <%= link_to "/comparisons/#{comparison.id}/upvote", class: "btn btn-primary" do %>
-            <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary'><%= comparison.upvotes %></span>
+            <i class="fa-solid fa-thumbs-up"></i> <span class='badge text-bg-primary' id="<%= dom_id(comparison) %>_upvotes"><%= comparison.upvotes %></span>
             <% end %> 
             <%= link_to "/comparisons/#{comparison.id}/downvote", class: "btn btn-warning" do %>
-            <i class="fa-solid fa-thumbs-down"></i> <span class='badge text-bg-warning'><%= comparison.downvotes %></span>
+            <i class="fa-solid fa-thumbs-down"></i> <span class='badge text-bg-warning' id="<%= dom_id(comparison) %>_downvotes"><%= comparison.downvotes %></span>
             <% end %> 
                   
 
