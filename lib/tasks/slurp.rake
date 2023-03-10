@@ -60,8 +60,7 @@ namespace :slurp do
       n.name_with_city = "#{n.city.display_name} - #{n.name}"
       n.save
     end 
-
-end 
+  end 
 
   task comparisons: :environment do
     require "csv"

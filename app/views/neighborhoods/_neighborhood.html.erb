@@ -33,7 +33,7 @@
               <div class="align-top">
                 <div id="map" style='width: 800px; height: 400px;' ></div>
               </div>
-              <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood  %>
+              <%= render 'shared/map', lat: @neighborhood.lat, lng: @neighborhood.lng, place: @neighborhood, cached: true %>
             </div>
             <div class="mt-4"><span class="fs-4"><%= @neighborhood.name %> currently has <%= @neighborhood.fans.count %> fans:</span>
             <p><% @neighborhood.fans.all.order(karma: :desc).each do |fan| %>

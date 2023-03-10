@@ -28,7 +28,7 @@
           <div id="map" style='width: 600px; height: 400px;'></div>
 
           <div>
-                   <%= render 'shared/map', lat: @city.lat, lng: @city.lng, place: @city  %>
+                   <%= render 'shared/map', lat: @city.lat, lng: @city.lng, place: @city, cached: true %>
 
           </div>
         </div>

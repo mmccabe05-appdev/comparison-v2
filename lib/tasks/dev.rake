@@ -61,9 +61,9 @@ task({ :all_sample_data => :environment}) do
 
   Rake::Task["users:add_users"].execute
 
-
   Rake::Task["slurp:cities"].execute
   Rake::Task["slurp:neighborhoods"].execute
+  Rake::Task["slurp:add_name_with_city"].execute
 
   Rake::Task["google_maps:google_maps"].execute
   Rake::Task["wikipedia:cities"].execute
