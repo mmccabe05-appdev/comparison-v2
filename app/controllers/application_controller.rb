@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def profile
     @user = User.where(username: params.fetch("username")).first
-    @comparisons = Comparison.where(user: @user).order(net_comparison_score: :desc)
+    @comparisons = Comparison.includes(:user).includes(:neighborhood_1).includes(:neighborhood_2).includes(:city_1).includes(:city_2).where(user: @user).order(net_comparison_score: :desc)
     @user.karma = @comparisons.sum(:net_comparison_score)
     @user.save
     render({ :template => "users/show.html.erb" })
