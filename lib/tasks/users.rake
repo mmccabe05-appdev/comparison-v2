@@ -1,18 +1,15 @@
 
 namespace :users do
-  task add_users: :environment do
+  task refresh_users: :environment do
     require 'faker'
     require 'cgi'
     require 'open-uri'
     require 'wikipedia'
+
+    p "#{User.count} users at the outset"
+    User.delete_all
+    p "#{User.count} users remain"
     p "creating users"
-    # test user
-    # user = User.new
-    # user.username = "test"
-    # user.email = "test@test.com"
-    # user.password = "password"
-    # p user
-    # user.save
 
     usernames = Array.new { Faker::Name.first_name }
 

@@ -14,7 +14,7 @@ task({ :comparisons_and_comments => :environment}) do
     p "#{Comparison.count} comparisons remain"
 
     FavoriteNeighborhood.destroy_all
-    p "#{FavoriteNeighborhood.count} neighborhood favorites remain"
+    p "#{FavoriteNeighborhood.count} favorites favorites remain"
 
 
   end 
@@ -49,16 +49,13 @@ task({ :all_sample_data => :environment}) do
     Comparison.destroy_all
     p "#{Comparison.count} comparisons remain"
 
-    User.destroy_all
-    p "#{User.count} users remain"
-
     FavoriteNeighborhood.destroy_all
-    p "#{FavoriteNeighborhood.count} neighborhood favorites remain"
+    p "#{FavoriteNeighborhood.count} fav neighborhood favorites remain"
 
 
   end 
 
-  Rake::Task["users:add_users"].execute
+  Rake::Task["users:refresh_users"].execute
 
   Rake::Task["slurp:cities"].execute
   Rake::Task["slurp:neighborhoods"].execute
@@ -72,4 +69,3 @@ task({ :all_sample_data => :environment}) do
   Rake::Task["slurp:comparisons"].execute
   Rake::Task["users:add_comments"].execute
 end 
-end
