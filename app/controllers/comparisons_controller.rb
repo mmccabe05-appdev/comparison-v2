@@ -27,6 +27,9 @@ class ComparisonsController < ApplicationController
 
   # GET /comparisons/1/edit
   def edit
+    authorize @comparison
+    redirect_back(fallback_location: root_url)
+
   end
 
   # POST /comparisons or /comparisons.json
@@ -109,6 +112,7 @@ class ComparisonsController < ApplicationController
 
   # DELETE /comparisons/1 or /comparisons/1.json
   def destroy
+    authorize @comparison
     @comparison.destroy
 
     respond_to do |format|
