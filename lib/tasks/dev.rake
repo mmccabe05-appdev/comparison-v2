@@ -29,7 +29,6 @@ task({ :comparisons_and_comments => :environment}) do
 
 end
 
-task({ :users => :environment}) do
 
 
 task({ :all_sample_data => :environment}) do
