@@ -8,6 +8,7 @@
 #  lat                          :float            default(0.0)
 #  lng                          :float            default(0.0)
 #  name                         :string
+#  name_with_city               :string
 #  wiki_url                     :string
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null

@@ -54,9 +54,14 @@ namespace :slurp do
     end
     puts "There are now #{Neighborhood.count} rows in the Neighborhood table"
   end
-
-    
   
+  task add_name_with_city: :environment do
+    Neighborhood.all.each do |n|
+      n.name_with_city = "#{n.city.display_name} - #{n.name}"
+      n.save
+    end 
+
+end 
 
   task comparisons: :environment do
     require "csv"

@@ -8,6 +8,7 @@
 #  lat                          :float            default(0.0)
 #  lng                          :float            default(0.0)
 #  name                         :string
+#  name_with_city               :string
 #  wiki_url                     :string
 #  created_at                   :datetime         not null
 #  updated_at                   :datetime         not null
@@ -34,9 +35,7 @@ class Neighborhood < ApplicationRecord
   has_many(:neighborhood_2s, :through => :comparisons_as_neighborhood_1, :source => :neighborhood_2 )
   has_many(:neighborhood_1s, :through => :comparisons_as_neighborhood_2, :source => :neighborhood_1 )
 
-  def name_with_city 
-    "#{self.city.display_name} - #{self.name}"
-  end 
+
 
   def all_comparisons_for_given_neighborhood
     self.comparisons_as_neighborhood_1.or(self.comparisons_as_neighborhood_2)
