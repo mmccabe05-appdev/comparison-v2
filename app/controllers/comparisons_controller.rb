@@ -7,14 +7,14 @@ class ComparisonsController < ApplicationController
 
   # GET /comparisons or /comparisons.json
   def index
-    @comparisons = Comparison.all
+    @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all
   end
 
   def top
-    @comparisons = Comparison.all.order(net_comparison_score: :desc).first(10)
+    @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :desc).first(10)
   end 
   def worst
-    @comparisons = Comparison.all.order(net_comparison_score: :asc).first(10)
+    @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :asc).first(10)
   end 
   # GET /comparisons/1 or /comparisons/1.json
   def show
@@ -22,7 +22,7 @@ class ComparisonsController < ApplicationController
 
   # GET /comparisons/new
   def new
-    @comparison = Comparison.new
+    @comparison = Comparison.new.includes(:city)
   end
 
   # GET /comparisons/1/edit
