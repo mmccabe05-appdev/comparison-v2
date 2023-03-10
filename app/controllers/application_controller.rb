@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     else
  
       @query_city = City.find(params.fetch("query_city"))
-      @query_neighborhood = Neighborhood.find(params.fetch("query_neighborhood"))
+      @query_neighborhood = Neighborhood.includes(:city).find(params.fetch("query_neighborhood"))
 
       if @query_neighborhood.city != @query_city
         

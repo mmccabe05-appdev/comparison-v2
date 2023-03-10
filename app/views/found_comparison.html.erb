@@ -24,7 +24,7 @@
       comparisons 
       <% end %> for 
 <%= @query_neighborhood.name %> (<%= @query_neighborhood.city.name %>) in <%= @query_city.name %>...</h2>
-<% @comparisons_limited_to_target_city.order(net_comparison_score: :desc).each do |comparison| %>
+<% @comparisons_limited_to_target_city.includes(:user).includes(:city_1).includes(:city_2).includes(:neighborhood_1).includes(:neighborhood_2).order(net_comparison_score: :desc).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 <% end %>
 <hr class="mb-5" >
@@ -41,7 +41,7 @@
     <% elsif @comparisons_except_in_target_city.count < 3 %>s
     <% else %>, here are the top three...</h5>
     <% end %>
-<% @comparisons_except_in_target_city.order(net_comparison_score: :desc).limit(3).each do |comparison| %>
+<% @comparisons_except_in_target_city.includes(:user).includes(:city_1).includes(:city_2).includes(:neighborhood_1).includes(:neighborhood_2).order(net_comparison_score: :desc).limit(3).each do |comparison| %>
  <%= render 'comparisons/comparison', comparison: comparison  %>
 
 <% end %>

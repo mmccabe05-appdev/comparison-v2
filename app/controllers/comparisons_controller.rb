@@ -32,7 +32,6 @@ class ComparisonsController < ApplicationController
   # GET /comparisons/1/edit
   def edit
     authorize @comparison
-    redirect_back(fallback_location: root_url)
 
   end
 
@@ -98,6 +97,8 @@ class ComparisonsController < ApplicationController
 
   # PATCH/PUT /comparisons/1 or /comparisons/1.json
   def update
+    authorize @comparison
+
     @comparison.update(comparison_params)
     @comparison.overall_similarity = (@comparison.culinary_similarity + @comparison.transportation_similarity + @comparison.people_similarity + @comparison.built_environment_similarity)/4.0
 
@@ -128,7 +129,7 @@ class ComparisonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comparison
-      @comparison = Comparison.includes(:user).includes(:city_1).includes(:city_2).find(params[:id])
+      @comparison = Comparison.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

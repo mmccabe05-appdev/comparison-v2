@@ -9,6 +9,7 @@ class ComparisonPolicy
   def edit?
     user == comparison.user
   end
+  
   def destroy?
     user == comparison.user
   end
