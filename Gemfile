@@ -4,8 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 gem 'devise'
 gem 'wikipedia-client'
-gem 'htmlbeautifier'
-gem 'bullet', group: 'development'
 
 gem 'faker' # :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
