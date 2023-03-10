@@ -7,9 +7,9 @@
         <h2 class="fs-1 fw-lighter">What is the...</h2>
         <select name="query_neighborhood" id="query_neighborhood" class="form-select-lg form-floating w-50" >
           <option selected>Pick a neighborhood you know</option>
-          <% City.all.each do |each_city| %>
+          <% City.all.order(display_name: :asc).each do |each_city| %>
 
-    <% Neighborhood.where(:city=>each_city).all.order(name: :asc).each do |neighborhood| %>
+    <% Neighborhood.where(:city=>each_city).all.order(name_with_city: :asc).each do |neighborhood| %>
             <option value="<%= neighborhood.id %>"><%= neighborhood.name_with_city %></option>
           <% end %>
           <% end %>
