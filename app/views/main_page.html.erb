@@ -18,7 +18,7 @@
         <div>
           <select name="query_city" class="form-select-lg w-50">
             <option selected>Pick a city you don't</option>
-            <% City.all.each do |a_city| %>
+            <% City.all.order(display_name: :asc).each do |a_city| %>
               <option value="<%= a_city.id %>"><%= a_city.display_name %></option>
             <% end %>
           </select>
