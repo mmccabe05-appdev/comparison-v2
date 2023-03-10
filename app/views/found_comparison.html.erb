@@ -10,7 +10,7 @@
   <center><%= render 'shared/add_comparison_button', comparison: Comparison.new %></center>
   </div>
  <% else %>
- <div class="fs-3 fw-lighter mt-5 mb-5">Doesn't seem like someone has made this comparison yet, <%= link_to "add one", new_comparison_path, class: "" %>
+ <div class="fs-3 fw-lighter mt-5 mb-5">Doesn't seem like someone has made this comparison yet, <%= link_to "add one", new_comparison_path(Comparison.new), class: "" %>
 ?</div>
  <% end %>
 </div>

@@ -26,7 +26,7 @@ class ComparisonsController < ApplicationController
 
   # GET /comparisons/new
   def new
-    @comparison = Comparison.new.includes(:city)
+    @comparison = Comparison.new
   end
 
   # GET /comparisons/1/edit
