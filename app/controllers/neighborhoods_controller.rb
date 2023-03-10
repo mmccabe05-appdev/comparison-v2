@@ -8,7 +8,7 @@ class NeighborhoodsController < ApplicationController
 
   # GET /neighborhoods/1 or /neighborhoods/1.json
   def show
-    # @all_comparisons_for_neighborhood = Comparison.where(:comparisons_as_neighborhood_1 => @neighborhood)
+    
   end
 
   # GET /neighborhoods/new
@@ -61,7 +61,7 @@ class NeighborhoodsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_neighborhood
-      @neighborhood = Neighborhood.find(params[:id])
+      @neighborhood = Neighborhood.includes(:city).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

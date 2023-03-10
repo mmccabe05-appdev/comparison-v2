@@ -37,7 +37,7 @@
             </div>
             <div class="mt-4"><span class="fs-4"><%= @neighborhood.name %> currently has <%= @neighborhood.fans.count %> fans:</span>
             <p><% @neighborhood.fans.all.order(karma: :desc).each do |fan| %>
-            <a href="/users/<%= fan.username %>" %><%= fan.username %></a>,
+            <%= link_to fan.username, "/users/#{fan.username}" %>,
             <% end %></p>
             </div>
             </div>

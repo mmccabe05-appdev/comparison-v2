@@ -18,7 +18,7 @@
 </div> 
 <div class="row">
 
-      <% @neighborhood.all_comparisons_for_given_neighborhood.order(net_comparison_score: :desc).limit(3).each do |comparison| %>
+      <% @neighborhood.all_comparisons_for_given_neighborhood.includes(:user).includes(:city_1).includes(:city_2).order(net_comparison_score: :desc).limit(3).each do |comparison| %>
          <%= render 'comparisons/comparison', comparison: comparison, class: "w-50"  %>
 
       <% end %>

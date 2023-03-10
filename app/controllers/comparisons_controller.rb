@@ -16,8 +16,12 @@ class ComparisonsController < ApplicationController
   def worst
     @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :asc).first(10)
   end 
+
+
+
   # GET /comparisons/1 or /comparisons/1.json
   def show
+    
   end
 
   # GET /comparisons/new
@@ -124,7 +128,7 @@ class ComparisonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comparison
-      @comparison = Comparison.find(params[:id])
+      @comparison = Comparison.includes(:user).includes(:city_1).includes(:city_2).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
