@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    authorize @comment
     respond_to do |format|
       format.js do
         render template: "comments/edit.js.erb"
