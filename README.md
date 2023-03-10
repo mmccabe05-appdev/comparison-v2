@@ -1,9 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Comparison is an app to help you find new places to explore.
 
-Things you may want to cover:
+More to come...
+
+
+
 
 * Ruby version
 
