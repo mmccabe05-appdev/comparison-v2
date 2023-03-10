@@ -80,3 +80,7 @@ group :development do
 end
 
 gem "pundit", "~> 2.3"
+
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "redis", "~> 5.0"
