@@ -9,4 +9,7 @@ class CommentPolicy
   def edit?
     user == comment.commenter
   end
+  def destroy?
+    user == comment.commenter
+  end
 end

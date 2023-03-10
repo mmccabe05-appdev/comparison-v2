@@ -63,6 +63,7 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
+    authorize @comment
     @comment.destroy
 
     respond_to do |format|
