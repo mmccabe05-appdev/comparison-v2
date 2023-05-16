@@ -37,4 +37,6 @@ class User < ApplicationRecord
          has_many(:liked_neighborhoods, :through => :favorite_neighborhoods, :source => :neighborhood )
          validates(:username, :presence => true )
          validates(:username, :uniqueness => true )
+         validates :username, presence: true, uniqueness: true, username: true
+
 end
