@@ -1,3 +1,4 @@
+        <% if user_signed_in? %>
 
 
 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#add_comparison">
@@ -17,3 +18,8 @@
       </div>
     </div>
   </div>
+<% else %>
+<button type="button" class="btn btn-secondary" disabled>
+  Add your own comparison! 
+</button>
+<% end %>
