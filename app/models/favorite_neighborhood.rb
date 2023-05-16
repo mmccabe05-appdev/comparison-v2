@@ -19,11 +19,12 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class FavoriteNeighborhood < ApplicationRecord
-  # belongs_to :user
-  # belongs_to :neighborhood
 
 
   belongs_to(:user,  :required => true, :class_name => "User", :foreign_key => "user_id", :counter_cache => true )
   belongs_to(:neighborhood,  :required => true, :class_name => "Neighborhood", :foreign_key => "neighborhood_id", :counter_cache => true )
+
+  # has_one(:neighborhood_name,  :through => :neighborhood_id )
+
 
 end

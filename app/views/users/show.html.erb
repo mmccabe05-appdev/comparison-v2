@@ -22,11 +22,10 @@
 <p class="fs-2 fw-lighter"><%= @user.username %> has contributed <%= link_to @comparisons.count, "#user_comparisons" %> comparisons</p>
 <p class="fs-2 fw-lighter"><%= @user.username %> has <%= @user.favorite_neighborhoods.count %> favorite neighborhoods</p>
 <ul>
-<% @user.favorite_neighborhoods.includes(:neighborhood).all.each do |fav| %>
+<% @user.favorite_neighborhoods.includes(:neighborhood).all.joins(:neighborhood).merge(Neighborhood.order(name: :asc)).each do |fav| %>
 <li><%= link_to fav.neighborhood.name, fav.neighborhood %> </li>
 <% end %>
 </ul>
-          
         </div>
         </div>
 
