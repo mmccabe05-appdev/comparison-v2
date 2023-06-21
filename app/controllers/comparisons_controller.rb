@@ -8,10 +8,13 @@ class ComparisonsController < ApplicationController
   # GET /comparisons or /comparisons.json
   def index
     @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all
+    
   end
 
   def top
     @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :desc).first(10)
+    @top_three_comparisons = @comparisons.first(3)
+    
   end 
   def worst
     @comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :asc).first(10)

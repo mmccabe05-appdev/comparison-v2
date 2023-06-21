@@ -5,11 +5,19 @@ class ApplicationController < ActionController::Base
   
   before_action :authenticate_user!
 
+  before_action :slider_comparisons #, if: :user_not_authorized
+
+  def slider_comparisons
+    @top_three_comparisons = Comparison.all.order(net_comparison_score: :desc).first(3)
+    return @top_three_comparisons
+  end
+
   def google_api_key
     return ENV.fetch("GMAPS_KEY")
   end
 
   def index
+    slider_comparisons
     render({ :template => "main_page.html.erb" })
   end
 
