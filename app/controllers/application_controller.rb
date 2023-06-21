@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_action :slider_comparisons #, if: :user_not_authorized
 
   def slider_comparisons
-    @top_three_comparisons = Comparison.all.order(net_comparison_score: :desc).first(3)
+    @top_three_comparisons = Comparison.includes(:user).includes(:city_1).includes(:city_2).all.order(net_comparison_score: :desc).first(3)
     return @top_three_comparisons
   end
 
